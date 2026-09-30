@@ -202,7 +202,7 @@ button {
 
   font-family: "Poppins", sans-serif;
 
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(32px, 4vw, 50px);
 
   line-height: 1.1;
   font-weight: 700;
@@ -1361,7 +1361,7 @@ button {
   }
 
   .hero h1 {
-    font-size: 42px;
+    font-size: 34px;
   }
 
   .hero h2 {
