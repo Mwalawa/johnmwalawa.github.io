@@ -1,3 +1,20 @@
+:root {
+    --bg: #0b1120;
+    --bg-secondary: #0f172a;
+    --card: #111827;
+    --card-light: #172033;
+    --border: #243244;
+    --border-light: #334155;
+    --text: #e5e7eb;
+    --text-light: #cbd5e1;
+    --muted: #94a3b8;
+    --muted-dark: #64748b;
+    --accent: #38bdf8;
+    --accent-light: #7dd3fc;
+    --dark: #07111f;
+}
+
+
 /* ================================
    GLOBAL
 ================================ */
@@ -14,8 +31,8 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-    background: #0b1120;
-    color: #e5e7eb;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.7;
 }
 
@@ -54,13 +71,13 @@ section {
 }
 
 .section-title p {
-    color: #94a3b8;
+    color: var(--muted);
     max-width: 650px;
     margin: auto;
 }
 
 .highlight {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 
@@ -96,7 +113,7 @@ section {
 }
 
 .logo span {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 .nav-menu {
@@ -107,7 +124,7 @@ section {
 }
 
 .nav-link {
-    color: #cbd5e1;
+    color: var(--text-light);
     font-size: 0.9rem;
     font-weight: 500;
     transition: 0.3s ease;
@@ -115,12 +132,12 @@ section {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 .nav-button {
-    background: #38bdf8;
-    color: #07111f;
+    background: var(--accent);
+    color: var(--dark);
     padding: 9px 17px;
     border-radius: 7px;
     font-weight: 700;
@@ -128,7 +145,7 @@ section {
 }
 
 .nav-button:hover {
-    background: #7dd3fc;
+    background: var(--accent-light);
     transform: translateY(-2px);
 }
 
@@ -157,7 +174,7 @@ section {
             rgba(14, 165, 233, 0.12),
             transparent 30%
         ),
-        #0b1120;
+        var(--bg);
 }
 
 .hero-container {
@@ -174,7 +191,7 @@ section {
 }
 
 .hero-intro {
-    color: #38bdf8;
+    color: var(--accent);
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -189,18 +206,18 @@ section {
 }
 
 .hero h1 span {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 .hero-role {
     font-size: 1.2rem;
-    color: #cbd5e1;
+    color: var(--text-light);
     font-weight: 600;
     margin-bottom: 20px;
 }
 
 .hero-description {
-    color: #94a3b8;
+    color: var(--muted);
     max-width: 650px;
     font-size: 1rem;
     margin-bottom: 30px;
@@ -227,24 +244,24 @@ section {
 }
 
 .btn-primary {
-    background: #38bdf8;
-    color: #07111f;
+    background: var(--accent);
+    color: var(--dark);
 }
 
 .btn-primary:hover {
-    background: #7dd3fc;
+    background: var(--accent-light);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-    border: 1px solid #334155;
-    color: #e2e8f0;
+    border: 1px solid var(--border-light);
+    color: var(--text-light);
     background: transparent;
 }
 
 .btn-secondary:hover {
-    border-color: #38bdf8;
-    color: #38bdf8;
+    border-color: var(--accent);
+    color: var(--accent);
     transform: translateY(-2px);
 }
 
@@ -260,15 +277,15 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #334155;
+    border: 1px solid var(--border-light);
     border-radius: 7px;
-    color: #cbd5e1;
+    color: var(--text-light);
     transition: 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #38bdf8;
-    border-color: #38bdf8;
+    color: var(--accent);
+    border-color: var(--accent);
     transform: translateY(-2px);
 }
 
@@ -284,9 +301,15 @@ section {
     justify-content: center;
 }
 
+/*
+   The image frame no longer forces the photo
+   into a square. This allows the complete
+   original image to remain visible.
+*/
+
 .image-frame {
     width: min(400px, 100%);
-    aspect-ratio: 1 / 1;
+    max-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,15 +322,16 @@ section {
 
 .image-frame img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
     border-radius: inherit;
 }
 
 .status-card {
     margin-top: 20px;
     padding: 14px 20px;
-    border: 1px solid #243244;
+    border: 1px solid var(--border);
     background: rgba(15, 23, 42, 0.85);
     border-radius: 10px;
     text-align: center;
@@ -322,7 +346,7 @@ section {
 
 .status-card span {
     display: block;
-    color: #94a3b8;
+    color: var(--muted);
     font-size: 0.8rem;
     margin-top: 3px;
 }
@@ -333,7 +357,7 @@ section {
 ================================ */
 
 .about {
-    background: #0f172a;
+    background: var(--bg-secondary);
 }
 
 .about-grid {
@@ -344,7 +368,7 @@ section {
 }
 
 .about-text p {
-    color: #94a3b8;
+    color: var(--muted);
     margin-bottom: 18px;
 }
 
@@ -356,12 +380,12 @@ section {
 .info-card {
     padding: 18px;
     background: #111c30;
-    border: 1px solid #243244;
+    border: 1px solid var(--border);
     border-radius: 10px;
 }
 
 .info-card i {
-    color: #38bdf8;
+    color: var(--accent);
     margin-right: 8px;
 }
 
@@ -370,7 +394,7 @@ section {
 }
 
 .info-card span {
-    color: #94a3b8;
+    color: var(--muted);
 }
 
 
@@ -385,15 +409,15 @@ section {
 }
 
 .skill-card {
-    background: #111827;
-    border: 1px solid #243244;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
     transition: 0.3s ease;
 }
 
 .skill-card:hover {
-    border-color: #38bdf8;
+    border-color: var(--accent);
     transform: translateY(-3px);
 }
 
@@ -413,7 +437,7 @@ section {
 }
 
 .expand-btn i {
-    color: #38bdf8;
+    color: var(--accent);
     transition: 0.3s ease;
 }
 
@@ -424,7 +448,7 @@ section {
 .expand-content {
     display: none;
     padding: 0 22px 22px;
-    color: #94a3b8;
+    color: var(--muted);
     font-size: 0.9rem;
 }
 
@@ -446,7 +470,7 @@ section {
 ================================ */
 
 .projects {
-    background: #0f172a;
+    background: var(--bg-secondary);
 }
 
 .projects-grid {
@@ -456,8 +480,8 @@ section {
 }
 
 .project-card {
-    background: #111827;
-    border: 1px solid #243244;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     transition: 0.3s ease;
@@ -465,14 +489,14 @@ section {
 
 .project-card:hover {
     transform: translateY(-4px);
-    border-color: #38bdf8;
+    border-color: var(--accent);
 }
 
 .project-image {
     width: 100%;
     height: 210px;
     overflow: hidden;
-    background: #0b1120;
+    background: var(--bg);
 }
 
 .project-image img {
@@ -497,7 +521,7 @@ section {
 }
 
 .project-content p {
-    color: #94a3b8;
+    color: var(--muted);
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
@@ -505,7 +529,7 @@ section {
 .project-toggle {
     border: none;
     background: transparent;
-    color: #38bdf8;
+    color: var(--accent);
     font-weight: 700;
     cursor: pointer;
     font-size: 0.85rem;
@@ -520,8 +544,8 @@ section {
     display: none;
     margin-top: 18px;
     padding-top: 18px;
-    border-top: 1px solid #243244;
-    color: #94a3b8;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
     font-size: 0.88rem;
 }
 
@@ -543,7 +567,7 @@ section {
 ================================ */
 
 .experience {
-    background: #0b1120;
+    background: var(--bg);
 }
 
 .timeline {
@@ -559,7 +583,7 @@ section {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #243244;
+    background: var(--border);
 }
 
 .timeline-item {
@@ -579,14 +603,14 @@ section {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #38bdf8;
-    border: 4px solid #0b1120;
-    box-shadow: 0 0 0 2px #38bdf8;
+    background: var(--accent);
+    border: 4px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
 }
 
 .timeline-card {
-    background: #111827;
-    border: 1px solid #243244;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -603,13 +627,13 @@ section {
 }
 
 .timeline-company {
-    color: #38bdf8;
+    color: var(--accent);
     font-size: 0.9rem;
     font-weight: 600;
 }
 
 .timeline-date {
-    color: #64748b;
+    color: var(--muted-dark);
     font-size: 0.82rem;
     margin-top: 3px;
 }
@@ -622,7 +646,7 @@ section {
 .timeline-content {
     display: none;
     padding: 0 22px 22px;
-    color: #94a3b8;
+    color: var(--muted);
     font-size: 0.9rem;
 }
 
@@ -644,7 +668,7 @@ section {
 ================================ */
 
 .education {
-    background: #0f172a;
+    background: var(--bg-secondary);
 }
 
 .education-grid {
@@ -655,8 +679,8 @@ section {
 
 .education-card,
 .certifications-card {
-    background: #111827;
-    border: 1px solid #243244;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 25px;
 }
@@ -668,18 +692,18 @@ section {
 }
 
 .education-card .institution {
-    color: #38bdf8;
+    color: var(--accent);
     font-weight: 600;
 }
 
 .education-card .date {
-    color: #64748b;
+    color: var(--muted-dark);
     font-size: 0.85rem;
     margin-bottom: 15px;
 }
 
 .education-card p {
-    color: #94a3b8;
+    color: var(--muted);
     font-size: 0.9rem;
 }
 
@@ -695,7 +719,7 @@ section {
     border-radius: 20px;
     background: #172338;
     border: 1px solid #2c3d55;
-    color: #cbd5e1;
+    color: var(--text-light);
     font-size: 0.78rem;
 }
 
@@ -710,7 +734,7 @@ section {
 
 .cert-list ul {
     padding-left: 20px;
-    color: #94a3b8;
+    color: var(--muted);
     font-size: 0.88rem;
 }
 
@@ -721,7 +745,7 @@ section {
 .cert-toggle {
     border: none;
     background: transparent;
-    color: #38bdf8;
+    color: var(--accent);
     font-weight: 700;
     cursor: pointer;
     padding: 0;
@@ -733,7 +757,7 @@ section {
 ================================ */
 
 .contact {
-    background: #0b1120;
+    background: var(--bg);
 }
 
 .contact-box {
@@ -741,9 +765,9 @@ section {
     margin: auto;
     text-align: center;
     padding: 50px 30px;
-    border: 1px solid #243244;
+    border: 1px solid var(--border);
     border-radius: 14px;
-    background: #111827;
+    background: var(--card);
 }
 
 .contact-box h2 {
@@ -753,7 +777,7 @@ section {
 }
 
 .contact-box p {
-    color: #94a3b8;
+    color: var(--muted);
     max-width: 600px;
     margin: 0 auto 25px;
 }
@@ -770,16 +794,16 @@ section {
     align-items: center;
     gap: 8px;
     padding: 11px 16px;
-    border: 1px solid #334155;
+    border: 1px solid var(--border-light);
     border-radius: 7px;
-    color: #cbd5e1;
+    color: var(--text-light);
     font-size: 0.88rem;
     transition: 0.3s ease;
 }
 
 .contact-link:hover {
-    color: #38bdf8;
-    border-color: #38bdf8;
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 
@@ -803,7 +827,7 @@ footer {
 }
 
 footer p {
-    color: #64748b;
+    color: var(--muted-dark);
     font-size: 0.8rem;
 }
 
@@ -813,12 +837,12 @@ footer p {
 }
 
 .footer-social a {
-    color: #64748b;
+    color: var(--muted-dark);
     transition: 0.3s ease;
 }
 
 .footer-social a:hover {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 
@@ -834,6 +858,11 @@ footer p {
 
     .image-frame {
         width: min(400px, 100%);
+        max-height: 480px;
+    }
+
+    .image-frame img {
+        max-height: 480px;
     }
 
     .skills-grid {
@@ -881,6 +910,14 @@ footer p {
 
     .image-frame {
         width: min(400px, 82vw);
+        max-height: none;
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
     }
 
     .about-grid {
@@ -912,8 +949,8 @@ footer p {
         top: 65px;
         left: 0;
         width: 100%;
-        background: #0b1120;
-        border-top: 1px solid #243244;
+        background: var(--bg);
+        border-top: 1px solid var(--border);
         display: none;
         flex-direction: column;
         align-items: stretch;
@@ -978,10 +1015,22 @@ footer p {
         font-size: 0.9rem;
     }
 
+    /*
+       The image keeps its original proportions.
+       No forced square and no cropping.
+    */
+
     .image-frame {
         width: min(340px, 90vw);
-        aspect-ratio: 1 / 1;
+        max-height: none;
         border-radius: 12px;
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
     }
 
     .status-card {
@@ -1032,7 +1081,14 @@ footer p {
 
     .image-frame {
         width: min(310px, 90vw);
+        max-height: none;
         border-radius: 10px;
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
     .project-image {
