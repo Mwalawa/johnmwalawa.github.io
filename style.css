@@ -198,11 +198,22 @@ section {
     margin-bottom: 12px;
 }
 
+
+/* ================================
+   HERO NAME
+================================ */
+
 .hero h1 {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.6rem, 4.7vw, 4.4rem);
     line-height: 1.05;
     color: #ffffff;
     margin-bottom: 20px;
+
+    /*
+       Keeps John Anderson Mwalawa
+       on one line on larger screens.
+    */
+    white-space: nowrap;
 }
 
 .hero h1 span {
@@ -302,14 +313,13 @@ section {
 }
 
 /*
-   The image frame no longer forces the photo
-   into a square. This allows the complete
-   original image to remain visible.
+   The frame does NOT force a square.
+   This allows the complete original
+   image to be displayed.
 */
 
 .image-frame {
     width: min(400px, 100%);
-    max-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,7 +333,6 @@ section {
 .image-frame img {
     width: 100%;
     height: auto;
-    max-height: 500px;
     object-fit: contain;
     border-radius: inherit;
 }
@@ -856,13 +865,12 @@ footer p {
         gap: 40px;
     }
 
-    .image-frame {
-        width: min(400px, 100%);
-        max-height: 480px;
+    .hero h1 {
+        font-size: clamp(2.5rem, 4.5vw, 4rem);
     }
 
-    .image-frame img {
-        max-height: 480px;
+    .image-frame {
+        width: min(400px, 100%);
     }
 
     .skills-grid {
@@ -896,6 +904,10 @@ footer p {
         margin: auto;
     }
 
+    .hero h1 {
+        font-size: clamp(2.5rem, 7vw, 4rem);
+    }
+
     .hero-buttons {
         justify-content: center;
     }
@@ -910,13 +922,11 @@ footer p {
 
     .image-frame {
         width: min(400px, 82vw);
-        max-height: none;
     }
 
     .image-frame img {
         width: 100%;
         height: auto;
-        max-height: none;
         object-fit: contain;
     }
 
@@ -1003,8 +1013,14 @@ footer p {
         padding-top: 105px;
     }
 
+    /*
+       Allow the name to wrap naturally
+       on very small screens if necessary.
+    */
+
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.45rem;
+        white-space: nowrap;
     }
 
     .hero-role {
@@ -1015,21 +1031,14 @@ footer p {
         font-size: 0.9rem;
     }
 
-    /*
-       The image keeps its original proportions.
-       No forced square and no cropping.
-    */
-
     .image-frame {
         width: min(340px, 90vw);
-        max-height: none;
         border-radius: 12px;
     }
 
     .image-frame img {
         width: 100%;
         height: auto;
-        max-height: none;
         object-fit: contain;
     }
 
@@ -1061,8 +1070,15 @@ footer p {
         width: 90%;
     }
 
+    /*
+       Smaller font so the complete name
+       still fits on one line where possible.
+    */
+
     .hero h1 {
-        font-size: 2.35rem;
+        font-size: 2rem;
+        white-space: nowrap;
+        letter-spacing: -0.8px;
     }
 
     .hero-intro {
@@ -1081,7 +1097,6 @@ footer p {
 
     .image-frame {
         width: min(310px, 90vw);
-        max-height: none;
         border-radius: 10px;
     }
 
