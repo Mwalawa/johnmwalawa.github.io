@@ -317,11 +317,11 @@ button {
 }
 
 .hero-image img {
-  width: min(400px, 100%);
+  width: min(280px, 100%);
 
   aspect-ratio: 1;
 
-  object-fit: cover;
+  object-fit: contain;
 
   border-radius: 18px;
 
