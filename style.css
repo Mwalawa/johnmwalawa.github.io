@@ -319,7 +319,9 @@ button {
 .hero-image img {
   width: min(280px, 100%);
 
-  aspect-ratio: 1;
+  height: auto;
+
+  aspect-ratio: auto;
 
   object-fit: contain;
 
@@ -1382,6 +1384,9 @@ button {
 
   .hero-image img {
     width: 230px;
+     height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   }
 
   .section-heading {
