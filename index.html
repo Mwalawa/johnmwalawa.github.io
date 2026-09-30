@@ -2,408 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="John Anderson Mwalawa — ICT Specialist, IT Support, Systems Administration and IT Project Support."
-  >
-
-  <meta name="author" content="John Anderson Mwalawa">
 
   <title>John Anderson Mwalawa | ICT Specialist</title>
 
-  <!-- Google Fonts -->
+  <meta
+    name="description"
+    content="John Anderson Mwalawa - ICT Specialist, IT Support, Systems Administration and IT Project Support."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-  <!-- =========================================
-       NAVIGATION
-  ========================================== -->
+  <!-- ================= NAVIGATION ================= -->
 
-  <header id="header">
+  <header class="navbar">
+    <div class="nav-container">
 
-    <div class="container navbar">
-
-      <a href="#home" class="brand">
-
-        <div class="brand-logo">
-          JM
-        </div>
-
-        <span>
-          John Anderson Mwalawa
-        </span>
-
-      </a>
-
+      <a href="#home" class="logo">JM</a>
 
       <nav class="nav-links" id="navLinks">
-
-        <a href="#home" class="active">Home</a>
-
-        <a href="#about">About</a>
-
-        <a href="#skills">Skills</a>
-
-        <a href="#projects">Projects</a>
-
-        <a href="#experience">Experience</a>
-
-        <a href="#certifications">Certifications</a>
-
-        <a href="#contact">Contact</a>
-
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
-
-
-      <a
-        href="John Mwalawa CV_.pdf"
-        target="_blank"
-        class="nav-cv"
-      >
-        ↓ &nbsp; Download CV
-      </a>
-
 
       <button
         class="menu-btn"
         id="menuBtn"
-        aria-label="Open navigation"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
       >
         ☰
       </button>
 
     </div>
-
   </header>
 
 
-  <!-- =========================================
-       HERO
-  ========================================== -->
+  <!-- ================= HERO ================= -->
 
   <section class="hero" id="home">
 
-    <div class="container hero-content">
+    <div class="hero-overlay"></div>
 
+    <div class="container hero-container">
 
-      <div class="hero-text">
+      <div class="hero-content">
 
-        <div class="hero-small">
-          HELLO, I'M
-        </div>
+        <span class="hero-small">HELLO, I'M</span>
 
+        <h1>John Anderson Mwalawa</h1>
 
-        <h1>
-          John Anderson<br>
-          <span>Mwalawa</span>
-        </h1>
-
-
-        <div class="hero-title">
-          ICT Specialist | IT Support | Systems Administration |
+        <h2>
+          ICT Specialist |
+          IT Support |
+          Systems Administration |
           IT Project Support
-        </div>
-
-
-        <p class="hero-description">
-          I help organizations support users, systems and
-          technology-driven operations. I'm passionate about
-          solving technical problems and improving business
-          processes through technology.
-        </p>
-
-
-        <div class="buttons">
-
-          <a
-            href="#projects"
-            class="btn btn-primary"
-          >
-            ▣ &nbsp; View My Projects
-          </a>
-
-
-          <a
-            href="John Mwalawa CV_.pdf"
-            target="_blank"
-            class="btn btn-outline"
-          >
-            ↓ &nbsp; Download CV
-          </a>
-
-        </div>
-
-
-        <div class="socials">
-
-          <a
-            href="https://linkedin.com/in/john-m-896a2b244"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            in
-          </a>
-
-          <a
-            href="mailto:johnmwalawa@gmail.com"
-            aria-label="Email"
-          >
-            ✉
-          </a>
-
-          <a
-            href="tel:+254705170345"
-            aria-label="Phone"
-          >
-            ☎
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="hero-image">
-
-        <img
-          src="images/profile.jpg"
-          alt="John Anderson Mwalawa"
-        >
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================
-       ABOUT
-  ========================================== -->
-
-  <section class="about" id="about">
-
-    <div class="container about-grid">
-
-
-      <div class="about-text">
-
-        <div class="section-label">
-          ABOUT ME
-        </div>
-
-
-        <h2 class="section-title">
-          A Passionate ICT Professional
         </h2>
 
-
         <p>
-          I'm an ICT professional with 4+ years of experience
-          in IT support, systems administration, business
-          systems and technology-driven projects. I have
-          worked in university, corporate and remote
-          environments, supporting users, managing systems
-          and contributing to IT projects and operational
-          efficiency.
+          Adaptable ICT professional with experience supporting users,
+          systems, business applications, and technology-driven projects.
+          I learn and adapt quickly to new systems and environments while
+          working effectively with minimal supervision.
         </p>
 
+        <div class="hero-buttons">
 
-        <p>
-          I adapt quickly to new systems and environments,
-          work with minimal supervision and enjoy solving
-          technical and operational problems.
-        </p>
+          <a href="#projects" class="btn btn-primary">
+            View My Projects
+          </a>
 
-
-        <div class="traits">
-
-
-          <div class="trait">
-
-            <div class="trait-icon">
-              ◉
-            </div>
-
-            <strong>
-              Adaptable
-            </strong>
-
-            <span>
-              Quick to learn
-            </span>
-
-          </div>
-
-
-          <div class="trait">
-
-            <div class="trait-icon">
-              ♙
-            </div>
-
-            <strong>
-              Team Player
-            </strong>
-
-            <span>
-              Collaborative
-            </span>
-
-          </div>
-
-
-          <div class="trait">
-
-            <div class="trait-icon">
-              ✓
-            </div>
-
-            <strong>
-              Problem Solver
-            </strong>
-
-            <span>
-              Practical solutions
-            </span>
-
-          </div>
-
+          <a
+            href="John%20Mwalawa%20CV_.pdf"
+            class="btn btn-outline"
+            target="_blank"
+          >
+            Download CV
+          </a>
 
         </div>
 
       </div>
 
+      <div class="hero-profile">
 
-      <!-- CONTACT CARD -->
-
-      <div class="contact-card">
-
-
-        <div class="contact-row">
-
-          <div class="contact-icon">
-            ⌖
-          </div>
-
-          <div>
-
-            <strong>
-              Location
-            </strong>
-
-            <span>
-              Nairobi, Kenya
-            </span>
-
-          </div>
-
+        <div class="profile-image-wrapper">
+          <img
+            src="images/profile.jpg"
+            alt="John Anderson Mwalawa"
+            class="profile-image"
+          >
         </div>
 
-
-        <div class="contact-row">
-
-          <div class="contact-icon">
-            ☎
-          </div>
-
-          <div>
-
-            <strong>
-              Phone
-            </strong>
-
-            <a href="tel:+254705170345">
-              +254 705 170345
-            </a>
-
-          </div>
-
+        <div class="profile-badge">
+          <strong>John Mwalawa</strong>
+          <span>Open to Opportunities</span>
+          <small>IT • ICT • Project Support</small>
         </div>
-
-
-        <div class="contact-row">
-
-          <div class="contact-icon">
-            ✉
-          </div>
-
-          <div>
-
-            <strong>
-              Email
-            </strong>
-
-            <a href="mailto:johnmwalawa@gmail.com">
-              johnmwalawa@gmail.com
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="contact-row">
-
-          <div class="contact-icon">
-            in
-          </div>
-
-          <div>
-
-            <strong>
-              LinkedIn
-            </strong>
-
-            <a
-              href="https://linkedin.com/in/john-m-896a2b244"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/john-m-896a2b244
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div class="contact-row">
-
-          <div class="contact-icon">
-            ◎
-          </div>
-
-          <div>
-
-            <strong>
-              Languages
-            </strong>
-
-            <span>
-              English & Swahili
-            </span>
-
-          </div>
-
-        </div>
-
 
       </div>
 
@@ -412,185 +123,220 @@
   </section>
 
 
-  <!-- =========================================
-       SKILLS
-  ========================================== -->
+  <!-- ================= ABOUT ================= -->
 
-  <section class="skills" id="skills">
+  <section class="section about-section" id="about">
 
     <div class="container">
 
+      <div class="section-heading">
+        <span class="section-label">ABOUT ME</span>
+        <h2>Technology Support With a Practical Approach</h2>
+      </div>
 
-      <div class="skills-heading">
+      <div class="about-grid">
 
-        <div>
+        <div class="about-content">
 
-          <div class="section-label">
-            MY SKILLS
-          </div>
+          <p>
+            I combine technical support, systems administration,
+            business applications, and project coordination experience
+            to help organizations keep their technology operations
+            running effectively.
+          </p>
 
-          <h2 class="section-title">
-            Core Competencies
-          </h2>
+          <p>
+            I have experience supporting users, maintaining IT systems,
+            troubleshooting technical issues, administering accounts
+            and business applications, and assisting with
+            technology-driven projects.
+          </p>
+
+          <p>
+            I am comfortable working across Windows, macOS, Linux,
+            Microsoft 365, Active Directory, ERP systems, networking,
+            and general ICT operations.
+          </p>
+
+          <p>
+            I am adaptable, a fast learner, and comfortable taking
+            responsibility for tasks with minimal supervision.
+          </p>
 
         </div>
 
 
-        <p>
-          A combination of technical, practical and
-          professional skills that help me support
-          systems, users and projects effectively.
-        </p>
+        <div class="contact-card">
 
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <small>Location</small>
+              <strong>Nairobi, Kenya</strong>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <div>
+              <small>Email</small>
+              <strong>johnmwalawa@gmail.com</strong>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">☎</span>
+            <div>
+              <small>Phone</small>
+              <strong>+254 705 170345</strong>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="about-highlights">
+
+        <div class="highlight-card">
+          <div class="highlight-icon">🛠</div>
+          <h3>IT Support</h3>
+          <p>
+            Troubleshooting, user support, system setup,
+            maintenance, and incident resolution.
+          </p>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon">⚙</div>
+          <h3>Systems Administration</h3>
+          <p>
+            Windows, Linux, Microsoft 365, Active Directory,
+            ERP systems, and user administration.
+          </p>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon">📊</div>
+          <h3>Project Support</h3>
+          <p>
+            Project coordination, task tracking, documentation,
+            reporting, and stakeholder communication.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+
+  <section class="section light-section" id="skills">
+
+    <div class="container">
+
+      <div class="section-heading centered">
+        <span class="section-label">SKILLS</span>
+        <h2>Technical & Professional Skills</h2>
+        <p>Click a category to view the details.</p>
       </div>
 
 
       <div class="skills-grid">
 
-
         <div class="skill-card">
-
-          <div class="skill-icon">
-            ▣
-          </div>
-
-          <div>
-
-            <h3>
-              IT Support & Helpdesk
-            </h3>
-
-            <p>
-              • Troubleshooting<br>
-              • User support<br>
-              • Ticketing (ITSM)<br>
-              • Onboarding / Offboarding
-            </p>
-
-          </div>
-
+          <div class="skill-icon">📋</div>
+          <h3>IT Project Support</h3>
+          <ul>
+            <li>Project coordination</li>
+            <li>Task tracking</li>
+            <li>Milestone monitoring</li>
+            <li>Technical documentation</li>
+            <li>Reporting</li>
+          </ul>
         </div>
 
 
         <div class="skill-card">
-
-          <div class="skill-icon">
-            ⚙
-          </div>
-
-          <div>
-
-            <h3>
-              Systems Administration
-            </h3>
-
-            <p>
-              • Active Directory<br>
-              • Microsoft 365<br>
-              • Windows / macOS / Linux<br>
-              • Backups & Patching
-            </p>
-
-          </div>
-
+          <div class="skill-icon">🤝</div>
+          <h3>Stakeholder Coordination</h3>
+          <ul>
+            <li>Stakeholder communication</li>
+            <li>Cross-functional collaboration</li>
+            <li>Meeting coordination</li>
+            <li>Vendor coordination</li>
+          </ul>
         </div>
 
 
         <div class="skill-card">
-
-          <div class="skill-icon">
-            ⌘
-          </div>
-
-          <div>
-
-            <h3>
-              Networking
-            </h3>
-
-            <p>
-              • TCP/IP<br>
-              • DNS<br>
-              • VPN<br>
-              • Network troubleshooting
-            </p>
-
-          </div>
-
+          <div class="skill-icon">🛠</div>
+          <h3>IT Support</h3>
+          <ul>
+            <li>Incident management</li>
+            <li>Troubleshooting</li>
+            <li>Onboarding</li>
+            <li>Account provisioning</li>
+            <li>Hardware & software support</li>
+          </ul>
         </div>
 
 
         <div class="skill-card">
-
-          <div class="skill-icon">
-            ▤
-          </div>
-
-          <div>
-
-            <h3>
-              Business Systems & ERP
-            </h3>
-
-            <p>
-              • ERP access<br>
-              • User administration<br>
-              • Business process support<br>
-              • Documentation
-            </p>
-
-          </div>
-
+          <div class="skill-icon">⚙</div>
+          <h3>Systems Administration</h3>
+          <ul>
+            <li>Windows</li>
+            <li>macOS</li>
+            <li>Linux</li>
+            <li>Active Directory</li>
+            <li>Microsoft 365</li>
+            <li>ERP systems</li>
+            <li>VPN</li>
+          </ul>
         </div>
 
 
         <div class="skill-card">
-
-          <div class="skill-icon">
-            ▦
-          </div>
-
-          <div>
-
-            <h3>
-              IT Project Support
-            </h3>
-
-            <p>
-              • Task tracking<br>
-              • Reporting<br>
-              • Stakeholder communication<br>
-              • Coordination
-            </p>
-
-          </div>
-
+          <div class="skill-icon">🚀</div>
+          <h3>Testing & Deployment</h3>
+          <ul>
+            <li>SDLC</li>
+            <li>Application deployment</li>
+            <li>Software installation</li>
+            <li>Testing</li>
+            <li>Implementation support</li>
+          </ul>
         </div>
 
 
         <div class="skill-card">
-
-          <div class="skill-icon">
-            ♢
-          </div>
-
-          <div>
-
-            <h3>
-              Cybersecurity
-            </h3>
-
-            <p>
-              • Endpoint security<br>
-              • Network defense<br>
-              • Security practices<br>
-              • Risk awareness
-            </p>
-
-          </div>
-
+          <div class="skill-icon">🖥</div>
+          <h3>ICT Operations</h3>
+          <ul>
+            <li>Asset management</li>
+            <li>Equipment tracking</li>
+            <li>ICT rollouts</li>
+            <li>Process improvement</li>
+          </ul>
         </div>
 
+
+        <div class="skill-card">
+          <div class="skill-icon">🔐</div>
+          <h3>Cybersecurity</h3>
+          <ul>
+            <li>Endpoint protection</li>
+            <li>Access control</li>
+            <li>System hardening</li>
+            <li>Backups & recovery</li>
+            <li>Cybersecurity awareness</li>
+          </ul>
+        </div>
 
       </div>
 
@@ -599,37 +345,18 @@
   </section>
 
 
-  <!-- =========================================
-       PROJECTS
-  ========================================== -->
+  <!-- ================= PROJECTS ================= -->
 
-  <section class="projects" id="projects">
+  <section class="section projects-section" id="projects">
 
     <div class="container">
 
-
-      <div class="project-heading">
-
-        <div>
-
-          <div class="section-label">
-            FEATURED PROJECTS
-          </div>
-
-          <h2 class="section-title">
-            Real-World Experience
-          </h2>
-
-        </div>
-
-
-        <a
-          href="#contact"
-          class="view-all"
-        >
-          Get In Touch →
-        </a>
-
+      <div class="section-heading centered">
+        <span class="section-label">PROJECTS</span>
+        <h2>Selected Projects</h2>
+        <p>
+          A selection of technical, systems, and technology-support work.
+        </p>
       </div>
 
 
@@ -640,52 +367,34 @@
 
         <article class="project-card">
 
-          <div class="project-image">
-
-            <img
-              src="images/imageszetech.jpg"
-              alt="Zetech University ICT Support"
-            >
-
+          <div class="project-image zetech">
+            <span>ICT SUPPORT</span>
           </div>
-
 
           <div class="project-content">
 
-            <div class="project-label">
-              ICT SUPPORT
-            </div>
+            <span class="project-category">
+              University ICT Support
+            </span>
 
-            <h3>
-              ICT Support & Systems Administration –
-              Zetech University
-            </h3>
+            <h3>Zetech University ICT Support</h3>
 
             <p>
-              Supported users, systems and infrastructure
-              including Active Directory, ERP, CCTV,
-              biometric systems, printers and IT inventory.
+              Supported users, systems, applications, infrastructure,
+              and ICT operations within a university environment.
             </p>
 
+            <button class="details-btn">
+              Hide Details
+            </button>
 
-            <div class="tags">
-
-              <span class="tag">
-                AD
-              </span>
-
-              <span class="tag">
-                M365
-              </span>
-
-              <span class="tag">
-                ERP
-              </span>
-
-              <span class="tag">
-                Windows
-              </span>
-
+            <div class="project-details">
+              <ul>
+                <li>User and account administration</li>
+                <li>ERP and application support</li>
+                <li>Hardware and software troubleshooting</li>
+                <li>ICT asset and equipment support</li>
+              </ul>
             </div>
 
           </div>
@@ -697,47 +406,34 @@
 
         <article class="project-card">
 
-          <div class="project-image">
-
-            <img
-              src="images/imageserp.jpg"
-              alt="ERP Business Systems Support"
-            >
-
+          <div class="project-image erp">
+            <span>BUSINESS SYSTEMS</span>
           </div>
-
 
           <div class="project-content">
 
-            <div class="project-label">
-              BUSINESS SYSTEMS
-            </div>
-
-            <h3>
+            <span class="project-category">
               ERP & Business Systems Support
-            </h3>
+            </span>
+
+            <h3>ERP and Business Systems</h3>
 
             <p>
-              Provided ERP access administration,
-              troubleshooting, documentation and
-              business-process support.
+              Supported ERP access, user administration, business
+              applications, and technology-enabled workflows.
             </p>
 
+            <button class="details-btn">
+              Hide Details
+            </button>
 
-            <div class="tags">
-
-              <span class="tag">
-                ERP
-              </span>
-
-              <span class="tag">
-                Access
-              </span>
-
-              <span class="tag">
-                Business Processes
-              </span>
-
+            <div class="project-details">
+              <ul>
+                <li>ERP user access administration</li>
+                <li>Application support</li>
+                <li>User onboarding and provisioning</li>
+                <li>Process and workflow support</li>
+              </ul>
             </div>
 
           </div>
@@ -749,47 +445,34 @@
 
         <article class="project-card">
 
-          <div class="project-image">
-
-            <img
-              src="images/itsupport.jpg"
-              alt="IT Project Support"
-            >
-
+          <div class="project-image it-support">
+            <span>IT OPERATIONS</span>
           </div>
-
 
           <div class="project-content">
 
-            <div class="project-label">
-              IT OPERATIONS
-            </div>
-
-            <h3>
+            <span class="project-category">
               IT Support & Infrastructure
-            </h3>
+            </span>
+
+            <h3>IT Support Project</h3>
 
             <p>
-              Hands-on support involving computers,
-              peripherals, networking, maintenance and
-              technical troubleshooting.
+              Hands-on support involving computers, peripherals,
+              networking, maintenance, and technical troubleshooting.
             </p>
 
+            <button class="details-btn">
+              Hide Details
+            </button>
 
-            <div class="tags">
-
-              <span class="tag">
-                IT Support
-              </span>
-
-              <span class="tag">
-                Networking
-              </span>
-
-              <span class="tag">
-                Maintenance
-              </span>
-
+            <div class="project-details">
+              <ul>
+                <li>Hardware and software troubleshooting</li>
+                <li>Network connectivity support</li>
+                <li>Preventive maintenance</li>
+                <li>Backup and recovery support</li>
+              </ul>
             </div>
 
           </div>
@@ -801,54 +484,40 @@
 
         <article class="project-card">
 
-          <div class="project-image">
-
-            <img
-              src="images/ai.jpg"
-              alt="AI Data Annotation and Quality Assurance"
-            >
-
+          <div class="project-image ai">
+            <span>AI & DATA</span>
           </div>
-
 
           <div class="project-content">
 
-            <div class="project-label">
-              AI & DATA
-            </div>
+            <span class="project-category">
+              AI Data Annotation & QA
+            </span>
 
-            <h3>
-              AI / Data Annotation & Quality Operations
-            </h3>
+            <h3>AI Data Annotation and QA</h3>
 
             <p>
-              Worked on AI/ML data annotation, review,
-              validation and quality-control projects
-              across distributed teams.
+              Worked across AI/ML data projects involving annotation,
+              validation, review, and quality assurance.
             </p>
 
+            <button class="details-btn">
+              Hide Details
+            </button>
 
-            <div class="tags">
-
-              <span class="tag">
-                AI / ML
-              </span>
-
-              <span class="tag">
-                Annotation
-              </span>
-
-              <span class="tag">
-                QA
-              </span>
-
+            <div class="project-details">
+              <ul>
+                <li>AI/ML data annotation</li>
+                <li>Data validation and review</li>
+                <li>Quality assurance</li>
+                <li>Workflow improvement</li>
+              </ul>
             </div>
 
           </div>
 
         </article>
 
-
       </div>
 
     </div>
@@ -856,455 +525,231 @@
   </section>
 
 
-  <!-- =========================================
-       EXPERIENCE
-  ========================================== -->
+  <!-- ================= EXPERIENCE ================= -->
 
-  <section class="experience" id="experience">
-
-    <div class="container experience-grid">
-
-
-      <!-- EXPERIENCE -->
-
-      <div>
-
-        <div class="section-label">
-          WORK EXPERIENCE
-        </div>
-
-        <h2 class="section-title">
-          Professional Journey
-        </h2>
-
-
-        <div class="timeline">
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              Apr 2023 – Apr 2024
-            </div>
-
-            <div class="timeline-company">
-              Zetech University
-            </div>
-
-            <div class="timeline-role">
-              ICT Support Technician –
-              Attaché & Volunteer
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              Aug 2025 – Nov 2025
-            </div>
-
-            <div class="timeline-company">
-              Zetech University
-            </div>
-
-            <div class="timeline-role">
-              ICT Support Technician –
-              Attaché & Volunteer
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              2024 – 2025
-            </div>
-
-            <div class="timeline-company">
-              APSEA
-            </div>
-
-            <div class="timeline-role">
-              IT Support
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              Jan 2025 – Feb 2025
-            </div>
-
-            <div class="timeline-company">
-              Excelerate
-            </div>
-
-            <div class="timeline-role">
-              Project Management Associate Intern
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              2021 – 2025
-            </div>
-
-            <div class="timeline-company">
-              Sama / CloudFactory /
-              Other AI Projects
-            </div>
-
-            <div class="timeline-role">
-              Data Annotation, Review & QA
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-date">
-              Jun – Aug 2025
-            </div>
-
-            <div class="timeline-company">
-              Bognér & Partners
-            </div>
-
-            <div class="timeline-role">
-              AI Model Training Contributor
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-      <!-- CERTIFICATIONS -->
-
-      <div id="certifications">
-
-        <div class="section-label">
-          CERTIFICATIONS & TRAINING
-        </div>
-
-        <h2 class="section-title">
-          Continuous Learning
-        </h2>
-
-
-        <div class="cert-grid">
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              CS
-            </div>
-
-            <div>
-
-              <strong>
-                Cyber Shujaa
-              </strong>
-
-              <span>
-                Cybersecurity Analyst · Aug 2025
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              C
-            </div>
-
-            <div>
-
-              <strong>
-                Cisco DevNet Associate
-              </strong>
-
-              <span>
-                Cisco Networking Academy · May 2025
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              C
-            </div>
-
-            <div>
-
-              <strong>
-                Cisco Network Technician
-              </strong>
-
-              <span>
-                Cisco Networking Academy · May 2025
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              H
-            </div>
-
-            <div>
-
-              <strong>
-                Huawei HCIA Cloud Computing
-              </strong>
-
-              <span>
-                Huawei · 2022
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              H
-            </div>
-
-            <div>
-
-              <strong>
-                Huawei HCIA Datacom
-              </strong>
-
-              <span>
-                Huawei · 2022
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              C
-            </div>
-
-            <div>
-
-              <strong>
-                Agile Project Management
-              </strong>
-
-              <span>
-                Coursera
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              C
-            </div>
-
-            <div>
-
-              <strong>
-                CyberOps Associate
-              </strong>
-
-              <span>
-                Cisco Networking Academy
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              C
-            </div>
-
-            <div>
-
-              <strong>
-                Network Defense
-              </strong>
-
-              <span>
-                Cisco Networking Academy
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="cert-card">
-
-            <div class="cert-logo">
-              +
-            </div>
-
-            <div>
-
-              <strong>
-                More Training
-              </strong>
-
-              <span>
-                See full list in CV
-              </span>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================================
-       CONTACT
-  ========================================== -->
-
-  <section class="contact" id="contact">
+  <section class="section light-section" id="experience">
 
     <div class="container">
 
-
-      <div class="contact-grid">
-
-
-        <div>
-
-          <div class="section-label">
-            GET IN TOUCH
-          </div>
-
-          <h2>
-            Let's Work Together
-          </h2>
-
-          <p>
-            I'm open to new opportunities in IT support,
-            systems administration, IT project support,
-            ERP / business systems support and technical
-            operations.
-          </p>
-
-        </div>
-
-
-        <div class="footer-contact">
-
-          <div>
-            ☎ &nbsp;
-            <a href="tel:+254705170345">
-              +254 705 170345
-            </a>
-          </div>
-
-          <div>
-            ✉ &nbsp;
-            <a href="mailto:johnmwalawa@gmail.com">
-              johnmwalawa@gmail.com
-            </a>
-          </div>
-
-          <div>
-            ⌖ &nbsp;
-            Nairobi, Kenya
-          </div>
-
-          <div>
-            in &nbsp;
-            <a
-              href="https://linkedin.com/in/john-m-896a2b244"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn Profile
-            </a>
-          </div>
-
-        </div>
-
-
-        <div class="contact-action">
-
-          <p>
-            Interested in working with me?
-            Feel free to reach out. I'd love to discuss
-            how I can contribute to your team.
-          </p>
-
-
-          <a
-            href="mailto:johnmwalawa@gmail.com?subject=Portfolio%20Enquiry"
-            class="btn btn-primary"
-          >
-            ✈ &nbsp; Send Message
-          </a>
-
-        </div>
-
-
+      <div class="section-heading centered">
+        <span class="section-label">EXPERIENCE</span>
+        <h2>Professional Experience</h2>
+        <p>
+          Experience across IT support, systems administration,
+          project support, and AI data operations.
+        </p>
       </div>
 
 
-      <div class="copyright">
+      <div class="experience-list">
 
-        <span>
-          © <span id="year"></span>
-          John Anderson Mwalawa.
-          All rights reserved.
-        </span>
 
-        <span>
-          Built with HTML, CSS & JavaScript
-        </span>
+        <article class="experience-card">
+
+          <div class="experience-date">
+            Recent / Project-Based
+          </div>
+
+          <div class="experience-content">
+
+            <h3>Independent IT Support</h3>
+
+            <span class="company">
+              Freelance / Project-Based
+            </span>
+
+            <ul>
+              <li>
+                Provide IT support, troubleshooting, system setup,
+                and maintenance for individual and business clients.
+              </li>
+
+              <li>
+                Install, configure, and maintain computers,
+                software, printers, and network devices.
+              </li>
+
+              <li>
+                Troubleshoot hardware, software, operating system,
+                and connectivity issues.
+              </li>
+
+              <li>
+                Perform preventive maintenance, backups,
+                system optimization, and basic security configuration.
+              </li>
+
+              <li>
+                Advise clients on IT best practices,
+                cybersecurity awareness, and technology solutions.
+              </li>
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-date">
+            Jan 2025 – Feb 2025
+          </div>
+
+          <div class="experience-content">
+
+            <h3>Project Management Associate Intern</h3>
+
+            <span class="company">Excelerate</span>
+
+            <ul>
+              <li>
+                Supported planning and execution of virtual hackathons
+                and technology-driven projects.
+              </li>
+
+              <li>
+                Coordinated technical setup, project tracking,
+                reporting, and stakeholder communication.
+              </li>
+
+              <li>
+                Monitored project activities, deliverables,
+                and milestones.
+              </li>
+
+              <li>
+                Collaborated with cross-functional teams to resolve
+                operational and technical issues.
+              </li>
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-date">
+            Apr 2023 – Apr 2024<br>
+            & Aug 2025 – Nov 2025
+          </div>
+
+          <div class="experience-content">
+
+            <h3>ICT Support Technician – Attaché & Volunteer</h3>
+
+            <span class="company">Zetech University</span>
+
+            <ul>
+              <li>
+                Provided technical support for users, computers,
+                applications, printers, and ICT systems.
+              </li>
+
+              <li>
+                Managed Active Directory accounts, ERP access,
+                email, and user provisioning.
+              </li>
+
+              <li>
+                Supported university portals, e-learning platforms,
+                labs, CCTV, access control, and biometric systems.
+              </li>
+
+              <li>
+                Assisted with ICT asset management, backups,
+                patching, troubleshooting, and vendor coordination.
+              </li>
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-date">
+            2024 – 2025
+          </div>
+
+          <div class="experience-content">
+
+            <h3>IT Support</h3>
+
+            <span class="company">APSEA</span>
+
+            <ul>
+              <li>
+                Provided day-to-day technical support for computers,
+                printers, and software.
+              </li>
+
+              <li>
+                Installed and configured hardware and software for users.
+              </li>
+
+              <li>
+                Supported user accounts and QuickBooks backup activities.
+              </li>
+
+              <li>
+                Troubleshot hardware and software issues to maintain
+                smooth operations.
+              </li>
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-date">
+            Jan 2021 – Apr 2026
+          </div>
+
+          <div class="experience-content">
+
+            <h3>AI Data Annotation, Trainer, Reviewer & QA Specialist</h3>
+
+            <span class="company">
+              Sama | CloudFactory | Bognér & Partners |
+              Label Your Data | iMerit
+            </span>
+
+            <ul>
+              <li>
+                Performed AI/ML data annotation, validation,
+                review, and quality assurance.
+              </li>
+
+              <li>
+                Maintained 99.95% QA accuracy while meeting
+                quality and productivity targets.
+              </li>
+
+              <li>
+                Reviewed and corrected data to ensure compliance
+                with project guidelines.
+              </li>
+
+              <li>
+                Identified quality gaps and supported workflow improvements.
+              </li>
+
+              <li>
+                Collaborated with distributed teams using Slack,
+                Teams, Discord, and other platforms.
+              </li>
+            </ul>
+
+          </div>
+
+        </article>
 
       </div>
 
@@ -1313,7 +758,228 @@
   </section>
 
 
-  <!-- JavaScript -->
+  <!-- ================= EDUCATION ================= -->
+
+  <section class="section education-section" id="education">
+
+    <div class="container">
+
+      <div class="section-heading centered">
+
+        <span class="section-label">EDUCATION</span>
+
+        <h2>Education & Certifications</h2>
+
+        <p>
+          Academic background and professional training.
+        </p>
+
+      </div>
+
+
+      <div class="education-grid">
+
+
+        <div class="education-card">
+
+          <span class="education-date">
+            2023 – 2025
+          </span>
+
+          <h3>Bachelor of Software Engineering</h3>
+
+          <p>Zetech University</p>
+
+        </div>
+
+
+        <div class="education-card">
+
+          <span class="education-date">
+            May 2025 – Aug 2025
+          </span>
+
+          <h3>Cybersecurity Analyst Program</h3>
+
+          <p>
+            Cyber Shujaa – USIU-Africa
+          </p>
+
+          <small>
+            Cybersecurity analysis, endpoint protection,
+            threat detection, and secure system operations.
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="certifications">
+
+        <div class="cert-heading">
+
+          <div>
+            <span class="section-label">CERTIFICATIONS & TRAINING</span>
+
+            <h3>
+              Selected professional certifications and training.
+            </h3>
+          </div>
+
+          <button id="certToggle" class="cert-toggle">
+            Hide Certifications
+          </button>
+
+        </div>
+
+
+        <div class="cert-grid" id="certGrid">
+
+          <div class="cert-card">
+            <strong>Cisco DevNet Associate</strong>
+            <span>Cisco Networking Academy</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>CyberOps Associate</strong>
+            <span>Cisco Networking Academy</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Network Defense</strong>
+            <span>Cisco Networking Academy</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Endpoint Security</strong>
+            <span>Cisco Networking Academy</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>SQL Injection Attack</strong>
+            <span>EC-Council • 2022</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Getting Started with DevOps</strong>
+            <span>Simplilearn • 2023</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Agile Project Management</strong>
+            <span>Coursera • 2024</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Business Analysis & Process Management</strong>
+            <span>Coursera • 2024</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Virtual Assistance Certificate</strong>
+            <span>ALX Africa • 2024</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Team Lead Certification Program</strong>
+            <span>Sama</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Leaders Worth Following Program</strong>
+            <span>CloudFactory</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Chatbot Development</strong>
+            <span>Chatfuel / Coursera • 2023</span>
+          </div>
+
+          <div class="cert-card">
+            <strong>Learn-A-Thon</strong>
+            <span>Cisco • 2022 & 2025</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section class="contact-section" id="contact">
+
+    <div class="container contact-container">
+
+      <div class="contact-text">
+
+        <span class="section-label">CONTACT</span>
+
+        <h2>Open to New Opportunities</h2>
+
+        <p>
+          I am currently open to opportunities in IT support,
+          ICT operations, systems administration, business applications,
+          and IT project support.
+        </p>
+
+      </div>
+
+
+      <div class="contact-buttons">
+
+        <a
+          href="mailto:johnmwalawa@gmail.com"
+          class="btn btn-primary"
+        >
+          Email Me
+        </a>
+
+        <a
+          href="https://linkedin.com/in/john-m-896a2b244"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="container footer-container">
+
+      <div>
+        <strong>John Mwalawa</strong>
+
+        <span>
+          ICT Specialist | IT Support | Systems Administration
+        </span>
+      </div>
+
+      <p>
+        © <span id="currentYear">2026</span>
+        John Mwalawa. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
   <script src="script.js"></script>
 
 </body>
