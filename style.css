@@ -1,6 +1,6 @@
 /* =========================================================
    JOHN MWALAWA PORTFOLIO
-   RESPONSIVE DESIGN - ALL DEVICES
+   RESPONSIVE DESIGN + LIGHT / DARK MODE
 ========================================================= */
 
 :root {
@@ -18,10 +18,34 @@
 
     --border: #e5edf6;
 
+    --card: #ffffff;
+
     --shadow: 0 10px 35px rgba(11, 37, 69, 0.08);
     --shadow-hover: 0 18px 45px rgba(11, 37, 69, 0.14);
 
     --radius: 12px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    --text: #e7edf5;
+    --muted: #a7b4c5;
+
+    --light: #0d1928;
+    --white: #111f30;
+
+    --border: #24364a;
+
+    --card: #111f30;
+
+    --shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 18px 45px rgba(0, 0, 0, 0.35);
+
+    background: #081321;
 }
 
 
@@ -46,6 +70,7 @@ body {
     background: var(--white);
     line-height: 1.7;
     overflow-x: hidden;
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
 img {
@@ -114,7 +139,7 @@ button {
     border-radius: 10px;
 
     background: var(--blue);
-    color: var(--white);
+    color: #ffffff;
 
     font-size: 17px;
     font-weight: 800;
@@ -142,7 +167,7 @@ button {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--white);
+    color: #ffffff;
 }
 
 .nav-link.active::after {
@@ -171,7 +196,7 @@ button {
     border-radius: 7px;
 
     background: var(--blue);
-    color: var(--white);
+    color: #ffffff;
 
     font-size: 13px;
     font-weight: 600;
@@ -186,6 +211,41 @@ button {
     transform: translateY(-1px);
 }
 
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
 .menu-toggle {
     display: none;
 
@@ -196,7 +256,7 @@ button {
     border-radius: 8px;
 
     background: transparent;
-    color: var(--white);
+    color: #ffffff;
 
     font-size: 22px;
 
@@ -224,7 +284,7 @@ button {
             var(--navy-2)
         );
 
-    color: var(--white);
+    color: #ffffff;
 }
 
 .hero-grid {
@@ -234,11 +294,11 @@ button {
 
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(380px, 1fr);
+        minmax(350px, 0.9fr);
 
     align-items: center;
 
-    gap: clamp(35px, 5vw, 75px);
+    gap: clamp(35px, 5vw, 70px);
 }
 
 .hero-content {
@@ -262,19 +322,15 @@ button {
 }
 
 .hero h1 {
+    max-width: 700px;
+
+    margin-bottom: 20px;
+
     font-size: clamp(42px, 6vw, 70px);
 
     line-height: 1.05;
 
     letter-spacing: -2px;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    display: block;
-
-    color: var(--blue);
 }
 
 .hero h2 {
@@ -333,24 +389,21 @@ button {
 
 .btn-primary {
     background: var(--blue);
-    color: var(--white);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
     background: var(--blue-dark);
-
     transform: translateY(-2px);
 }
 
 .btn-outline {
     border: 1px solid rgba(255, 255, 255, 0.3);
-
-    color: var(--white);
+    color: #ffffff;
 }
 
 .btn-outline:hover {
     border-color: var(--blue);
-
     background: rgba(8, 127, 245, 0.1);
 }
 
@@ -389,7 +442,7 @@ button {
 
     border-color: var(--blue);
 
-    color: var(--white);
+    color: #ffffff;
 
     transform: translateY(-2px);
 }
@@ -400,8 +453,6 @@ button {
 ========================================================= */
 
 .hero-image {
-    position: relative;
-
     width: 100%;
 
     display: flex;
@@ -409,13 +460,11 @@ button {
     justify-content: center;
     align-items: center;
 
-    min-width: 0;
+    position: relative;
 }
 
 .image-frame {
-    width: min(480px, 100%);
-
-    aspect-ratio: 1 / 1;
+    width: min(400px, 100%);
 
     display: flex;
 
@@ -424,11 +473,7 @@ button {
 
     overflow: hidden;
 
-    background: transparent;
-
     border-radius: 14px;
-
-    padding: 0;
 
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.25);
@@ -436,14 +481,11 @@ button {
 
 .image-frame img {
     width: 100%;
-    height: 100%;
+    height: auto;
 
     display: block;
 
-    object-fit: cover;
-    object-position: center;
-
-    border: none;
+    object-fit: contain;
 
     border-radius: 14px;
 }
@@ -473,9 +515,8 @@ button {
 
     padding: 13px 17px;
 
-    background: var(--white);
-
-    color: var(--text);
+    background: #ffffff;
+    color: #142033;
 
     border-radius: 10px;
 
@@ -493,7 +534,7 @@ button {
 .status-card small {
     display: block;
 
-    color: var(--muted);
+    color: #63728a;
 
     font-size: 11px;
 }
@@ -516,6 +557,8 @@ button {
 
 .section {
     padding: clamp(70px, 9vw, 100px) 0;
+
+    background: var(--white);
 }
 
 .section-light {
@@ -539,6 +582,8 @@ button {
 
 .section-heading h2 {
     margin: 9px 0 14px;
+
+    color: var(--text);
 
     font-size: clamp(30px, 4vw, 43px);
 
@@ -615,7 +660,7 @@ button {
 
     border-radius: var(--radius);
 
-    background: var(--white);
+    background: var(--card);
 
     transition: 0.25s ease;
 }
@@ -636,6 +681,8 @@ button {
 
 .trait-card h3 {
     margin-bottom: 5px;
+
+    color: var(--text);
 
     font-size: 17px;
 }
@@ -663,7 +710,7 @@ button {
 .skill-card {
     overflow: hidden;
 
-    background: var(--white);
+    background: var(--card);
 
     border: 1px solid var(--border);
 
@@ -720,6 +767,8 @@ button {
 }
 
 .skill-title h3 {
+    color: var(--text);
+
     font-size: 16px;
 }
 
@@ -796,7 +845,7 @@ button {
 .project-card {
     overflow: hidden;
 
-    background: var(--white);
+    background: var(--card);
 
     border: 1px solid var(--border);
 
@@ -848,6 +897,8 @@ button {
 
 .project-body h3 {
     margin: 8px 0 10px;
+
+    color: var(--text);
 
     font-size: 20px;
 
@@ -971,7 +1022,7 @@ button {
 .timeline-card {
     overflow: hidden;
 
-    background: var(--white);
+    background: var(--card);
 
     border: 1px solid var(--border);
 
@@ -995,6 +1046,8 @@ button {
 }
 
 .timeline-card h3 {
+    color: var(--text);
+
     font-size: 18px;
 }
 
@@ -1028,11 +1081,15 @@ button {
 .education-card {
     padding: 22px;
 
-    background: var(--white);
+    background: var(--card);
 
     border: 1px solid var(--border);
 
     border-radius: var(--radius);
+}
+
+.education-card.expandable {
+    padding: 0;
 }
 
 .education-inner {
@@ -1055,7 +1112,7 @@ button {
 
     border-radius: 10px;
 
-    background: #eaf4ff;
+    background: rgba(8, 127, 245, 0.1);
 
     color: var(--blue);
 }
@@ -1070,6 +1127,8 @@ button {
 
 .education-card h3 {
     margin: 2px 0;
+
+    color: var(--text);
 
     font-size: 18px;
 }
@@ -1096,6 +1155,8 @@ button {
 }
 
 .sub-heading h3 {
+    color: var(--text);
+
     font-size: 22px;
 }
 
@@ -1122,6 +1183,8 @@ button {
 
     border-radius: 20px;
 
+    color: var(--text);
+
     font-size: 12px;
 
     transition: 0.2s ease;
@@ -1144,7 +1207,7 @@ button {
 
     background: var(--blue);
 
-    color: var(--white);
+    color: #ffffff;
 
     cursor: pointer;
 
@@ -1177,7 +1240,7 @@ button {
 .cert-item {
     padding: 16px;
 
-    background: var(--white);
+    background: var(--card);
 
     border: 1px solid var(--border);
 
@@ -1194,6 +1257,8 @@ button {
 
 .cert-item strong {
     display: block;
+
+    color: var(--text);
 
     font-size: 13px;
 }
@@ -1212,7 +1277,7 @@ button {
 .contact-section {
     background: var(--navy);
 
-    color: var(--white);
+    color: #ffffff;
 }
 
 .contact-box {
@@ -1256,7 +1321,7 @@ button {
 footer {
     background: #040d17;
 
-    color: var(--white);
+    color: #ffffff;
 }
 
 .footer-content {
@@ -1312,7 +1377,7 @@ footer {
 
     border-color: var(--blue);
 
-    color: var(--white);
+    color: #ffffff;
 }
 
 .copyright {
@@ -1345,13 +1410,9 @@ footer {
     .hero-grid {
         grid-template-columns:
             minmax(0, 1fr)
-            minmax(350px, 0.9fr);
+            minmax(330px, 0.9fr);
 
         gap: 40px;
-    }
-
-    .image-frame {
-        width: min(450px, 100%);
     }
 }
 
@@ -1410,6 +1471,10 @@ footer {
         display: none;
     }
 
+    .theme-toggle {
+        margin-top: 10px;
+    }
+
     .menu-toggle {
         display: grid;
 
@@ -1418,7 +1483,6 @@ footer {
 
     .hero {
         padding-top: 105px;
-
         padding-bottom: 80px;
     }
 
@@ -1450,7 +1514,7 @@ footer {
     }
 
     .image-frame {
-        width: min(450px, 82vw);
+        width: min(400px, 82vw);
     }
 
     .status-card {
@@ -1499,7 +1563,6 @@ footer {
         min-height: auto;
 
         padding-top: 100px;
-
         padding-bottom: 80px;
     }
 
@@ -1523,14 +1586,6 @@ footer {
 
     .image-frame {
         width: min(380px, 90vw);
-
-        aspect-ratio: 1 / 1;
-
-        border-radius: 12px;
-    }
-
-    .image-frame img {
-        border-radius: 12px;
     }
 
     .hero-buttons {
@@ -1541,7 +1596,6 @@ footer {
         width: min(380px, 100%);
 
         margin-right: auto;
-
         margin-left: auto;
     }
 
@@ -1573,7 +1627,6 @@ footer {
         position: relative;
 
         left: auto;
-
         bottom: auto;
 
         transform: none;
@@ -1623,12 +1676,6 @@ footer {
 
     .image-frame {
         width: min(350px, 90vw);
-
-        border-radius: 10px;
-    }
-
-    .image-frame img {
-        border-radius: 10px;
     }
 
     .section {
@@ -1657,6 +1704,10 @@ footer {
 
     .education-card {
         padding: 18px;
+    }
+
+    .education-card.expandable {
+        padding: 0;
     }
 
     .contact-box {
