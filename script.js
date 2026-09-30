@@ -10,17 +10,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (menuToggle && navMenu) {
 
         menuToggle.addEventListener("click", function () {
+
             navMenu.classList.toggle("active");
 
             const icon = menuToggle.querySelector("i");
 
             if (navMenu.classList.contains("active")) {
+
                 icon.classList.remove("fa-bars");
                 icon.classList.add("fa-xmark");
+
             } else {
+
                 icon.classList.remove("fa-xmark");
                 icon.classList.add("fa-bars");
+
             }
+
         });
 
 
@@ -43,24 +49,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       SKILLS EXPANSION
+       SKILLS
     ========================= */
 
-    const expandButtons = document.querySelectorAll(".expand-btn");
+    const expandButtons =
+        document.querySelectorAll(".expand-btn");
 
     expandButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-            const card = button.closest(".skill-card");
-            const expandable = card.querySelector(".expandable");
+            const card =
+                button.closest(".skill-card");
+
+            const expandable =
+                card.querySelector(".expandable");
 
             card.classList.toggle("open");
 
             if (card.classList.contains("open")) {
-                expandable.style.maxHeight = expandable.scrollHeight + "px";
+
+                expandable.style.maxHeight =
+                    expandable.scrollHeight + "px";
+
             } else {
+
                 expandable.style.maxHeight = null;
+
             }
 
         });
@@ -72,13 +87,15 @@ document.addEventListener("DOMContentLoaded", function () {
        PROJECT DETAILS
     ========================= */
 
-    const projectButtons = document.querySelectorAll(".project-toggle");
+    const projectButtons =
+        document.querySelectorAll(".project-toggle");
 
     projectButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-            const card = button.closest(".project-card");
+            const card =
+                button.closest(".project-card");
 
             card.classList.toggle("open");
 
@@ -100,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       EXPERIENCE EXPANSION
+       EXPERIENCE
     ========================= */
 
     const experienceButtons =
@@ -110,15 +127,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         button.addEventListener("click", function () {
 
-            const card = button.closest(".experience-card");
-            const details = card.querySelector(".experience-details");
+            const card =
+                button.closest(".experience-card");
+
+            const details =
+                card.querySelector(".experience-details");
 
             card.classList.toggle("open");
 
             if (card.classList.contains("open")) {
-                details.style.maxHeight = details.scrollHeight + "px";
+
+                details.style.maxHeight =
+                    details.scrollHeight + "px";
+
             } else {
+
                 details.style.maxHeight = null;
+
             }
 
         });
@@ -127,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       EDUCATION EXPANSION
+       CYBER SHUJAA
     ========================= */
 
     const educationButtons =
@@ -137,15 +162,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         button.addEventListener("click", function () {
 
-            const card = button.closest(".expandable-education");
-            const details = card.querySelector(".education-details");
+            const card =
+                button.closest(".cyber-card");
+
+            const details =
+                card.querySelector(".education-details");
 
             card.classList.toggle("open");
 
             if (card.classList.contains("open")) {
-                details.style.maxHeight = details.scrollHeight + "px";
+
+                details.style.maxHeight =
+                    details.scrollHeight + "px";
+
             } else {
+
                 details.style.maxHeight = null;
+
             }
 
         });
@@ -157,8 +190,11 @@ document.addEventListener("DOMContentLoaded", function () {
        CERTIFICATIONS
     ========================= */
 
-    const certToggle = document.getElementById("certToggle");
-    const certList = document.getElementById("certList");
+    const certToggle =
+        document.getElementById("certToggle");
+
+    const certList =
+        document.getElementById("certList");
 
     if (certToggle && certList) {
 
@@ -187,14 +223,20 @@ document.addEventListener("DOMContentLoaded", function () {
        NAVBAR SHADOW
     ========================= */
 
-    const navbar = document.querySelector(".navbar");
+    const navbar =
+        document.querySelector(".navbar");
 
     window.addEventListener("scroll", function () {
 
         if (window.scrollY > 20) {
-            navbar.style.boxShadow = "0 4px 18px rgba(0,0,0,0.08)";
+
+            navbar.style.boxShadow =
+                "0 4px 18px rgba(0,0,0,0.08)";
+
         } else {
+
             navbar.style.boxShadow = "none";
+
         }
 
     });
