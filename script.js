@@ -1,202 +1,202 @@
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+    /* =========================
+       MOBILE NAVIGATION
+    ========================= */
 
-if (menuToggle && navMenu) {
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
-    menuToggle.addEventListener("click", () => {
+    if (menuToggle && navMenu) {
 
-        navMenu.classList.toggle("open");
-
-        const icon = menuToggle.querySelector("i");
-
-        if (navMenu.classList.contains("open")) {
-
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        }
-
-    });
-
-
-    document.querySelectorAll(".nav-link").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navMenu.classList.remove("open");
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
 
             const icon = menuToggle.querySelector("i");
 
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
+            if (navMenu.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        });
+
+
+        navMenu.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navMenu.classList.remove("active");
+
+                const icon = menuToggle.querySelector("i");
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            });
+
+        });
+
+    }
+
+
+    /* =========================
+       SKILLS EXPANSION
+    ========================= */
+
+    const expandButtons = document.querySelectorAll(".expand-btn");
+
+    expandButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const card = button.closest(".skill-card");
+            const expandable = card.querySelector(".expandable");
+
+            card.classList.toggle("open");
+
+            if (card.classList.contains("open")) {
+                expandable.style.maxHeight = expandable.scrollHeight + "px";
+            } else {
+                expandable.style.maxHeight = null;
+            }
 
         });
 
     });
 
-}
 
+    /* =========================
+       PROJECT DETAILS
+    ========================= */
 
-/* =========================================================
-   EXPANDABLE SECTIONS
-========================================================= */
+    const projectButtons = document.querySelectorAll(".project-toggle");
 
-document.querySelectorAll(".expand-btn").forEach(button => {
+    projectButtons.forEach(function (button) {
 
-    button.addEventListener("click", () => {
+        button.addEventListener("click", function () {
 
-        const parent = button.closest(".expandable");
+            const card = button.closest(".project-card");
 
-        if (parent) {
+            card.classList.toggle("open");
 
-            parent.classList.toggle("open");
+            if (card.classList.contains("open")) {
 
-        }
+                button.innerHTML =
+                    'Hide Details <i class="fa-solid fa-arrow-up"></i>';
 
-    });
+            } else {
 
-});
+                button.innerHTML =
+                    'View Details <i class="fa-solid fa-arrow-down"></i>';
 
+            }
 
-/* =========================================================
-   PROJECT DETAILS
-========================================================= */
-
-document.querySelectorAll(".project-toggle").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const card = button.closest(".project-card");
-
-        if (!card) return;
-
-
-        card.classList.toggle("open");
-
-
-        if (card.classList.contains("open")) {
-
-            button.innerHTML =
-                'Hide Details <i class="fa-solid fa-arrow-up"></i>';
-
-        } else {
-
-            button.innerHTML =
-                'View Details <i class="fa-solid fa-arrow-right"></i>';
-
-        }
-
-    });
-
-});
-
-
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
-
-const certToggle = document.getElementById("certToggle");
-const certList = document.getElementById("certList");
-
-if (certToggle && certList) {
-
-    certToggle.addEventListener("click", () => {
-
-        certList.classList.toggle("show");
-
-
-        if (certList.classList.contains("show")) {
-
-            certToggle.innerHTML =
-                'Hide Certifications <i class="fa-solid fa-chevron-up"></i>';
-
-        } else {
-
-            certToggle.innerHTML =
-                'View All Certifications <i class="fa-solid fa-chevron-down"></i>';
-
-        }
-
-    });
-
-}
-
-
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-
-            current = section.getAttribute("id");
-
-        }
+        });
 
     });
 
 
-    navLinks.forEach(link => {
+    /* =========================
+       EXPERIENCE EXPANSION
+    ========================= */
 
-        link.classList.remove("active");
+    const experienceButtons =
+        document.querySelectorAll(".experience-header");
 
+    experienceButtons.forEach(function (button) {
 
-        if (link.getAttribute("href") === `#${current}`) {
+        button.addEventListener("click", function () {
 
-            link.classList.add("active");
+            const card = button.closest(".experience-card");
+            const details = card.querySelector(".experience-details");
 
-        }
+            card.classList.toggle("open");
+
+            if (card.classList.contains("open")) {
+                details.style.maxHeight = details.scrollHeight + "px";
+            } else {
+                details.style.maxHeight = null;
+            }
+
+        });
 
     });
 
-});
+
+    /* =========================
+       EDUCATION EXPANSION
+    ========================= */
+
+    const educationButtons =
+        document.querySelectorAll(".education-header");
+
+    educationButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const card = button.closest(".expandable-education");
+            const details = card.querySelector(".education-details");
+
+            card.classList.toggle("open");
+
+            if (card.classList.contains("open")) {
+                details.style.maxHeight = details.scrollHeight + "px";
+            } else {
+                details.style.maxHeight = null;
+            }
+
+        });
+
+    });
 
 
-/* =========================================================
-   NAVBAR SHADOW
-========================================================= */
+    /* =========================
+       CERTIFICATIONS
+    ========================= */
 
-const navbar = document.getElementById("navbar");
+    const certToggle = document.getElementById("certToggle");
+    const certList = document.getElementById("certList");
 
-window.addEventListener("scroll", () => {
+    if (certToggle && certList) {
 
-    if (!navbar) return;
+        certToggle.addEventListener("click", function () {
 
+            certList.classList.toggle("show-all");
 
-    if (window.scrollY > 30) {
+            if (certList.classList.contains("show-all")) {
 
-        navbar.style.boxShadow =
-            "0 8px 30px rgba(0,0,0,.25)";
+                certToggle.innerHTML =
+                    'Hide Certifications <i class="fa-solid fa-arrow-up"></i>';
 
-    } else {
+            } else {
 
-        navbar.style.boxShadow = "none";
+                certToggle.innerHTML =
+                    'View All Certifications <i class="fa-solid fa-arrow-down"></i>';
+
+            }
+
+        });
 
     }
+
+
+    /* =========================
+       NAVBAR SHADOW
+    ========================= */
+
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 20) {
+            navbar.style.boxShadow = "0 4px 18px rgba(0,0,0,0.08)";
+        } else {
+            navbar.style.boxShadow = "none";
+        }
+
+    });
 
 });
