@@ -1,4 +1,48 @@
 /* =========================================================
+   LIGHT / DARK MODE
+========================================================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.innerHTML =
+            '<i class="fa-solid fa-sun"></i>';
+    }
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        const darkMode =
+            document.body.classList.contains("dark-mode");
+
+        if (darkMode) {
+
+            themeToggle.innerHTML =
+                '<i class="fa-solid fa-sun"></i>';
+
+            localStorage.setItem("theme", "dark");
+
+        } else {
+
+            themeToggle.innerHTML =
+                '<i class="fa-solid fa-moon"></i>';
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
 
