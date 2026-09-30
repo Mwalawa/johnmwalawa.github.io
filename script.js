@@ -1,163 +1,175 @@
-/* =========================================
-   JOHN ANDERSON MWALAWA
-   PORTFOLIO JAVASCRIPT
-========================================= */
+/* =========================================================
+   JOHN MWALAWA PORTFOLIO
+   JavaScript
+   ========================================================= */
 
 
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+if (menuBtn && navLinks) {
+
+  menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+    const isOpen = navLinks.classList.contains("open");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+
+  });
 
 
-  /* =========================================
-     MOBILE MENU
-  ========================================== */
+  // Close menu when a navigation link is clicked
 
-  const menuBtn =
-    document.getElementById("menuBtn");
+  document.querySelectorAll(".nav-link").forEach(link => {
 
-  const navLinks =
-    document.getElementById("navLinks");
+    link.addEventListener("click", () => {
 
+      navLinks.classList.remove("open");
 
-  if (menuBtn && navLinks) {
+      menuBtn.setAttribute("aria-expanded", "false");
 
-    menuBtn.addEventListener("click", function () {
-
-      navLinks.classList.toggle("show");
-
-    });
-
-
-    navLinks
-      .querySelectorAll("a")
-      .forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-          navLinks.classList.remove("show");
-
-        });
-
-      });
-
-  }
-
-
-  /* =========================================
-     ACTIVE NAVIGATION
-  ========================================== */
-
-  const sections =
-    document.querySelectorAll("section[id]");
-
-  const navigationLinks =
-    document.querySelectorAll(".nav-links a");
-
-
-  function updateActiveNavigation() {
-
-    let currentSection = "";
-
-    sections.forEach(function (section) {
-
-      const sectionTop =
-        section.offsetTop - 130;
-
-      const sectionHeight =
-        section.offsetHeight;
-
-
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY <
-        sectionTop + sectionHeight
-      ) {
-
-        currentSection =
-          section.getAttribute("id");
-
-      }
+      menuBtn.textContent = "☰";
 
     });
 
+  });
 
-    navigationLinks.forEach(function (link) {
-
-      link.classList.remove("active");
-
-
-      if (
-        link.getAttribute("href") ===
-        "#" + currentSection
-      ) {
-
-        link.classList.add("active");
-
-      }
-
-    });
-
-  }
+}
 
 
-  window.addEventListener(
-    "scroll",
-    updateActiveNavigation
-  );
+/* =========================================================
+   ACTIVE NAVIGATION LINK
+   ========================================================= */
+
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-link");
+
+function updateActiveNavigation() {
+
+  let currentSection = "";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.offsetTop - 120;
+
+    if (window.scrollY >= sectionTop) {
+      currentSection = section.getAttribute("id");
+    }
+
+  });
+
+  navigationLinks.forEach(link => {
+
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", updateActiveNavigation);
 
 
-  updateActiveNavigation();
+/* =========================================================
+   PROJECT DETAILS
+   ========================================================= */
 
+const detailButtons = document.querySelectorAll(".details-btn");
 
-  /* =========================================
-     NAVBAR SCROLL EFFECT
-  ========================================== */
+detailButtons.forEach(button => {
 
-  const header =
-    document.getElementById("header");
+  button.addEventListener("click", () => {
 
+    const details = button.nextElementSibling;
 
-  function updateHeader() {
+    if (!details) return;
 
-    if (!header) return;
+    details.classList.toggle("hidden");
 
+    if (details.classList.contains("hidden")) {
 
-    if (window.scrollY > 20) {
-
-      header.style.boxShadow =
-        "0 8px 30px rgba(0,0,0,.15)";
+      button.textContent = "Show Details";
 
     } else {
 
-      header.style.boxShadow = "none";
+      button.textContent = "Hide Details";
 
     }
 
+  });
+
+});
+
+
+/* =========================================================
+   CERTIFICATIONS TOGGLE
+   ========================================================= */
+
+const certToggle = document.getElementById("certToggle");
+const certGrid = document.getElementById("certGrid");
+
+if (certToggle && certGrid) {
+
+  certToggle.addEventListener("click", () => {
+
+    certGrid.classList.toggle("hidden");
+
+    if (certGrid.classList.contains("hidden")) {
+
+      certToggle.textContent = "Show Certifications";
+
+    } else {
+
+      certToggle.textContent = "Hide Certifications";
+
+    }
+
+  });
+
+}
+
+
+/* =========================================================
+   CURRENT YEAR
+   ========================================================= */
+
+const currentYear = document.getElementById("currentYear");
+
+if (currentYear) {
+
+  currentYear.textContent = new Date().getFullYear();
+
+}
+
+
+/* =========================================================
+   CLOSE MOBILE MENU WITH ESCAPE
+   ========================================================= */
+
+document.addEventListener("keydown", event => {
+
+  if (event.key === "Escape") {
+
+    if (navLinks) {
+      navLinks.classList.remove("open");
+    }
+
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.textContent = "☰";
+    }
+
   }
-
-
-  window.addEventListener(
-    "scroll",
-    updateHeader
-  );
-
-
-  updateHeader();
-
-
-  /* =========================================
-     CURRENT YEAR
-  ========================================== */
-
-  const year =
-    document.getElementById("year");
-
-
-  if (year) {
-
-    year.textContent =
-      new Date().getFullYear();
-
-  }
-
 
 });
