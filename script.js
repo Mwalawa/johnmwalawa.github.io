@@ -1,45 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================
+   JOHN MWALAWA PORTFOLIO
+   Main JavaScript
+========================================= */
 
-    /* =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* =====================================
        MOBILE NAVIGATION
-    ========================= */
+    ====================================== */
 
     const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+    const navLinks = document.getElementById("navLinks");
 
-    if (menuToggle && navMenu) {
+    if (menuToggle && navLinks) {
 
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", () => {
 
-            navMenu.classList.toggle("active");
-
-            const icon = menuToggle.querySelector("i");
-
-            if (navMenu.classList.contains("active")) {
-
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-xmark");
-
-            } else {
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-
-            }
+            navLinks.classList.toggle("active");
 
         });
 
 
-        navMenu.querySelectorAll("a").forEach(function (link) {
+        const navigationLinks =
+            navLinks.querySelectorAll("a");
 
-            link.addEventListener("click", function () {
+        navigationLinks.forEach(link => {
 
-                navMenu.classList.remove("active");
+            link.addEventListener("click", () => {
 
-                const icon = menuToggle.querySelector("i");
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
+                navLinks.classList.remove("active");
 
             });
 
@@ -48,66 +39,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
-       SKILLS
-    ========================= */
-
-    const expandButtons =
-        document.querySelectorAll(".expand-btn");
-
-    expandButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const card =
-                button.closest(".skill-card");
-
-            const expandable =
-                card.querySelector(".expandable");
-
-            card.classList.toggle("open");
-
-            if (card.classList.contains("open")) {
-
-                expandable.style.maxHeight =
-                    expandable.scrollHeight + "px";
-
-            } else {
-
-                expandable.style.maxHeight = null;
-
-            }
-
-        });
-
-    });
-
-
-    /* =========================
+    /* =====================================
        PROJECT DETAILS
-    ========================= */
+    ====================================== */
 
     const projectButtons =
         document.querySelectorAll(".project-toggle");
 
-    projectButtons.forEach(function (button) {
+    projectButtons.forEach(button => {
 
-        button.addEventListener("click", function () {
+        button.addEventListener("click", () => {
 
-            const card =
-                button.closest(".project-card");
+            const targetId =
+                button.getAttribute("data-target");
 
-            card.classList.toggle("open");
+            const target =
+                document.getElementById(targetId);
 
-            if (card.classList.contains("open")) {
+            if (!target) return;
 
-                button.innerHTML =
-                    'Hide Details <i class="fa-solid fa-arrow-up"></i>';
+
+            target.classList.toggle("active");
+
+
+            if (target.classList.contains("active")) {
+
+                button.textContent = "Hide Details −";
 
             } else {
 
-                button.innerHTML =
-                    'View Details <i class="fa-solid fa-arrow-down"></i>';
+                button.textContent = "View Details +";
 
             }
 
@@ -116,122 +77,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    const experienceButtons =
-        document.querySelectorAll(".experience-header");
-
-    experienceButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const card =
-                button.closest(".experience-card");
-
-            const details =
-                card.querySelector(".experience-details");
-
-            card.classList.toggle("open");
-
-            if (card.classList.contains("open")) {
-
-                details.style.maxHeight =
-                    details.scrollHeight + "px";
-
-            } else {
-
-                details.style.maxHeight = null;
-
-            }
-
-        });
-
-    });
-
-
-    /* =========================
-       CYBER SHUJAA
-    ========================= */
-
-    const educationButtons =
-        document.querySelectorAll(".education-header");
-
-    educationButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const card =
-                button.closest(".cyber-card");
-
-            const details =
-                card.querySelector(".education-details");
-
-            card.classList.toggle("open");
-
-            if (card.classList.contains("open")) {
-
-                details.style.maxHeight =
-                    details.scrollHeight + "px";
-
-            } else {
-
-                details.style.maxHeight = null;
-
-            }
-
-        });
-
-    });
-
-
-    /* =========================
-       CERTIFICATIONS
-    ========================= */
-
-    const certToggle =
-        document.getElementById("certToggle");
-
-    const certList =
-        document.getElementById("certList");
-
-    if (certToggle && certList) {
-
-        certToggle.addEventListener("click", function () {
-
-            certList.classList.toggle("show-all");
-
-            if (certList.classList.contains("show-all")) {
-
-                certToggle.innerHTML =
-                    'Hide Certifications <i class="fa-solid fa-arrow-up"></i>';
-
-            } else {
-
-                certToggle.innerHTML =
-                    'View All Certifications <i class="fa-solid fa-arrow-down"></i>';
-
-            }
-
-        });
-
-    }
-
-
-    /* =========================
-       NAVBAR SHADOW
-    ========================= */
+    /* =====================================
+       NAVIGATION SHADOW ON SCROLL
+    ====================================== */
 
     const navbar =
         document.querySelector(".navbar");
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", () => {
+
+        if (!navbar) return;
 
         if (window.scrollY > 20) {
 
             navbar.style.boxShadow =
-                "0 4px 18px rgba(0,0,0,0.08)";
+                "0 5px 25px rgba(0,0,0,0.06)";
 
         } else {
 
@@ -240,5 +100,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     });
+
+
+    /* =====================================
+       CURRENT YEAR
+    ====================================== */
+
+    const yearElement =
+        document.querySelector("footer p:last-child");
+
+    if (yearElement) {
+
+        const currentYear =
+            new Date().getFullYear();
+
+        yearElement.textContent =
+            `© ${currentYear} John Mwalawa. All rights reserved.`;
+
+    }
 
 });
