@@ -2,92 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="John Anderson Mwalawa - ICT Specialist, IT Support, Systems Administration and IT Project Support."
+  >
 
   <title>John Anderson Mwalawa | ICT Specialist</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Modern icons -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================= NAVBAR ================= -->
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
   <header class="navbar">
-    <div class="container nav-container">
+
+    <div class="nav-container">
 
       <a href="#home" class="brand">
-        <span class="brand-logo">JM</span>
-        <span>John Anderson Mwalawa</span>
+        <span class="brand-mark">JM</span>
+        <span class="brand-name">John Anderson Mwalawa</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#home" class="active">
+          <i class="fa-solid fa-house"></i>
+          Home
+        </a>
+
+        <a href="#about">
+          <i class="fa-solid fa-user"></i>
+          About
+        </a>
+
+        <a href="#skills">
+          <i class="fa-solid fa-code"></i>
+          Skills
+        </a>
+
+        <a href="#projects">
+          <i class="fa-solid fa-diagram-project"></i>
+          Projects
+        </a>
+
+        <a href="#experience">
+          <i class="fa-solid fa-briefcase"></i>
+          Experience
+        </a>
+
+        <a href="#education">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Education
+        </a>
+
+        <a href="#contact">
+          <i class="fa-solid fa-envelope"></i>
+          Contact
+        </a>
+
       </nav>
 
-      <a
-        href="John Mwalawa CV_.pdf"
-        class="nav-cv"
-        target="_blank"
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
       >
-        <i class="fa-solid fa-download"></i>
-        Download CV
-      </a>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
         <i class="fa-solid fa-bars"></i>
       </button>
 
     </div>
+
   </header>
 
 
-  <!-- ================= HERO ================= -->
-
   <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero" id="home">
 
-      <div class="hero-overlay"></div>
+      <div class="container hero-grid">
 
-      <div class="container hero-container">
+        <div class="hero-content">
 
-        <div class="hero-text">
-
-          <div class="hero-small">
+          <span class="eyebrow">
             HELLO, I'M
-          </div>
+          </span>
 
           <h1>
-            John Anderson<br>
+            John Anderson
             <span>Mwalawa</span>
           </h1>
 
           <h2>
-            ICT Specialist |
-            IT Support |
-            Systems Administration |
-            IT Project Support
+            ICT Specialist | IT Support |
+            Systems Administration | IT Project Support
           </h2>
 
           <p>
@@ -97,57 +136,48 @@
             working effectively with minimal supervision.
           </p>
 
-          <div class="hero-buttons">
+          <div class="hero-actions">
 
             <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-folder-open"></i>
+              <i class="fa-solid fa-arrow-down"></i>
               View My Projects
             </a>
 
             <a
-              href="John Mwalawa CV_.pdf"
+              href="John%20Mwalawa%20CV_.pdf"
               class="btn btn-outline"
               target="_blank"
             >
-              <i class="fa-solid fa-download"></i>
+              <i class="fa-solid fa-file-arrow-down"></i>
               Download CV
             </a>
 
           </div>
 
-          <div class="social-links">
+          <div class="hero-status">
 
-            <a
-              href="https://linkedin.com/in/john-m-896a2b244"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
+            <span class="status-dot"></span>
 
-            <a
-              href="mailto:johnmwalawa@gmail.com"
-              aria-label="Email"
-            >
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-
-            <a
-              href="tel:+254705170345"
-              aria-label="Phone"
-            >
-              <i class="fa-solid fa-phone"></i>
-            </a>
+            <div>
+              <strong>Open to Opportunities</strong>
+              <small>IT • ICT • Project Support</small>
+            </div>
 
           </div>
 
         </div>
 
-        <div class="hero-image">
+
+        <div class="hero-image-wrap">
+
+          <div class="hero-image-glow"></div>
+
           <img
             src="images/profile.jpg"
             alt="John Anderson Mwalawa"
+            class="hero-image"
           >
+
         </div>
 
       </div>
@@ -155,19 +185,21 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
-    <section class="about section" id="about">
+    <section class="section about-section" id="about">
 
-      <div class="container about-grid">
+      <div class="container">
 
-        <div class="about-content">
+        <div class="section-heading">
 
-          <div class="section-label">
+          <span class="section-label">
             ABOUT ME
-          </div>
+          </span>
 
-          <h2 class="section-title">
+          <h2>
             Technology Support With a Practical Approach
           </h2>
 
@@ -178,137 +210,96 @@
             running effectively.
           </p>
 
-          <p>
-            I have experience supporting users, maintaining IT systems,
-            troubleshooting technical issues, administering accounts
-            and business applications, and assisting with
-            technology-driven projects.
-          </p>
-
-          <p>
-            I am comfortable working across Windows, macOS, Linux,
-            Microsoft 365, Active Directory, ERP systems, networking,
-            and general ICT operations.
-          </p>
-
-          <p>
-            I am adaptable, a fast learner, and comfortable taking
-            responsibility for tasks with minimal supervision.
-          </p>
-
-          <div class="traits">
-
-            <div class="trait">
-              <div class="trait-icon">
-                <i class="fa-solid fa-bolt"></i>
-              </div>
-              <strong>Adaptable</strong>
-              <span>Quick to learn</span>
-            </div>
-
-            <div class="trait">
-              <div class="trait-icon">
-                <i class="fa-solid fa-users"></i>
-              </div>
-              <strong>Team Player</strong>
-              <span>Collaborative</span>
-            </div>
-
-            <div class="trait">
-              <div class="trait-icon">
-                <i class="fa-solid fa-lightbulb"></i>
-              </div>
-              <strong>Problem Solver</strong>
-              <span>Practical solutions</span>
-            </div>
-
-          </div>
-
         </div>
 
 
-        <div class="contact-card">
+        <div class="about-grid">
 
-          <div class="contact-row">
+          <div class="about-text">
 
-            <div class="contact-icon">
+            <p>
+              I have experience supporting users, maintaining IT systems,
+              troubleshooting technical issues, administering accounts and
+              business applications, and assisting with technology-driven
+              projects.
+            </p>
+
+            <p>
+              I am comfortable working across Windows, macOS, Linux,
+              Microsoft 365, Active Directory, ERP systems, networking,
+              and general ICT operations.
+            </p>
+
+            <p>
+              I am adaptable, a fast learner, and comfortable taking
+              responsibility for tasks with minimal supervision.
+            </p>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <div class="contact-item">
               <i class="fa-solid fa-location-dot"></i>
+
+              <div>
+                <span>Location</span>
+                <strong>Nairobi, Kenya</strong>
+              </div>
             </div>
 
-            <div>
-              <strong>Location</strong>
-              <span>Nairobi, Kenya</span>
-            </div>
 
-          </div>
-
-
-          <div class="contact-row">
-
-            <div class="contact-icon">
+            <div class="contact-item">
               <i class="fa-solid fa-envelope"></i>
+
+              <div>
+                <span>Email</span>
+
+                <a href="mailto:johnmwalawa@gmail.com">
+                  johnmwalawa@gmail.com
+                </a>
+              </div>
             </div>
 
-            <div>
-              <strong>Email</strong>
-              <a href="mailto:johnmwalawa@gmail.com">
-                johnmwalawa@gmail.com
-              </a>
-            </div>
 
-          </div>
-
-
-          <div class="contact-row">
-
-            <div class="contact-icon">
+            <div class="contact-item">
               <i class="fa-solid fa-phone"></i>
+
+              <div>
+                <span>Phone</span>
+
+                <a href="tel:+254705170345">
+                  +254 705 170345
+                </a>
+              </div>
             </div>
 
-            <div>
-              <strong>Phone</strong>
-              <a href="tel:+254705170345">
-                +254 705 170345
-              </a>
-            </div>
 
-          </div>
+            <div class="contact-item">
+              <i class="fa-brands fa-linkedin"></i>
 
+              <div>
+                <span>LinkedIn</span>
 
-          <div class="contact-row">
-
-            <div class="contact-icon">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-
-            <div>
-              <strong>LinkedIn</strong>
-              <a
-                href="https://linkedin.com/in/john-m-896a2b244"
-                target="_blank"
-              >
-                John Mwalawa
-              </a>
+                <a
+                  href="https://linkedin.com/in/john-m-896a2b244"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  John Mwalawa
+                </a>
+              </div>
             </div>
 
           </div>
 
         </div>
 
-      </div>
-
-    </section>
-
-
-    <!-- ================= QUICK AREAS ================= -->
-
-    <section class="focus-section">
-
-      <div class="container">
 
         <div class="focus-grid">
 
-          <div class="focus-card">
+          <article class="focus-card">
 
             <div class="focus-icon">
               <i class="fa-solid fa-headset"></i>
@@ -321,10 +312,10 @@
               maintenance, and incident resolution.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="focus-card">
+          <article class="focus-card">
 
             <div class="focus-icon">
               <i class="fa-solid fa-server"></i>
@@ -337,13 +328,13 @@
               ERP systems, and user administration.
             </p>
 
-          </div>
+          </article>
 
 
-          <div class="focus-card">
+          <article class="focus-card">
 
             <div class="focus-icon">
-              <i class="fa-solid fa-diagram-project"></i>
+              <i class="fa-solid fa-list-check"></i>
             </div>
 
             <h3>Project Support</h3>
@@ -353,7 +344,7 @@
               reporting, and stakeholder communication.
             </p>
 
-          </div>
+          </article>
 
         </div>
 
@@ -362,23 +353,23 @@
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
+    <!-- =========================
+         SKILLS
+    ========================== -->
 
-    <section class="skills section" id="skills">
+    <section class="section skills-section" id="skills">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading centered">
 
-          <div>
-            <div class="section-label">
-              SKILLS
-            </div>
+          <span class="section-label">
+            SKILLS
+          </span>
 
-            <h2 class="section-title">
-              Technical & Professional Skills
-            </h2>
-          </div>
+          <h2>
+            Technical & Professional Skills
+          </h2>
 
           <p>
             Click a category to view the details.
@@ -387,31 +378,38 @@
         </div>
 
 
-        <div class="skills-list">
+        <div class="skills-grid">
 
 
           <!-- IT PROJECT SUPPORT -->
 
           <div class="skill-category">
 
-            <button class="skill-header">
+            <button
+              class="skill-header"
+              type="button"
+              aria-expanded="false"
+            >
 
-              <span class="skill-heading-left">
+              <div class="skill-title">
 
-                <span class="skill-icon">
+                <div class="skill-icon">
                   <i class="fa-solid fa-diagram-project"></i>
-                </span>
+                </div>
 
-                <span>
-                  <strong>IT Project Support</strong>
-                  <small>Project coordination and delivery support</small>
-                </span>
+                <div>
+                  <h3>IT Project Support</h3>
+                  <span>
+                    Project coordination and delivery support
+                  </span>
+                </div>
 
-              </span>
+              </div>
 
               <i class="fa-solid fa-chevron-down skill-arrow"></i>
 
             </button>
+
 
             <div class="skill-details">
 
@@ -430,24 +428,31 @@
 
           <div class="skill-category">
 
-            <button class="skill-header">
+            <button
+              class="skill-header"
+              type="button"
+              aria-expanded="false"
+            >
 
-              <span class="skill-heading-left">
+              <div class="skill-title">
 
-                <span class="skill-icon">
-                  <i class="fa-solid fa-people-group"></i>
-                </span>
+                <div class="skill-icon">
+                  <i class="fa-solid fa-users"></i>
+                </div>
 
-                <span>
-                  <strong>Stakeholder Coordination</strong>
-                  <small>Communication and collaboration</small>
-                </span>
+                <div>
+                  <h3>Stakeholder Coordination</h3>
+                  <span>
+                    Communication and collaboration
+                  </span>
+                </div>
 
-              </span>
+              </div>
 
               <i class="fa-solid fa-chevron-down skill-arrow"></i>
 
             </button>
+
 
             <div class="skill-details">
 
@@ -465,24 +470,31 @@
 
           <div class="skill-category">
 
-            <button class="skill-header">
+            <button
+              class="skill-header"
+              type="button"
+              aria-expanded="false"
+            >
 
-              <span class="skill-heading-left">
+              <div class="skill-title">
 
-                <span class="skill-icon">
+                <div class="skill-icon">
                   <i class="fa-solid fa-headset"></i>
-                </span>
+                </div>
 
-                <span>
-                  <strong>IT Support</strong>
-                  <small>User and technical support</small>
-                </span>
+                <div>
+                  <h3>IT Support</h3>
+                  <span>
+                    Incident and technical support
+                  </span>
+                </div>
 
-              </span>
+              </div>
 
               <i class="fa-solid fa-chevron-down skill-arrow"></i>
 
             </button>
+
 
             <div class="skill-details">
 
@@ -501,24 +513,31 @@
 
           <div class="skill-category">
 
-            <button class="skill-header">
+            <button
+              class="skill-header"
+              type="button"
+              aria-expanded="false"
+            >
 
-              <span class="skill-heading-left">
+              <div class="skill-title">
 
-                <span class="skill-icon">
+                <div class="skill-icon">
                   <i class="fa-solid fa-server"></i>
-                </span>
+                </div>
 
-                <span>
-                  <strong>Systems Administration</strong>
-                  <small>Infrastructure and user administration</small>
-                </span>
+                <div>
+                  <h3>Systems Administration</h3>
+                  <span>
+                    Infrastructure and user administration
+                  </span>
+                </div>
 
-              </span>
+              </div>
 
               <i class="fa-solid fa-chevron-down skill-arrow"></i>
 
             </button>
+
 
             <div class="skill-details">
 
@@ -539,24 +558,31 @@
 
           <div class="skill-category">
 
-            <button class="skill-header">
+            <button
+              class="skill-header"
+              type="button"
+              aria-expanded="false"
+            >
 
-              <span class="skill-heading-left">
+              <div class="skill-title">
 
-                <span class="skill-icon">
-                  <i class="fa-solid fa-code-branch"></i>
-                </span>
+                <div class="skill-icon">
+                  <i class="fa-solid fa-flask"></i>
+                </div>
 
-                <span>
-                  <strong>Testing & Deployment</strong>
-                  <small>Application implementation support</small>
-                </span>
+                <div>
+                  <h3>Testing & Deployment</h3>
+                  <span>
+                    Application implementation support
+                  </span>
+                </div>
 
-              </span>
+              </div>
 
               <i class="fa-solid fa-chevron-down skill-arrow"></i>
 
             </button>
+
 
             <div class="skill-details">
 
@@ -575,24 +601,31 @@
 
           <div class="skill-category">
 
-            <button class="skill-header">
+            <button
+              class="skill-header"
+              type="button"
+              aria-expanded="false"
+            >
 
-              <span class="skill-heading-left">
+              <div class="skill-title">
 
-                <span class="skill-icon">
+                <div class="skill-icon">
                   <i class="fa-solid fa-gears"></i>
-                </span>
+                </div>
 
-                <span>
-                  <strong>ICT Operations</strong>
-                  <small>Operational technology support</small>
-                </span>
+                <div>
+                  <h3>ICT Operations</h3>
+                  <span>
+                    Operational technology support
+                  </span>
+                </div>
 
-              </span>
+              </div>
 
               <i class="fa-solid fa-chevron-down skill-arrow"></i>
 
             </button>
+
 
             <div class="skill-details">
 
@@ -610,24 +643,31 @@
 
           <div class="skill-category">
 
-            <button class="skill-header">
+            <button
+              class="skill-header"
+              type="button"
+              aria-expanded="false"
+            >
 
-              <span class="skill-heading-left">
+              <div class="skill-title">
 
-                <span class="skill-icon">
+                <div class="skill-icon">
                   <i class="fa-solid fa-shield-halved"></i>
-                </span>
+                </div>
 
-                <span>
-                  <strong>Cybersecurity</strong>
-                  <small>Security and protection</small>
-                </span>
+                <div>
+                  <h3>Cybersecurity</h3>
+                  <span>
+                    Security and protection
+                  </span>
+                </div>
 
-              </span>
+              </div>
 
               <i class="fa-solid fa-chevron-down skill-arrow"></i>
 
             </button>
+
 
             <div class="skill-details">
 
@@ -648,27 +688,26 @@
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
+    <!-- =========================
+         PROJECTS
+    ========================== -->
 
-    <section class="projects section" id="projects">
+    <section class="section projects-section" id="projects">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading centered">
 
-          <div>
-            <div class="section-label">
-              PROJECTS
-            </div>
+          <span class="section-label">
+            PROJECTS
+          </span>
 
-            <h2 class="section-title">
-              Selected Projects
-            </h2>
-          </div>
+          <h2>
+            Selected Projects
+          </h2>
 
           <p>
-            A selection of technical, systems, and
-            technology-support work.
+            A selection of technical, systems, and technology-support work.
           </p>
 
         </div>
@@ -677,34 +716,39 @@
         <div class="projects-grid">
 
 
-          <!-- ZETECH -->
+          <!-- PROJECT 1 -->
 
           <article class="project-card">
 
             <div class="project-image">
+
               <img
                 src="images/imageszetech.jpg"
                 alt="Zetech University ICT Support"
               >
+
             </div>
 
-            <div class="project-body">
+            <div class="project-content">
 
               <span class="project-category">
                 ICT SUPPORT
               </span>
 
               <h3>
-                University ICT Support
+                Zetech University ICT Support
               </h3>
 
               <p>
-                Supported users, systems, applications,
-                infrastructure, and ICT operations within
-                a university environment.
+                Supported users, systems, applications, infrastructure,
+                and ICT operations within a university environment.
               </p>
 
-              <button class="project-toggle">
+              <button
+                class="project-toggle"
+                type="button"
+                aria-expanded="false"
+              >
                 <span>View Details</span>
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
@@ -723,18 +767,20 @@
           </article>
 
 
-          <!-- ERP -->
+          <!-- PROJECT 2 -->
 
           <article class="project-card">
 
             <div class="project-image">
+
               <img
                 src="images/imageserp.jpg"
                 alt="ERP and Business Systems"
               >
+
             </div>
 
-            <div class="project-body">
+            <div class="project-content">
 
               <span class="project-category">
                 BUSINESS SYSTEMS
@@ -746,11 +792,14 @@
 
               <p>
                 Supported ERP access, user administration,
-                business applications, and technology-enabled
-                workflows.
+                business applications, and technology-enabled workflows.
               </p>
 
-              <button class="project-toggle">
+              <button
+                class="project-toggle"
+                type="button"
+                aria-expanded="false"
+              >
                 <span>View Details</span>
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
@@ -769,18 +818,20 @@
           </article>
 
 
-          <!-- IT SUPPORT -->
+          <!-- PROJECT 3 -->
 
           <article class="project-card">
 
             <div class="project-image">
+
               <img
                 src="images/itsupport.jpg"
-                alt="IT Support Project"
+                alt="IT Support and Infrastructure"
               >
+
             </div>
 
-            <div class="project-body">
+            <div class="project-content">
 
               <span class="project-category">
                 IT OPERATIONS
@@ -791,12 +842,15 @@
               </h3>
 
               <p>
-                Hands-on support involving computers,
-                peripherals, networking, maintenance,
-                and technical troubleshooting.
+                Hands-on support involving computers, peripherals,
+                networking, maintenance, and technical troubleshooting.
               </p>
 
-              <button class="project-toggle">
+              <button
+                class="project-toggle"
+                type="button"
+                aria-expanded="false"
+              >
                 <span>View Details</span>
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
@@ -815,18 +869,20 @@
           </article>
 
 
-          <!-- AI -->
+          <!-- PROJECT 4 -->
 
           <article class="project-card">
 
             <div class="project-image">
+
               <img
                 src="images/ai.jpg"
                 alt="AI Data Annotation and QA"
               >
+
             </div>
 
-            <div class="project-body">
+            <div class="project-content">
 
               <span class="project-category">
                 AI & DATA
@@ -837,12 +893,15 @@
               </h3>
 
               <p>
-                Worked across AI/ML data projects involving
-                annotation, validation, review, and
-                quality assurance.
+                Worked across AI/ML data projects involving annotation,
+                validation, review, and quality assurance.
               </p>
 
-              <button class="project-toggle">
+              <button
+                class="project-toggle"
+                type="button"
+                aria-expanded="false"
+              >
                 <span>View Details</span>
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
@@ -867,85 +926,46 @@
     </section>
 
 
-    <!-- ================= EXPERIENCE ================= -->
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
 
-    <section class="experience section" id="experience">
+    <section class="section experience-section" id="experience">
 
       <div class="container">
 
-        <div class="section-label">
-          EXPERIENCE
+        <div class="section-heading centered">
+
+          <span class="section-label">
+            EXPERIENCE
+          </span>
+
+          <h2>
+            Professional Experience
+          </h2>
+
+          <p>
+            Experience across IT support, systems administration,
+            project support, and AI data operations.
+          </p>
+
         </div>
-
-        <h2 class="section-title">
-          Professional Experience
-        </h2>
-
-        <p class="section-intro">
-          Experience across IT support, systems administration,
-          project support, and AI data operations.
-        </p>
 
 
         <div class="timeline">
 
 
-          <div class="timeline-item">
+          <!-- EXCELERATE -->
 
-            <div class="timeline-dot"></div>
+          <article class="timeline-item">
 
-            <div class="timeline-content">
-
-              <span class="timeline-date">
-                2025 – Present
-              </span>
-
-              <h3>
-                Freelance IT Support Consultant
-              </h3>
-
-              <h4>
-                Self-Employed
-              </h4>
-
-              <ul>
-                <li>
-                  Provide IT support, troubleshooting,
-                  system setup, and maintenance for
-                  individual and business clients.
-                </li>
-
-                <li>
-                  Install, configure, and maintain computers,
-                  software, printers, and network devices.
-                </li>
-
-                <li>
-                  Troubleshoot hardware, software,
-                  operating system, and connectivity issues.
-                </li>
-
-                <li>
-                  Perform preventive maintenance, backups,
-                  system optimization, and basic security
-                  configuration.
-                </li>
-              </ul>
-
+            <div class="timeline-date">
+              Jan 2025 – Feb 2025
             </div>
 
-          </div>
-
-
-          <div class="timeline-item">
-
             <div class="timeline-dot"></div>
 
             <div class="timeline-content">
-
-              <span class="timeline-date">
-                Jan 2025 – Feb 2025
-              </span>
 
               <h3>
                 Project Management Associate Intern
@@ -956,43 +976,45 @@
               </h4>
 
               <ul>
+
                 <li>
-                  Supported planning and execution of
-                  virtual hackathons and technology-driven
-                  projects.
+                  Supported planning and execution of virtual hackathons
+                  and technology-driven projects.
                 </li>
 
                 <li>
-                  Coordinated technical setup, project
-                  tracking, reporting, and stakeholder
-                  communication.
+                  Coordinated technical setup, project tracking,
+                  reporting, and stakeholder communication.
                 </li>
 
                 <li>
-                  Monitored project activities,
-                  deliverables, and milestones.
+                  Monitored project activities, deliverables, and milestones.
                 </li>
 
                 <li>
-                  Collaborated with cross-functional teams
-                  to resolve operational and technical issues.
+                  Collaborated with cross-functional teams to resolve
+                  operational and technical issues.
                 </li>
+
               </ul>
 
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="timeline-item">
+          <!-- ZETECH -->
+
+          <article class="timeline-item">
+
+            <div class="timeline-date">
+              Apr 2023 – Apr 2024<br>
+              Aug 2025 – Nov 2025
+            </div>
 
             <div class="timeline-dot"></div>
 
             <div class="timeline-content">
-
-              <span class="timeline-date">
-                Apr 2023 – Apr 2024 & Aug 2025 – Nov 2025
-              </span>
 
               <h3>
                 ICT Support Technician – Attaché & Volunteer
@@ -1003,44 +1025,45 @@
               </h4>
 
               <ul>
+
                 <li>
-                  Provided technical support for users,
-                  computers, applications, printers,
-                  and ICT systems.
+                  Provided technical support for users, computers,
+                  applications, printers, and ICT systems.
                 </li>
 
                 <li>
-                  Managed Active Directory accounts,
-                  ERP access, email, and user provisioning.
+                  Managed Active Directory accounts, ERP access,
+                  email, and user provisioning.
                 </li>
 
                 <li>
-                  Supported university portals,
-                  e-learning platforms, labs, CCTV,
-                  access control, and biometric systems.
+                  Supported university portals, e-learning platforms,
+                  labs, CCTV, access control, and biometric systems.
                 </li>
 
                 <li>
-                  Assisted with ICT asset management,
-                  backups, patching, troubleshooting,
-                  and vendor coordination.
+                  Assisted with ICT asset management, backups,
+                  patching, troubleshooting, and vendor coordination.
                 </li>
+
               </ul>
 
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="timeline-item">
+          <!-- APSEA -->
+
+          <article class="timeline-item">
+
+            <div class="timeline-date">
+              2024 – 2025
+            </div>
 
             <div class="timeline-dot"></div>
 
             <div class="timeline-content">
-
-              <span class="timeline-date">
-                2024 – 2025
-              </span>
 
               <h3>
                 IT Support
@@ -1051,41 +1074,46 @@
               </h4>
 
               <ul>
+
                 <li>
-                  Provided day-to-day technical support
-                  for computers, printers, and software.
+                  Provided day-to-day technical support for computers,
+                  printers, and software.
                 </li>
 
                 <li>
-                  Installed and configured hardware
-                  and software for users.
+                  Installed and configured hardware and software for users.
                 </li>
 
                 <li>
-                  Supported user accounts and
-                  QuickBooks backup activities.
+                  Supported user accounts and QuickBooks backup activities.
+                </li>
+
+                <li>
+                  Troubleshot hardware and software issues to maintain
+                  smooth operations.
                 </li>
 
               </ul>
 
             </div>
 
-          </div>
+          </article>
 
 
-          <div class="timeline-item">
+          <!-- AI DATA -->
+
+          <article class="timeline-item">
+
+            <div class="timeline-date">
+              Jan 2021 – Apr 2026
+            </div>
 
             <div class="timeline-dot"></div>
 
             <div class="timeline-content">
 
-              <span class="timeline-date">
-                Jan 2021 – Apr 2026
-              </span>
-
               <h3>
-                AI Data Annotation, Trainer,
-                Reviewer & QA Specialist
+                AI Data Annotation, Trainer, Reviewer & QA Specialist
               </h3>
 
               <h4>
@@ -1096,30 +1124,30 @@
               <ul>
 
                 <li>
-                  Performed AI/ML data annotation,
-                  validation, review, and quality assurance.
+                  Performed AI/ML data annotation, validation,
+                  review, and quality assurance.
                 </li>
 
                 <li>
-                  Maintained 99.95% QA accuracy while
-                  meeting quality and productivity targets.
+                  Maintained 99.95% QA accuracy while meeting
+                  quality and productivity targets.
                 </li>
 
                 <li>
-                  Reviewed and corrected data to ensure
-                  compliance with project guidelines.
+                  Reviewed and corrected data to ensure compliance
+                  with project guidelines.
                 </li>
 
                 <li>
-                  Identified quality gaps and supported
-                  workflow improvements.
+                  Identified quality gaps and supported workflow
+                  improvements.
                 </li>
 
               </ul>
 
             </div>
 
-          </div>
+          </article>
 
         </div>
 
@@ -1128,208 +1156,189 @@
     </section>
 
 
-    <!-- ================= EDUCATION ================= -->
+    <!-- =========================
+         EDUCATION
+    ========================== -->
 
-    <section class="education section" id="education">
+    <section class="section education-section" id="education">
 
       <div class="container">
 
-        <div class="section-label">
-          EDUCATION
+        <div class="section-heading centered">
+
+          <span class="section-label">
+            EDUCATION
+          </span>
+
+          <h2>
+            Education & Certifications
+          </h2>
+
+          <p>
+            Academic background and professional training.
+          </p>
+
         </div>
-
-        <h2 class="section-title">
-          Education & Certifications
-        </h2>
-
-        <p class="section-intro">
-          Academic background and professional training.
-        </p>
 
 
         <div class="education-grid">
 
 
-          <div class="education-card">
+          <article class="education-card">
 
             <div class="education-icon">
               <i class="fa-solid fa-graduation-cap"></i>
             </div>
 
-            <div>
+            <span class="education-date">
+              2023 – 2025
+            </span>
 
-              <span class="education-date">
-                2023 – 2025
-              </span>
+            <h3>
+              Bachelor of Software Engineering
+            </h3>
 
-              <h3>
-                Bachelor of Software Engineering
-              </h3>
+            <h4>
+              Zetech University
+            </h4>
 
-              <p>
-                Zetech University
-              </p>
-
-            </div>
-
-          </div>
+          </article>
 
 
-          <div class="education-card">
+          <article class="education-card">
 
             <div class="education-icon">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
 
-            <div>
+            <span class="education-date">
+              May 2025 – Aug 2025
+            </span>
 
-              <span class="education-date">
-                May 2025 – Aug 2025
-              </span>
+            <h3>
+              Cybersecurity Analyst Program
+            </h3>
 
-              <h3>
-                Cybersecurity Analyst Program
-              </h3>
+            <h4>
+              Cyber Shujaa – USIU-Africa
+            </h4>
 
-              <p>
-                Cyber Shujaa – USIU-Africa
-              </p>
+            <p>
+              Cybersecurity analysis, endpoint protection,
+              threat detection, and secure system operations.
+            </p>
 
-              <small>
-                Cybersecurity analysis, endpoint protection,
-                threat detection, and secure system operations.
-              </small>
-
-            </div>
-
-          </div>
+          </article>
 
         </div>
 
 
         <div class="certifications">
 
-          <h3 class="subsection-title">
-            Certifications & Training
-          </h3>
+          <div class="cert-heading">
+
+            <span class="section-label">
+              CERTIFICATIONS & TRAINING
+            </span>
+
+            <h3>
+              Selected professional certifications and training.
+            </h3>
+
+          </div>
+
 
           <div class="cert-grid">
 
 
             <div class="cert-card">
               <i class="fa-solid fa-code"></i>
-              <div>
-                <strong>Cisco DevNet Associate</strong>
-                <span>Cisco Networking Academy</span>
-              </div>
+              <strong>Cisco DevNet Associate</strong>
+              <span>Cisco Networking Academy</span>
             </div>
 
 
             <div class="cert-card">
-              <i class="fa-solid fa-shield-halved"></i>
-              <div>
-                <strong>CyberOps Associate</strong>
-                <span>Cisco Networking Academy</span>
-              </div>
+              <i class="fa-solid fa-shield"></i>
+              <strong>CyberOps Associate</strong>
+              <span>Cisco Networking Academy</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-network-wired"></i>
-              <div>
-                <strong>Network Defense</strong>
-                <span>Cisco Networking Academy</span>
-              </div>
+              <strong>Network Defense</strong>
+              <span>Cisco Networking Academy</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-laptop-code"></i>
-              <div>
-                <strong>Endpoint Security</strong>
-                <span>Cisco Networking Academy</span>
-              </div>
+              <strong>Endpoint Security</strong>
+              <span>Cisco Networking Academy</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-database"></i>
-              <div>
-                <strong>SQL Injection Attack</strong>
-                <span>EC-Council · 2022</span>
-              </div>
+              <strong>SQL Injection Attack</strong>
+              <span>EC-Council • 2022</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-gears"></i>
-              <div>
-                <strong>Getting Started with DevOps</strong>
-                <span>Simplilearn · 2023</span>
-              </div>
+              <strong>Getting Started with DevOps</strong>
+              <span>Simplilearn • 2023</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-list-check"></i>
-              <div>
-                <strong>Agile Project Management</strong>
-                <span>Coursera · 2024</span>
-              </div>
+              <strong>Agile Project Management</strong>
+              <span>Coursera • 2024</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-chart-line"></i>
-              <div>
-                <strong>Business Analysis & Process Management</strong>
-                <span>Coursera · 2024</span>
-              </div>
+              <strong>Business Analysis & Process Management</strong>
+              <span>Coursera • 2024</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-user-tie"></i>
-              <div>
-                <strong>Virtual Assistance Certificate</strong>
-                <span>ALX Africa · 2024</span>
-              </div>
+              <strong>Virtual Assistance Certificate</strong>
+              <span>ALX Africa • 2024</span>
             </div>
 
 
             <div class="cert-card">
-              <i class="fa-solid fa-users"></i>
-              <div>
-                <strong>Team Lead Certification Program</strong>
-                <span>Sama</span>
-              </div>
+              <i class="fa-solid fa-users-gear"></i>
+              <strong>Team Lead Certification Program</strong>
+              <span>Sama</span>
             </div>
 
 
             <div class="cert-card">
-              <i class="fa-solid fa-people-arrows"></i>
-              <div>
-                <strong>Leaders Worth Following Program</strong>
-                <span>CloudFactory</span>
-              </div>
+              <i class="fa-solid fa-star"></i>
+              <strong>Leaders Worth Following Program</strong>
+              <span>CloudFactory</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-robot"></i>
-              <div>
-                <strong>Chatbot Development</strong>
-                <span>Chatfuel / Coursera · 2023</span>
-              </div>
+              <strong>Chatbot Development</strong>
+              <span>Chatfuel / Coursera • 2023</span>
             </div>
 
 
             <div class="cert-card">
               <i class="fa-solid fa-graduation-cap"></i>
-              <div>
-                <strong>Learn-A-Thon</strong>
-                <span>Cisco · 2022 & 2025</span>
-              </div>
+              <strong>Learn-A-Thon</strong>
+              <span>Cisco • 2022 & 2025</span>
             </div>
 
           </div>
@@ -1341,17 +1350,19 @@
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
+    <!-- =========================
+         CONTACT
+    ========================== -->
 
-    <section class="contact section" id="contact">
+    <section class="contact-section" id="contact">
 
-      <div class="container contact-container">
+      <div class="container">
 
-        <div class="contact-main">
+        <div class="contact-content">
 
-          <div class="section-label">
+          <span class="section-label">
             OPEN TO OPPORTUNITIES
-          </div>
+          </span>
 
           <h2>
             Let's Work Together
@@ -1359,54 +1370,32 @@
 
           <p>
             I am currently open to opportunities in IT support,
-            ICT operations, systems administration, business
-            applications, and IT project support.
+            ICT operations, systems administration, business applications,
+            and IT project support.
           </p>
 
-          <a
-            href="mailto:johnmwalawa@gmail.com?subject=Portfolio Enquiry"
-            class="btn btn-primary"
-          >
-            <i class="fa-solid fa-paper-plane"></i>
-            Email Me
-          </a>
+          <div class="contact-actions">
 
-        </div>
+            <a
+              href="mailto:johnmwalawa@gmail.com"
+              class="btn btn-primary"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              Email Me
+            </a>
 
+            <a
+              href="https://linkedin.com/in/john-m-896a2b244"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline-light"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+              LinkedIn
+            </a>
 
-        <div class="contact-links">
+          </div>
 
-          <a href="mailto:johnmwalawa@gmail.com">
-            <i class="fa-solid fa-envelope"></i>
-            johnmwalawa@gmail.com
-          </a>
-
-          <a href="tel:+254705170345">
-            <i class="fa-solid fa-phone"></i>
-            +254 705 170345
-          </a>
-
-          <a
-            href="https://linkedin.com/in/john-m-896a2b244"
-            target="_blank"
-          >
-            <i class="fa-brands fa-linkedin-in"></i>
-            LinkedIn — John Mwalawa
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="container footer">
-
-        <div>
-          © 2026 John Mwalawa. All rights reserved.
-        </div>
-
-        <div>
-          ICT Specialist | IT Support | Systems Administration
         </div>
 
       </div>
@@ -1416,6 +1405,34 @@
   </main>
 
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>John Mwalawa</strong>
+
+        <span>
+          ICT Specialist | IT Support |
+          Systems Administration
+        </span>
+      </div>
+
+      <p>
+        © <span data-year>2026</span>
+        John Mwalawa. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Main JS -->
   <script src="script.js"></script>
 
 </body>
