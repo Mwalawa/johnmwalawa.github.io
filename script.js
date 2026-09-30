@@ -1,122 +1,163 @@
 /* =========================================
-   JOHN MWALAWA PORTFOLIO
-   Main JavaScript
+   JOHN ANDERSON MWALAWA
+   PORTFOLIO JAVASCRIPT
 ========================================= */
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =====================================
-       MOBILE NAVIGATION
-    ====================================== */
+  /* =========================================
+     MOBILE MENU
+  ========================================== */
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+  const menuBtn =
+    document.getElementById("menuBtn");
 
-    if (menuToggle && navLinks) {
-
-        menuToggle.addEventListener("click", () => {
-
-            navLinks.classList.toggle("active");
-
-        });
+  const navLinks =
+    document.getElementById("navLinks");
 
 
-        const navigationLinks =
-            navLinks.querySelectorAll("a");
+  if (menuBtn && navLinks) {
 
-        navigationLinks.forEach(link => {
+    menuBtn.addEventListener("click", function () {
 
-            link.addEventListener("click", () => {
-
-                navLinks.classList.remove("active");
-
-            });
-
-        });
-
-    }
-
-
-    /* =====================================
-       PROJECT DETAILS
-    ====================================== */
-
-    const projectButtons =
-        document.querySelectorAll(".project-toggle");
-
-    projectButtons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const targetId =
-                button.getAttribute("data-target");
-
-            const target =
-                document.getElementById(targetId);
-
-            if (!target) return;
-
-
-            target.classList.toggle("active");
-
-
-            if (target.classList.contains("active")) {
-
-                button.textContent = "Hide Details −";
-
-            } else {
-
-                button.textContent = "View Details +";
-
-            }
-
-        });
+      navLinks.classList.toggle("show");
 
     });
 
 
-    /* =====================================
-       NAVIGATION SHADOW ON SCROLL
-    ====================================== */
+    navLinks
+      .querySelectorAll("a")
+      .forEach(function (link) {
 
-    const navbar =
-        document.querySelector(".navbar");
+        link.addEventListener("click", function () {
 
-    window.addEventListener("scroll", () => {
+          navLinks.classList.remove("show");
 
-        if (!navbar) return;
+        });
 
-        if (window.scrollY > 20) {
+      });
 
-            navbar.style.boxShadow =
-                "0 5px 25px rgba(0,0,0,0.06)";
+  }
 
-        } else {
 
-            navbar.style.boxShadow = "none";
+  /* =========================================
+     ACTIVE NAVIGATION
+  ========================================== */
 
-        }
+  const sections =
+    document.querySelectorAll("section[id]");
+
+  const navigationLinks =
+    document.querySelectorAll(".nav-links a");
+
+
+  function updateActiveNavigation() {
+
+    let currentSection = "";
+
+    sections.forEach(function (section) {
+
+      const sectionTop =
+        section.offsetTop - 130;
+
+      const sectionHeight =
+        section.offsetHeight;
+
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY <
+        sectionTop + sectionHeight
+      ) {
+
+        currentSection =
+          section.getAttribute("id");
+
+      }
 
     });
 
 
-    /* =====================================
-       CURRENT YEAR
-    ====================================== */
+    navigationLinks.forEach(function (link) {
 
-    const yearElement =
-        document.querySelector("footer p:last-child");
+      link.classList.remove("active");
 
-    if (yearElement) {
 
-        const currentYear =
-            new Date().getFullYear();
+      if (
+        link.getAttribute("href") ===
+        "#" + currentSection
+      ) {
 
-        yearElement.textContent =
-            `© ${currentYear} John Mwalawa. All rights reserved.`;
+        link.classList.add("active");
+
+      }
+
+    });
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateActiveNavigation
+  );
+
+
+  updateActiveNavigation();
+
+
+  /* =========================================
+     NAVBAR SCROLL EFFECT
+  ========================================== */
+
+  const header =
+    document.getElementById("header");
+
+
+  function updateHeader() {
+
+    if (!header) return;
+
+
+    if (window.scrollY > 20) {
+
+      header.style.boxShadow =
+        "0 8px 30px rgba(0,0,0,.15)";
+
+    } else {
+
+      header.style.boxShadow = "none";
 
     }
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateHeader
+  );
+
+
+  updateHeader();
+
+
+  /* =========================================
+     CURRENT YEAR
+  ========================================== */
+
+  const year =
+    document.getElementById("year");
+
+
+  if (year) {
+
+    year.textContent =
+      new Date().getFullYear();
+
+  }
+
 
 });
