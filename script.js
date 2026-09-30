@@ -5,8 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
      MOBILE NAVIGATION
   ===================================== */
 
-  const menuToggle = document.querySelector("#menuToggle");
-  const navLinks = document.querySelector("#navLinks");
+  const menuToggle =
+    document.querySelector("#menuToggle");
+
+  const navLinks =
+    document.querySelector("#navLinks");
+
 
   if (menuToggle && navLinks) {
 
@@ -40,8 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* Close mobile menu after clicking a link */
-
     navLinks
       .querySelectorAll("a")
       .forEach((link) => {
@@ -61,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (icon) {
 
             icon.classList.add("fa-bars");
+
             icon.classList.remove("fa-xmark");
 
           }
@@ -69,8 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
 
-
-    /* Close when clicking outside */
 
     document.addEventListener("click", (event) => {
 
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (icon) {
 
           icon.classList.add("fa-bars");
+
           icon.classList.remove("fa-xmark");
 
         }
@@ -100,8 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-    /* Close with Escape */
 
     document.addEventListener("keydown", (event) => {
 
@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (icon) {
 
           icon.classList.add("fa-bars");
+
           icon.classList.remove("fa-xmark");
 
         }
@@ -138,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const skillCategories =
     document.querySelectorAll(".skill-category");
 
+
   skillCategories.forEach((category) => {
 
     const button =
@@ -145,18 +147,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!button) return;
 
+
     button.setAttribute(
       "aria-expanded",
       "false"
     );
+
 
     button.addEventListener("click", () => {
 
       const isCurrentlyOpen =
         category.classList.contains("open");
 
-
-      /* Close all categories first */
 
       skillCategories.forEach((item) => {
 
@@ -177,8 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
 
-      /* Open selected category */
-
       if (!isCurrentlyOpen) {
 
         category.classList.add("open");
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-  }
+  });
 
 
   /* =====================================
@@ -202,6 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectCards =
     document.querySelectorAll(".project-card");
 
+
   projectCards.forEach((card) => {
 
     const button =
@@ -209,20 +210,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!button) return;
 
+
     button.setAttribute(
       "aria-expanded",
       "false"
     );
+
 
     button.addEventListener("click", () => {
 
       const isOpen =
         card.classList.toggle("show-details");
 
+
       button.setAttribute(
         "aria-expanded",
         String(isOpen)
       );
+
 
       button.textContent =
         isOpen
@@ -238,35 +243,33 @@ document.addEventListener("DOMContentLoaded", () => {
      CERTIFICATIONS ACCORDION
   ===================================== */
 
-  const certifications =
-    document.querySelector(".certifications");
+  const certSection =
+    document.querySelector("#certifications");
 
-  if (certifications) {
+  const certButton =
+    document.querySelector(".cert-toggle");
 
-    const certToggle =
-      certifications.querySelector(".cert-toggle");
 
-    if (certToggle) {
+  if (certSection && certButton) {
 
-      certToggle.setAttribute(
+    certButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+
+    certButton.addEventListener("click", () => {
+
+      const isOpen =
+        certSection.classList.toggle("open");
+
+
+      certButton.setAttribute(
         "aria-expanded",
-        "false"
+        String(isOpen)
       );
 
-
-      certToggle.addEventListener("click", () => {
-
-        const isOpen =
-          certifications.classList.toggle("open");
-
-        certToggle.setAttribute(
-          "aria-expanded",
-          String(isOpen)
-        );
-
-      });
-
-    }
+    });
 
   }
 
@@ -302,6 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
               navigationLinks.forEach((link) => {
 
                 link.classList.remove("active");
+
 
                 if (
                   link.getAttribute("href") ===
@@ -341,6 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const yearElements =
     document.querySelectorAll("[data-year]");
+
 
   yearElements.forEach((element) => {
 
