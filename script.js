@@ -1,6 +1,6 @@
 /* =========================================================
    JOHN MWALAWA PORTFOLIO
-   JavaScript
+   JAVASCRIPT
    ========================================================= */
 
 
@@ -17,40 +17,56 @@ if (menuBtn && navLinks) {
 
     navLinks.classList.toggle("open");
 
-    const isOpen = navLinks.classList.contains("open");
+    const isOpen =
+      navLinks.classList.contains("open");
 
-    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.setAttribute(
+      "aria-expanded",
+      isOpen
+    );
 
-    menuBtn.textContent = isOpen ? "✕" : "☰";
+    menuBtn.innerHTML = isOpen
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
 
   });
 
 
-  // Close menu when a navigation link is clicked
+  /* Close mobile menu when a link is clicked */
 
-  document.querySelectorAll(".nav-link").forEach(link => {
+  document
+    .querySelectorAll(".nav-link")
+    .forEach(link => {
 
-    link.addEventListener("click", () => {
+      link.addEventListener("click", () => {
 
-      navLinks.classList.remove("open");
+        navLinks.classList.remove("open");
 
-      menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
-      menuBtn.textContent = "☰";
+        menuBtn.innerHTML =
+          '<i class="fa-solid fa-bars"></i>';
+
+      });
 
     });
-
-  });
 
 }
 
 
 /* =========================================================
-   ACTIVE NAVIGATION LINK
+   ACTIVE NAVIGATION
    ========================================================= */
 
-const sections = document.querySelectorAll("section[id]");
-const navigationLinks = document.querySelectorAll(".nav-link");
+const sections =
+  document.querySelectorAll("section[id]");
+
+const navigationLinks =
+  document.querySelectorAll(".nav-link");
+
 
 function updateActiveNavigation() {
 
@@ -58,52 +74,161 @@ function updateActiveNavigation() {
 
   sections.forEach(section => {
 
-    const sectionTop = section.offsetTop - 120;
+    const sectionTop =
+      section.offsetTop - 140;
 
     if (window.scrollY >= sectionTop) {
-      currentSection = section.getAttribute("id");
+
+      currentSection =
+        section.getAttribute("id");
+
     }
 
   });
+
 
   navigationLinks.forEach(link => {
 
     link.classList.remove("active");
 
-    if (link.getAttribute("href") === `#${currentSection}`) {
+    if (
+      link.getAttribute("href") ===
+      `#${currentSection}`
+    ) {
+
       link.classList.add("active");
+
     }
 
   });
 
 }
 
-window.addEventListener("scroll", updateActiveNavigation);
+
+window.addEventListener(
+  "scroll",
+  updateActiveNavigation
+);
+
+
+/* =========================================================
+   COLLAPSIBLE SKILLS
+   ========================================================= */
+
+const skillHeaders =
+  document.querySelectorAll(".skill-header");
+
+
+skillHeaders.forEach(header => {
+
+  header.addEventListener("click", () => {
+
+    const selectedCard =
+      header.closest(".collapsible-card");
+
+    const wasOpen =
+      selectedCard.classList.contains("open");
+
+
+    /* Close every skill */
+
+    document
+      .querySelectorAll(".collapsible-card")
+      .forEach(card => {
+
+        card.classList.remove("open");
+
+        const cardHeader =
+          card.querySelector(".skill-header");
+
+        if (cardHeader) {
+
+          cardHeader.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
+
+      });
+
+
+    /* Open selected skill */
+
+    if (!wasOpen) {
+
+      selectedCard.classList.add("open");
+
+      header.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+    }
+
+  });
+
+});
 
 
 /* =========================================================
    PROJECT DETAILS
    ========================================================= */
 
-const detailButtons = document.querySelectorAll(".details-btn");
+const detailButtons =
+  document.querySelectorAll(".details-btn");
+
 
 detailButtons.forEach(button => {
 
   button.addEventListener("click", () => {
 
-    const details = button.nextElementSibling;
+    const details =
+      button.nextElementSibling;
+
+    const text =
+      button.querySelector("span");
+
+    const icon =
+      button.querySelector("i");
+
 
     if (!details) return;
 
-    details.classList.toggle("hidden");
 
-    if (details.classList.contains("hidden")) {
+    const isHidden =
+      details.classList.contains("hidden");
 
-      button.textContent = "Show Details";
+
+    if (isHidden) {
+
+      details.classList.remove("hidden");
+
+      if (text) {
+        text.textContent = "Hide Details";
+      }
+
+      if (icon) {
+
+        icon.className =
+          "fa-solid fa-chevron-up";
+
+      }
 
     } else {
 
-      button.textContent = "Hide Details";
+      details.classList.add("hidden");
+
+      if (text) {
+        text.textContent = "Show Details";
+      }
+
+      if (icon) {
+
+        icon.className =
+          "fa-solid fa-chevron-down";
+
+      }
 
     }
 
@@ -116,8 +241,12 @@ detailButtons.forEach(button => {
    CERTIFICATIONS TOGGLE
    ========================================================= */
 
-const certToggle = document.getElementById("certToggle");
-const certGrid = document.getElementById("certGrid");
+const certToggle =
+  document.getElementById("certToggle");
+
+const certGrid =
+  document.getElementById("certGrid");
+
 
 if (certToggle && certGrid) {
 
@@ -125,13 +254,44 @@ if (certToggle && certGrid) {
 
     certGrid.classList.toggle("hidden");
 
-    if (certGrid.classList.contains("hidden")) {
+    const isHidden =
+      certGrid.classList.contains("hidden");
 
-      certToggle.textContent = "Show Certifications";
+
+    const text =
+      certToggle.querySelector("span");
+
+    const icon =
+      certToggle.querySelector("i");
+
+
+    if (isHidden) {
+
+      if (text) {
+        text.textContent =
+          "Show Certifications";
+      }
+
+      if (icon) {
+
+        icon.className =
+          "fa-solid fa-chevron-down";
+
+      }
 
     } else {
 
-      certToggle.textContent = "Hide Certifications";
+      if (text) {
+        text.textContent =
+          "Hide Certifications";
+      }
+
+      if (icon) {
+
+        icon.className =
+          "fa-solid fa-chevron-up";
+
+      }
 
     }
 
@@ -144,32 +304,47 @@ if (certToggle && certGrid) {
    CURRENT YEAR
    ========================================================= */
 
-const currentYear = document.getElementById("currentYear");
+const currentYear =
+  document.getElementById("currentYear");
+
 
 if (currentYear) {
 
-  currentYear.textContent = new Date().getFullYear();
+  currentYear.textContent =
+    new Date().getFullYear();
 
 }
 
 
 /* =========================================================
-   CLOSE MOBILE MENU WITH ESCAPE
+   ESCAPE KEY
    ========================================================= */
 
-document.addEventListener("keydown", event => {
+document.addEventListener(
+  "keydown",
+  event => {
 
-  if (event.key === "Escape") {
+    if (event.key === "Escape") {
 
-    if (navLinks) {
-      navLinks.classList.remove("open");
-    }
+      if (navLinks) {
 
-    if (menuBtn) {
-      menuBtn.setAttribute("aria-expanded", "false");
-      menuBtn.textContent = "☰";
+        navLinks.classList.remove("open");
+
+      }
+
+      if (menuBtn) {
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuBtn.innerHTML =
+          '<i class="fa-solid fa-bars"></i>';
+
+      }
+
     }
 
   }
-
-});
+);
