@@ -1,10 +1,4 @@
 /* =========================================================
-   JOHN MWALAWA PORTFOLIO
-   INTERACTIVE FEATURES
-========================================================= */
-
-
-/* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
 
@@ -34,6 +28,8 @@ if (menuToggle && navMenu) {
     });
 
 
+    /* Close mobile menu after clicking a link */
+
     document.querySelectorAll(".nav-link").forEach(link => {
 
         link.addEventListener("click", () => {
@@ -62,6 +58,8 @@ document.querySelectorAll(".expand-btn").forEach(button => {
 
         const parent = button.closest(".expandable");
 
+        if (!parent) return;
+
         parent.classList.toggle("open");
 
     });
@@ -78,6 +76,8 @@ document.querySelectorAll(".project-toggle").forEach(button => {
     button.addEventListener("click", () => {
 
         const card = button.closest(".project-card");
+
+        if (!card) return;
 
         card.classList.toggle("open");
 
@@ -129,7 +129,7 @@ if (certToggle && certList) {
 
 
 /* =========================================================
-   ACTIVE NAVIGATION
+   ACTIVE NAVIGATION ON SCROLL
 ========================================================= */
 
 const sections = document.querySelectorAll("section[id]");
@@ -141,11 +141,9 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop =
-            section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 150;
 
-        const sectionHeight =
-            section.offsetHeight;
+        const sectionHeight = section.offsetHeight;
 
         if (
             window.scrollY >= sectionTop &&
@@ -163,10 +161,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if (
-            link.getAttribute("href") ===
-            `#${current}`
-        ) {
+        if (link.getAttribute("href") === `#${current}`) {
 
             link.classList.add("active");
 
@@ -178,7 +173,7 @@ window.addEventListener("scroll", () => {
 
 
 /* =========================================================
-   NAVBAR SHADOW
+   NAVBAR SHADOW ON SCROLL
 ========================================================= */
 
 const navbar = document.getElementById("navbar");
