@@ -7,13 +7,16 @@
     <title>John Anderson Mwalawa | ICT Specialist</title>
 
     <meta name="description"
-          content="John Anderson Mwalawa — ICT Specialist, IT Support, Networking, Cybersecurity and Data Annotation.">
+          content="John Anderson Mwalawa — ICT Specialist specializing in IT Support, Systems Administration, Business Systems, ERP Support and IT Project Support.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
           rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,34 +25,41 @@
 
 <!-- ================= NAVIGATION ================= -->
 
-<header class="navbar">
-    <div class="nav-container">
+<header class="navbar" id="navbar">
+
+    <div class="container nav-container">
 
         <a href="#home" class="logo">
-            JM<span>.</span>
+            <span class="logo-box">JM</span>
+            <span class="logo-name">John Mwalawa</span>
         </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
-            ☰
-        </button>
+        <nav class="nav-menu" id="navMenu">
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#certifications" class="nav-link">Certifications</a>
+            <a href="#contact" class="nav-link">Contact</a>
+
+            <a href="John%20Mwalawa%20CV_.pdf"
+               class="nav-cv"
+               download>
+                <i class="fa-solid fa-download"></i>
+                Download CV
+            </a>
+
         </nav>
 
-        <a href="John_Anderson_Mwalawa_CV.pdf"
-           class="nav-cv"
-           target="_blank">
-            Download CV
-        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
     </div>
+
 </header>
 
 
@@ -57,13 +67,18 @@
 
 <section class="hero" id="home">
 
-    <div class="hero-container">
+    <div class="hero-background"></div>
+
+    <div class="container hero-container">
 
         <div class="hero-content">
 
-            <p class="eyebrow">
-                ICT SPECIALIST
-            </p>
+            <div class="availability">
+                <span class="availability-dot"></span>
+                Open to Opportunities
+            </div>
+
+            <p class="hero-intro">HELLO, I'M</p>
 
             <h1>
                 John Anderson
@@ -71,41 +86,66 @@
             </h1>
 
             <h2>
-                ICT Specialist | IT Support | Networking | Cybersecurity
+                ICT Specialist
+                <span>|</span>
+                IT Support
+                <span>|</span>
+                Systems Administration
             </h2>
 
+            <p class="hero-project">
+                IT Project Support
+                <span>•</span>
+                Business Systems
+                <span>•</span>
+                ERP Support
+            </p>
+
             <p class="hero-description">
-                Passionate about technology, problem solving and building
-                reliable digital solutions. I specialize in IT support,
-                networking, cybersecurity, data annotation and technology
-                solutions that create real-world impact.
+                ICT professional with 4+ years of experience supporting users,
+                systems and technology-driven operations. Skilled in IT support,
+                systems administration, Microsoft 365, ERP environments,
+                Active Directory and project support.
             </p>
 
             <div class="hero-buttons">
 
                 <a href="#projects" class="btn btn-primary">
-                    View My Work
+                    <i class="fa-solid fa-folder-open"></i>
+                    View My Projects
                 </a>
 
-                <a href="#contact" class="btn btn-outline">
-                    Contact Me
+                <a href="John%20Mwalawa%20CV_.pdf"
+                   class="btn btn-outline"
+                   download>
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    Download CV
                 </a>
 
             </div>
 
-            <div class="social-links">
+            <div class="hero-socials">
 
-                <a href="#" aria-label="LinkedIn">
-                    in
-                </a>
-
-                <a href="#" aria-label="GitHub">
-                    GH
+                <a href="https://linkedin.com/in/john-m-896a2b244"
+                   target="_blank"
+                   aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
                 <a href="mailto:johnmwalawa@gmail.com"
                    aria-label="Email">
-                    @
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a href="tel:+254705170345"
+                   aria-label="Phone">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+
+                <a href="https://github.com/Mwalawa"
+                   target="_blank"
+                   aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
                 </a>
 
             </div>
@@ -113,12 +153,27 @@
         </div>
 
 
-        <div class="hero-image">
+        <div class="hero-image-wrapper">
 
-            <div class="image-frame">
+            <div class="hero-image-glow"></div>
+
+            <div class="hero-image-frame">
 
                 <img src="profile.jpg"
                      alt="John Anderson Mwalawa">
+
+            </div>
+
+            <div class="hero-floating-card">
+
+                <div class="floating-icon">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+
+                <div>
+                    <strong>ICT & Systems</strong>
+                    <span>Support • Operations • Projects</span>
+                </div>
 
             </div>
 
@@ -131,24 +186,22 @@
 
 <!-- ================= ABOUT ================= -->
 
-<section class="section about-section" id="about">
+<section class="section" id="about">
 
     <div class="container">
 
         <div class="section-heading">
 
-            <p class="section-label">
-                ABOUT ME
-            </p>
+            <span class="section-label">ABOUT ME</span>
 
             <h2>
-                Turning Technology Into
-                <span>Practical Solutions</span>
+                A Passionate
+                <span>ICT Professional</span>
             </h2>
 
             <p>
-                I am an ICT professional passionate about technology,
-                problem solving and continuous learning.
+                I enjoy solving technology problems, supporting users and
+                helping organizations get the most from their digital systems.
             </p>
 
         </div>
@@ -159,48 +212,120 @@
             <div class="about-text">
 
                 <p>
-                    I am an ICT Specialist with experience and interest
-                    across information technology, technical support,
-                    networking, cybersecurity, data annotation and
-                    digital solutions.
+                    I am an ICT Specialist with over 4 years of practical
+                    experience across IT support, systems administration,
+                    business systems and technology-driven operations.
                 </p>
 
                 <p>
-                    My approach combines technical knowledge with
-                    practical problem solving. I enjoy troubleshooting
-                    systems, supporting users, learning new technologies
-                    and developing solutions that improve efficiency.
+                    My experience includes supporting users, administering
+                    accounts and access, troubleshooting hardware and software,
+                    supporting Microsoft 365 and ERP environments, maintaining
+                    IT records and assisting with technology projects.
                 </p>
 
                 <p>
-                    I am continuously developing my skills through
-                    professional training, hands-on projects and
-                    real-world technology challenges.
+                    I am adaptable, a fast learner and comfortable working
+                    independently or as part of a team. I enjoy learning new
+                    systems and finding practical solutions to technical and
+                    operational challenges.
                 </p>
+
+
+                <div class="traits">
+
+                    <div class="trait">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div>
+                            <strong>Adaptable</strong>
+                            <span>Fast learner who adapts to new systems.</span>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <i class="fa-solid fa-people-group"></i>
+                        <div>
+                            <strong>Team Player</strong>
+                            <span>Collaborative and dependable.</span>
+                        </div>
+                    </div>
+
+                    <div class="trait">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <div>
+                            <strong>Problem Solver</strong>
+                            <span>Focused on practical solutions.</span>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
 
 
             <div class="about-card">
 
-                <div class="about-item">
-                    <strong>Location</strong>
-                    <span>Kenya</span>
+                <div class="about-card-header">
+                    <i class="fa-solid fa-address-card"></i>
+                    <h3>Quick Details</h3>
                 </div>
 
-                <div class="about-item">
-                    <strong>Field</strong>
-                    <span>Information & Communication Technology</span>
+                <div class="detail-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+                        <span>Location</span>
+                        <strong>Nairobi, Kenya</strong>
+                    </div>
+
                 </div>
 
-                <div class="about-item">
-                    <strong>Focus</strong>
-                    <span>IT Support & Technology Solutions</span>
+                <div class="detail-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+                        <span>Phone</span>
+                        <strong>+254 705 170345</strong>
+                    </div>
+
                 </div>
 
-                <div class="about-item">
-                    <strong>Availability</strong>
-                    <span>Open to Opportunities</span>
+                <div class="detail-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+                        <span>Email</span>
+                        <strong>johnmwalawa@gmail.com</strong>
+                    </div>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                    <div>
+                        <span>LinkedIn</span>
+                        <a href="https://linkedin.com/in/john-m-896a2b244"
+                           target="_blank">
+                            linkedin.com/in/john-m-896a2b244
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <i class="fa-solid fa-language"></i>
+
+                    <div>
+                        <span>Languages</span>
+                        <strong>English • Swahili</strong>
+                    </div>
+
                 </div>
 
             </div>
@@ -214,24 +339,22 @@
 
 <!-- ================= SKILLS ================= -->
 
-<section class="section skills-section" id="skills">
+<section class="section section-light" id="skills">
 
     <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <p class="section-label">
-                MY SKILLS
-            </p>
+            <span class="section-label">WHAT I DO</span>
 
             <h2>
-                Technical
-                <span>Expertise</span>
+                Professional
+                <span>Skills</span>
             </h2>
 
             <p>
-                A combination of technical knowledge, practical
-                experience and continuous professional development.
+                A combination of technical support, systems administration,
+                business systems and project support capabilities.
             </p>
 
         </div>
@@ -240,62 +363,134 @@
         <div class="skills-grid">
 
             <div class="skill-card">
-                <div class="skill-icon">IT</div>
-                <h3>IT Support</h3>
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h3>IT Support & Helpdesk</h3>
+
                 <p>
-                    Troubleshooting, system support, software installation,
-                    hardware maintenance and user assistance.
+                    User support, troubleshooting, ITSM, onboarding,
+                    offboarding and technical issue resolution.
                 </p>
+
+                <div class="skill-tags">
+                    <span>Troubleshooting</span>
+                    <span>ITSM</span>
+                    <span>User Support</span>
+                </div>
+
             </div>
 
 
             <div class="skill-card">
-                <div class="skill-icon">NW</div>
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+
+                <h3>Systems Administration</h3>
+
+                <p>
+                    Administration and support of Windows, macOS and Linux
+                    environments, Active Directory and Microsoft 365.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Active Directory</span>
+                    <span>M365</span>
+                    <span>Windows</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
                 <h3>Networking</h3>
+
                 <p>
-                    Network configuration, connectivity troubleshooting,
-                    infrastructure and network support.
+                    Network troubleshooting, TCP/IP, DNS, VPN and
+                    connectivity support.
                 </p>
+
+                <div class="skill-tags">
+                    <span>TCP/IP</span>
+                    <span>DNS</span>
+                    <span>VPN</span>
+                </div>
+
             </div>
 
 
             <div class="skill-card">
-                <div class="skill-icon">CS</div>
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <h3>Business Systems & ERP</h3>
+
+                <p>
+                    ERP access administration, business application support,
+                    documentation and process support.
+                </p>
+
+                <div class="skill-tags">
+                    <span>ERP</span>
+                    <span>Access</span>
+                    <span>Processes</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div>
+
+                <h3>IT Project Support</h3>
+
+                <p>
+                    Task tracking, reporting, technical documentation,
+                    coordination and stakeholder communication.
+                </p>
+
+                <div class="skill-tags">
+                    <span>Coordination</span>
+                    <span>Reporting</span>
+                    <span>Documentation</span>
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
                 <h3>Cybersecurity</h3>
+
                 <p>
-                    Security awareness, basic security practices,
-                    networking security and cyber hygiene.
+                    Endpoint security, network defense, security best
+                    practices and risk awareness.
                 </p>
-            </div>
 
+                <div class="skill-tags">
+                    <span>Endpoint Security</span>
+                    <span>Network Defense</span>
+                    <span>Security</span>
+                </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">AI</div>
-                <h3>Data Annotation</h3>
-                <p>
-                    Data labeling, annotation workflows, quality control
-                    and AI data preparation.
-                </p>
-            </div>
-
-
-            <div class="skill-card">
-                <div class="skill-icon">WD</div>
-                <h3>Web Development</h3>
-                <p>
-                    Building responsive websites using HTML, CSS,
-                    JavaScript and modern web technologies.
-                </p>
-            </div>
-
-
-            <div class="skill-card">
-                <div class="skill-icon">CL</div>
-                <h3>Cloud & Digital Tools</h3>
-                <p>
-                    Working with cloud-based platforms, productivity
-                    tools and digital technology solutions.
-                </p>
             </div>
 
         </div>
@@ -307,23 +502,22 @@
 
 <!-- ================= PROJECTS ================= -->
 
-<section class="section projects-section" id="projects">
+<section class="section" id="projects">
 
     <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <p class="section-label">
-                MY WORK
-            </p>
+            <span class="section-label">SELECTED WORK</span>
 
             <h2>
-                Featured
-                <span>Projects</span>
+                Projects &
+                <span>Experience</span>
             </h2>
 
             <p>
-                Selected projects and practical technology work.
+                Examples of technical, systems and technology-driven work
+                across different environments.
             </p>
 
         </div>
@@ -334,132 +528,147 @@
 
             <article class="project-card">
 
-                <div class="project-top">
-                    <span class="project-number">01</span>
+                <div class="project-image">
 
-                    <span class="project-tag">
-                        Web
-                    </span>
+                    <img src="imageszetech.jpg.png"
+                         alt="Zetech University ICT Support">
+
+                    <div class="project-overlay">
+                        <span>IT Support</span>
+                    </div>
+
                 </div>
 
-                <h3>
-                    Personal Portfolio Website
-                </h3>
+                <div class="project-content">
 
-                <p>
-                    A responsive professional portfolio website designed
-                    to showcase my skills, experience, projects and
-                    professional background.
-                </p>
+                    <span class="project-category">ICT SUPPORT</span>
 
-                <div class="project-tech">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>GitHub Pages</span>
+                    <h3>Zetech ICT Support & Systems Administration</h3>
+
+                    <p>
+                        Supported users, computers, printers, accounts,
+                        business applications, learning platforms and
+                        technology infrastructure.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Active Directory</span>
+                        <span>ERP</span>
+                        <span>M365</span>
+                        <span>Technical Support</span>
+                    </div>
+
                 </div>
-
-                <a href="#" class="project-link">
-                    View Project →
-                </a>
 
             </article>
 
 
             <article class="project-card">
 
-                <div class="project-top">
-                    <span class="project-number">02</span>
+                <div class="project-image">
 
-                    <span class="project-tag">
-                        ICT
-                    </span>
+                    <img src="imageserp.jpg.png"
+                         alt="ERP and Business Systems">
+
+                    <div class="project-overlay">
+                        <span>Business Systems</span>
+                    </div>
+
                 </div>
 
-                <h3>
-                    ICT Support & Systems
-                </h3>
+                <div class="project-content">
 
-                <p>
-                    Practical ICT support work involving troubleshooting,
-                    computer systems, software and user support.
-                </p>
+                    <span class="project-category">ERP & SYSTEMS</span>
 
-                <div class="project-tech">
-                    <span>IT Support</span>
-                    <span>Hardware</span>
-                    <span>Software</span>
+                    <h3>ERP & Business Systems Support</h3>
+
+                    <p>
+                        Experience supporting business applications,
+                        user access, account administration, workflows,
+                        documentation and system-related requests.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>ERP</span>
+                        <span>User Access</span>
+                        <span>Documentation</span>
+                        <span>Processes</span>
+                    </div>
+
                 </div>
-
-                <a href="#contact" class="project-link">
-                    Learn More →
-                </a>
 
             </article>
 
 
             <article class="project-card">
 
-                <div class="project-top">
-                    <span class="project-number">03</span>
+                <div class="project-image">
 
-                    <span class="project-tag">
-                        AI
-                    </span>
+                    <img src="itsupport.jpg.png"
+                         alt="IT Project Support">
+
+                    <div class="project-overlay">
+                        <span>Project Support</span>
+                    </div>
+
                 </div>
 
-                <h3>
-                    AI Data Annotation
-                </h3>
+                <div class="project-content">
 
-                <p>
-                    Data annotation and quality-focused work supporting
-                    datasets used for artificial intelligence and
-                    machine learning applications.
-                </p>
+                    <span class="project-category">IT PROJECTS</span>
 
-                <div class="project-tech">
-                    <span>Data</span>
-                    <span>Annotation</span>
-                    <span>Quality Control</span>
+                    <h3>IT Project Support</h3>
+
+                    <p>
+                        Supported technology-driven activities through task
+                        tracking, coordination, technical documentation,
+                        reporting and stakeholder communication.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Coordination</span>
+                        <span>Reporting</span>
+                        <span>Documentation</span>
+                        <span>Stakeholders</span>
+                    </div>
+
                 </div>
-
-                <a href="#contact" class="project-link">
-                    Learn More →
-                </a>
 
             </article>
 
 
             <article class="project-card">
 
-                <div class="project-top">
-                    <span class="project-number">04</span>
+                <div class="project-image">
 
-                    <span class="project-tag">
-                        Security
-                    </span>
+                    <img src="ai.jpg.png"
+                         alt="AI Data Operations">
+
+                    <div class="project-overlay">
+                        <span>AI Operations</span>
+                    </div>
+
                 </div>
 
-                <h3>
-                    Cybersecurity Learning Projects
-                </h3>
+                <div class="project-content">
 
-                <p>
-                    Practical cybersecurity learning and hands-on
-                    activities focused on networking, security awareness
-                    and cyber defense concepts.
-                </p>
+                    <span class="project-category">AI & DATA</span>
 
-                <div class="project-tech">
-                    <span>Cybersecurity</span>
-                    <span>Networking</span>
-                    <span>Security</span>
+                    <h3>AI / Data Annotation & Quality Operations</h3>
+
+                    <p>
+                        Worked on AI and data operations involving annotation,
+                        quality review, content assessment and adherence to
+                        detailed project guidelines.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Data Annotation</span>
+                        <span>Quality Review</span>
+                        <span>AI Operations</span>
+                    </div>
+
                 </div>
-
-                <a href="#contact" class="project-link">
-                    Learn More →
-                </a>
 
             </article>
 
@@ -472,19 +681,17 @@
 
 <!-- ================= EXPERIENCE ================= -->
 
-<section class="section experience-section" id="experience">
+<section class="section section-light" id="experience">
 
     <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <p class="section-label">
-                EXPERIENCE
-            </p>
+            <span class="section-label">CAREER JOURNEY</span>
 
             <h2>
                 Professional
-                <span>Journey</span>
+                <span>Experience</span>
             </h2>
 
         </div>
@@ -497,25 +704,24 @@
 
                 <div class="timeline-dot"></div>
 
-                <div class="timeline-content">
+                <div class="timeline-date">
+                    2025
+                </div>
 
-                    <span class="timeline-date">
-                        Professional Experience
-                    </span>
+                <div class="timeline-card">
 
-                    <h3>
-                        ICT & Technology Roles
-                    </h3>
+                    <span class="timeline-company">Zetech University</span>
 
-                    <h4>
-                        IT Support • Networking • Data Annotation
-                    </h4>
+                    <h3>ICT Support Technician — Attaché & Volunteer</h3>
+
+                    <p class="timeline-period">
+                        Aug 2025 – Nov 2025
+                    </p>
 
                     <p>
-                        Experience working with technology support,
-                        troubleshooting, networking and data-focused
-                        activities while continuously developing
-                        professional ICT skills.
+                        Provided ICT support across users, systems,
+                        applications, hardware and institutional technology
+                        environments.
                     </p>
 
                 </div>
@@ -527,23 +733,152 @@
 
                 <div class="timeline-dot"></div>
 
-                <div class="timeline-content">
+                <div class="timeline-date">
+                    2023–2024
+                </div>
 
-                    <span class="timeline-date">
-                        Education
-                    </span>
+                <div class="timeline-card">
 
-                    <h3>
+                    <span class="timeline-company">Zetech University</span>
+
+                    <h3>ICT Support Technician — Attaché & Volunteer</h3>
+
+                    <p class="timeline-period">
+                        Apr 2023 – Apr 2024
+                    </p>
+
+                    <p>
+                        Supported users and IT infrastructure including
+                        Active Directory, applications, printers, endpoints,
+                        access systems and business platforms.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2024–2025
+                </div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-company">APSEA</span>
+
+                    <h3>IT Support</h3>
+
+                    <p class="timeline-period">
+                        2024 – 2025
+                    </p>
+
+                    <p>
+                        Provided day-to-day technical support for computers,
+                        printers, software installations, accounts and
+                        backup-related activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2021–2025
+                </div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-company">Sama / CloudFactory</span>
+
+                    <h3>Data & AI Operations</h3>
+
+                    <p>
+                        Worked across data annotation, review and quality
+                        operations supporting AI-related projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2025–2026
+                </div>
+
+                <div class="timeline-card">
+
+                    <span class="timeline-company">AI / Data Projects</span>
+
+                    <h3>AI Model Training & Data Review</h3>
+
+                    <p>
+                        Contributed to AI model training and data quality
+                        projects involving structured review and annotation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="section" id="education">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <span class="section-label">ACADEMIC BACKGROUND</span>
+
+            <h2>
+                Education &
+                <span>Training</span>
+            </h2>
+
+        </div>
+
+
+        <div class="education-grid">
+
+            <div class="education-card">
+
+                <div class="education-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+
+                    <span class="education-year">2025</span>
+
+                    <h3>Bachelor's Degree in Software Engineering</h3>
+
+                    <p class="education-school">
                         Zetech University
-                    </h3>
-
-                    <h4>
-                        Information & Communication Technology
-                    </h4>
+                    </p>
 
                     <p>
-                        Academic development in ICT, computing,
-                        information systems and related technologies.
+                        Graduated on 14 November 2025.
                     </p>
 
                 </div>
@@ -551,28 +886,24 @@
             </div>
 
 
-            <div class="timeline-item">
+            <div class="education-card">
 
-                <div class="timeline-dot"></div>
+                <div class="education-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
 
-                <div class="timeline-content">
+                <div>
 
-                    <span class="timeline-date">
-                        Professional Development
-                    </span>
+                    <span class="education-year">2023</span>
 
-                    <h3>
-                        Technology Training
-                    </h3>
+                    <h3>Diploma in Software Engineering</h3>
 
-                    <h4>
-                        Cybersecurity • Networking • Digital Skills
-                    </h4>
+                    <p class="education-school">
+                        Zetech University
+                    </p>
 
                     <p>
-                        Continuous learning through professional
-                        certifications, technology training and
-                        practical projects.
+                        Graduated with Distinction.
                     </p>
 
                 </div>
@@ -588,20 +919,17 @@
 
 <!-- ================= CERTIFICATIONS ================= -->
 
-<section class="section certifications-section"
-         id="certifications">
+<section class="section section-light" id="certifications">
 
     <div class="container">
 
-        <div class="section-heading centered">
+        <div class="section-heading center">
 
-            <p class="section-label">
-                CERTIFICATIONS
-            </p>
+            <span class="section-label">PROFESSIONAL DEVELOPMENT</span>
 
             <h2>
-                Professional
-                <span>Development</span>
+                Certifications &
+                <span>Training</span>
             </h2>
 
         </div>
@@ -613,17 +941,12 @@
             <div class="cert-card">
 
                 <div class="cert-icon">
-                    CC
+                    <i class="fa-solid fa-shield-halved"></i>
                 </div>
 
                 <div>
-                    <h3>
-                        Cisco
-                    </h3>
-
-                    <p>
-                        Networking & cybersecurity training
-                    </p>
+                    <h3>Cyber Shujaa — Cybersecurity Analyst</h3>
+                    <span>USIU-Africa • 2025</span>
                 </div>
 
             </div>
@@ -632,17 +955,12 @@
             <div class="cert-card">
 
                 <div class="cert-icon">
-                    H
+                    <i class="fa-solid fa-code"></i>
                 </div>
 
                 <div>
-                    <h3>
-                        Huawei
-                    </h3>
-
-                    <p>
-                        ICT and technology training
-                    </p>
+                    <h3>Cisco DevNet Associate</h3>
+                    <span>Cisco • 2025</span>
                 </div>
 
             </div>
@@ -651,17 +969,12 @@
             <div class="cert-card">
 
                 <div class="cert-icon">
-                    CS
+                    <i class="fa-solid fa-network-wired"></i>
                 </div>
 
                 <div>
-                    <h3>
-                        Cyber Shujaa
-                    </h3>
-
-                    <p>
-                        Cybersecurity professional development
-                    </p>
+                    <h3>Cisco Network Technician Career Path</h3>
+                    <span>Cisco • 2025</span>
                 </div>
 
             </div>
@@ -670,20 +983,87 @@
             <div class="cert-card">
 
                 <div class="cert-icon">
-                    C
+                    <i class="fa-solid fa-cloud"></i>
                 </div>
 
                 <div>
-                    <h3>
-                        Coursera
-                    </h3>
-
-                    <p>
-                        Online professional technology courses
-                    </p>
+                    <h3>Huawei HCIA Cloud Computing</h3>
+                    <span>Huawei • 2022</span>
                 </div>
 
             </div>
+
+
+            <div class="cert-card">
+
+                <div class="cert-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <div>
+                    <h3>Huawei HCIA Datacom</h3>
+                    <span>Huawei • 2022</span>
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <div class="cert-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <div>
+                    <h3>Agile Project Management</h3>
+                    <span>Coursera • 2025</span>
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <div class="cert-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div>
+                    <h3>Cisco CyberOps Associate</h3>
+                    <span>Cisco • Training</span>
+                </div>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <div class="cert-icon">
+                    <i class="fa-solid fa-shield"></i>
+                </div>
+
+                <div>
+                    <h3>Network Defense</h3>
+                    <span>Cisco • Training</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cert-more">
+
+            <i class="fa-solid fa-plus"></i>
+
+            <span>
+                Additional training available in my CV
+            </span>
+
+            <a href="John%20Mwalawa%20CV_.pdf"
+               download>
+                View Full CV
+            </a>
 
         </div>
 
@@ -694,8 +1074,7 @@
 
 <!-- ================= CONTACT ================= -->
 
-<section class="section contact-section"
-         id="contact">
+<section class="contact-section" id="contact">
 
     <div class="container">
 
@@ -703,77 +1082,100 @@
 
             <div class="contact-content">
 
-                <p class="section-label">
-                    GET IN TOUCH
-                </p>
+                <span class="section-label">GET IN TOUCH</span>
 
                 <h2>
-                    Let's Work
-                    <span>Together</span>
+                    Let's Connect
                 </h2>
 
                 <p>
-                    Interested in working together, discussing an
-                    opportunity or connecting professionally?
-                    Feel free to reach out.
+                    I am currently open to IT, ICT Support, Systems
+                    Administration, Business Systems and IT Project Support
+                    opportunities.
                 </p>
 
-                <a href="mailto:johnmwalawa@gmail.com"
-                   class="btn btn-primary">
-                    Send Me an Email
-                </a>
+
+                <div class="contact-buttons">
+
+                    <a href="mailto:johnmwalawa@gmail.com"
+                       class="btn btn-primary">
+                        <i class="fa-solid fa-envelope"></i>
+                        Email Me
+                    </a>
+
+                    <a href="tel:+254705170345"
+                       class="btn btn-outline-light">
+                        <i class="fa-solid fa-phone"></i>
+                        Call Me
+                    </a>
+
+                </div>
 
             </div>
 
 
             <div class="contact-details">
 
-                <div class="contact-detail">
+                <a href="mailto:johnmwalawa@gmail.com"
+                   class="contact-detail">
 
-                    <span class="contact-symbol">
-                        @
-                    </span>
-
-                    <div>
-                        <small>Email</small>
-                        <a href="mailto:johnmwalawa@gmail.com">
-                            johnmwalawa@gmail.com
-                        </a>
+                    <div class="contact-detail-icon">
+                        <i class="fa-solid fa-envelope"></i>
                     </div>
 
-                </div>
-
-
-                <div class="contact-detail">
-
-                    <span class="contact-symbol">
-                        in
-                    </span>
-
                     <div>
-                        <small>LinkedIn</small>
-                        <a href="#">
-                            Connect on LinkedIn
-                        </a>
+                        <span>Email</span>
+                        <strong>johnmwalawa@gmail.com</strong>
                     </div>
 
-                </div>
+                </a>
 
 
-                <div class="contact-detail">
+                <a href="tel:+254705170345"
+                   class="contact-detail">
 
-                    <span class="contact-symbol">
-                        GH
-                    </span>
-
-                    <div>
-                        <small>GitHub</small>
-                        <a href="#">
-                            View my GitHub
-                        </a>
+                    <div class="contact-detail-icon">
+                        <i class="fa-solid fa-phone"></i>
                     </div>
 
-                </div>
+                    <div>
+                        <span>Phone</span>
+                        <strong>+254 705 170345</strong>
+                    </div>
+
+                </a>
+
+
+                <a href="https://linkedin.com/in/john-m-896a2b244"
+                   target="_blank"
+                   class="contact-detail">
+
+                    <div class="contact-detail-icon">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <div>
+                        <span>LinkedIn</span>
+                        <strong>John Mwalawa</strong>
+                    </div>
+
+                </a>
+
+
+                <a href="https://github.com/Mwalawa"
+                   target="_blank"
+                   class="contact-detail">
+
+                    <div class="contact-detail-icon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+
+                    <div>
+                        <span>GitHub</span>
+                        <strong>@Mwalawa</strong>
+                    </div>
+
+                </a>
 
             </div>
 
@@ -786,93 +1188,51 @@
 
 <!-- ================= FOOTER ================= -->
 
-<footer class="footer">
+<footer>
 
     <div class="container footer-container">
 
-        <a href="#home" class="logo">
-            JM<span>.</span>
-        </a>
+        <div class="footer-brand">
+
+            <span class="logo-box">JM</span>
+
+            <div>
+                <strong>John Anderson Mwalawa</strong>
+                <span>ICT Specialist</span>
+            </div>
+
+        </div>
+
+
+        <div class="footer-socials">
+
+            <a href="https://linkedin.com/in/john-m-896a2b244"
+               target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://github.com/Mwalawa"
+               target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="mailto:johnmwalawa@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
 
         <p>
-            © 2026 John Anderson Mwalawa. All rights reserved.
+            © 2026 John Anderson Mwalawa. Built with HTML, CSS & JavaScript.
         </p>
-
-        <a href="#home" class="back-top">
-            ↑
-        </a>
 
     </div>
 
 </footer>
 
 
-<script>
-
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const navLinks =
-        document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-
-        navLinks.classList.toggle("show");
-
-    });
-
-
-    document.querySelectorAll(".nav-links a")
-        .forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                navLinks.classList.remove("show");
-
-            });
-
-        });
-
-
-    const sections =
-        document.querySelectorAll("section");
-
-    const navItems =
-        document.querySelectorAll(".nav-links a");
-
-
-    window.addEventListener("scroll", () => {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 150;
-
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute("id");
-            }
-
-        });
-
-
-        navItems.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (
-                link.getAttribute("href") ===
-                "#" + current
-            ) {
-                link.classList.add("active");
-            }
-
-        });
-
-    });
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
