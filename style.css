@@ -317,7 +317,7 @@ button {
 }
 
 .hero-image img {
-  width: min(400px, 100%);
+  width: min(500px, 100%);
 
   height: auto;
 
