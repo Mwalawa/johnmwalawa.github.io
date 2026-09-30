@@ -1,101 +1,37 @@
-/* =========================================================
-   LIGHT / DARK MODE
-========================================================= */
-
-const themeToggle = document.getElementById("themeToggle");
-
-if (themeToggle) {
-
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        themeToggle.innerHTML =
-            '<i class="fa-solid fa-sun"></i>';
-    }
-
-    themeToggle.addEventListener("click", () => {
-
-        document.body.classList.toggle("dark-mode");
-
-        const darkMode =
-            document.body.classList.contains("dark-mode");
-
-        if (darkMode) {
-
-            themeToggle.innerHTML =
-                '<i class="fa-solid fa-sun"></i>';
-
-            localStorage.setItem("theme", "dark");
-
-        } else {
-
-            themeToggle.innerHTML =
-                '<i class="fa-solid fa-moon"></i>';
-
-            localStorage.setItem("theme", "light");
-
-        }
-
-    });
-
-}
-
-
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
-
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
 if (menuToggle && navMenu) {
-
     menuToggle.addEventListener("click", () => {
-
         navMenu.classList.toggle("open");
 
         const icon = menuToggle.querySelector("i");
 
         if (navMenu.classList.contains("open")) {
-
             icon.classList.remove("fa-bars");
             icon.classList.add("fa-xmark");
-
         } else {
-
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
-
         }
-
     });
 
-
     document.querySelectorAll(".nav-link").forEach(link => {
-
         link.addEventListener("click", () => {
-
             navMenu.classList.remove("open");
 
             const icon = menuToggle.querySelector("i");
 
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
-
         });
-
     });
-
 }
 
 
-/* =========================================================
-   EXPANDABLE SKILLS / EXPERIENCE / EDUCATION
-========================================================= */
+/* Expandable sections */
 
 document.querySelectorAll(".expand-btn").forEach(button => {
-
     button.addEventListener("click", () => {
 
         const parent = button.closest(".expandable");
@@ -105,13 +41,10 @@ document.querySelectorAll(".expand-btn").forEach(button => {
         }
 
     });
-
 });
 
 
-/* =========================================================
-   PROJECT DETAILS
-========================================================= */
+/* Project details */
 
 document.querySelectorAll(".project-toggle").forEach(button => {
 
@@ -140,15 +73,10 @@ document.querySelectorAll(".project-toggle").forEach(button => {
 });
 
 
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
+/* Certifications */
 
-const certToggle =
-    document.getElementById("certToggle");
-
-const certList =
-    document.getElementById("certList");
+const certToggle = document.getElementById("certToggle");
+const certList = document.getElementById("certList");
 
 if (certToggle && certList) {
 
@@ -173,15 +101,10 @@ if (certToggle && certList) {
 }
 
 
-/* =========================================================
-   ACTIVE NAVIGATION LINK
-========================================================= */
+/* Active navigation */
 
-const sections =
-    document.querySelectorAll("section[id]");
-
-const navLinks =
-    document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
 
@@ -189,37 +112,24 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop =
-            section.offsetTop - 150;
-
-        const sectionHeight =
-            section.offsetHeight;
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
 
         if (
             window.scrollY >= sectionTop &&
-            window.scrollY <
-            sectionTop + sectionHeight
+            window.scrollY < sectionTop + sectionHeight
         ) {
-
-            current =
-                section.getAttribute("id");
-
+            current = section.getAttribute("id");
         }
 
     });
-
 
     navLinks.forEach(link => {
 
         link.classList.remove("active");
 
-        if (
-            link.getAttribute("href") ===
-            `#${current}`
-        ) {
-
+        if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("active");
-
         }
 
     });
@@ -227,12 +137,9 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* =========================================================
-   NAVBAR SHADOW ON SCROLL
-========================================================= */
+/* Navbar shadow */
 
-const navbar =
-    document.getElementById("navbar");
+const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
 
