@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
+  /* =====================================
      MOBILE NAVIGATION
-  ========================= */
+  ===================================== */
 
   const menuBtn = document.getElementById("menuBtn");
   const navLinks = document.getElementById("navLinks");
@@ -12,8 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     menuBtn.setAttribute("aria-expanded", "false");
 
     menuBtn.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      const icon = menuBtn.querySelector("i");
+
+      const isOpen =
+        navLinks.classList.toggle("open");
+
+      const icon =
+        menuBtn.querySelector("i");
 
       if (icon) {
         icon.className = isOpen
@@ -21,149 +25,253 @@ document.addEventListener("DOMContentLoaded", () => {
           : "fa-solid fa-bars";
       }
 
-      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
     });
 
-    // Close mobile menu after clicking a navigation link
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
 
-        const icon = menuBtn.querySelector("i");
-        if (icon) {
-          icon.className = "fa-solid fa-bars";
-        }
+    /* Close after clicking link */
 
-        menuBtn.setAttribute("aria-expanded", "false");
+    navLinks.querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          const icon =
+            menuBtn.querySelector("i");
+
+          if (icon) {
+            icon.className =
+              "fa-solid fa-bars";
+          }
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        });
+
       });
-    });
 
-    // Close menu when clicking outside
+
+    /* Close when clicking outside */
+
     document.addEventListener("click", event => {
+
       if (
         !navLinks.contains(event.target) &&
         !menuBtn.contains(event.target)
       ) {
+
         navLinks.classList.remove("open");
 
-        const icon = menuBtn.querySelector("i");
+        const icon =
+          menuBtn.querySelector("i");
+
         if (icon) {
-          icon.className = "fa-solid fa-bars";
+          icon.className =
+            "fa-solid fa-bars";
         }
 
-        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
       }
+
     });
 
-    // Close menu with Escape
+
+    /* Escape key */
+
     document.addEventListener("keydown", event => {
+
       if (event.key === "Escape") {
+
         navLinks.classList.remove("open");
 
-        const icon = menuBtn.querySelector("i");
+        const icon =
+          menuBtn.querySelector("i");
+
         if (icon) {
-          icon.className = "fa-solid fa-bars";
+          icon.className =
+            "fa-solid fa-bars";
         }
 
-        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
       }
+
     });
+
   }
 
 
-  /* =========================
+  /* =====================================
      SKILLS ACCORDION
-  ========================= */
+  ===================================== */
 
-  const skillCategories = document.querySelectorAll(".skill-category");
+  const skillCategories =
+    document.querySelectorAll(
+      ".skill-category"
+    );
 
   skillCategories.forEach(category => {
 
-    const header = category.querySelector(".skill-header");
+    const header =
+      category.querySelector(
+        ".skill-header"
+      );
 
     if (!header) return;
 
-    header.setAttribute("aria-expanded", "false");
+    header.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-    header.addEventListener("click", () => {
 
-      const isCurrentlyOpen =
-        category.classList.contains("open");
+    header.addEventListener(
+      "click",
+      () => {
 
-      // Close all categories first
-      skillCategories.forEach(otherCategory => {
+        const wasOpen =
+          category.classList.contains(
+            "open"
+          );
 
-        otherCategory.classList.remove("open");
 
-        const otherHeader =
-          otherCategory.querySelector(".skill-header");
+        /* Close everything */
 
-        if (otherHeader) {
-          otherHeader.setAttribute("aria-expanded", "false");
+        skillCategories.forEach(
+          otherCategory => {
+
+            otherCategory.classList.remove(
+              "open"
+            );
+
+            const otherHeader =
+              otherCategory.querySelector(
+                ".skill-header"
+              );
+
+            if (otherHeader) {
+
+              otherHeader.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
+
+        /* Open selected category */
+
+        if (!wasOpen) {
+
+          category.classList.add(
+            "open"
+          );
+
+          header.setAttribute(
+            "aria-expanded",
+            "true"
+          );
+
         }
-      });
 
-      // Open selected category
-      if (!isCurrentlyOpen) {
-
-        category.classList.add("open");
-
-        header.setAttribute("aria-expanded", "true");
       }
-    });
+    );
+
   });
 
 
-  /* =========================
+  /* =====================================
      PROJECT DETAILS
-  ========================= */
+  ===================================== */
 
   const projectCards =
-    document.querySelectorAll(".project-card");
+    document.querySelectorAll(
+      ".project-card"
+    );
 
   projectCards.forEach(card => {
 
     const button =
-      card.querySelector(".project-toggle");
+      card.querySelector(
+        ".project-toggle"
+      );
 
     if (!button) return;
 
     const label =
       button.querySelector("span");
 
-    button.setAttribute("aria-expanded", "false");
 
-    button.addEventListener("click", () => {
+    button.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-      const isOpen =
-        card.classList.toggle("show-details");
 
-      button.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
+    button.addEventListener(
+      "click",
+      () => {
 
-      if (label) {
-        label.textContent =
-          isOpen
-            ? "Hide Details"
-            : "View Details";
+        const isOpen =
+          card.classList.toggle(
+            "show-details"
+          );
+
+
+        button.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+
+
+        if (label) {
+
+          label.textContent =
+            isOpen
+              ? "Hide Details"
+              : "View Details";
+
+        }
+
       }
-    });
+    );
+
   });
 
 
-  /* =========================
-     ACTIVE NAVIGATION LINK
-  ========================= */
+  /* =====================================
+     ACTIVE NAVIGATION
+  ===================================== */
 
   const sections =
-    document.querySelectorAll("main section[id]");
+    document.querySelectorAll(
+      "main section[id]"
+    );
 
   const navItems =
-    document.querySelectorAll(".nav-links a");
+    document.querySelectorAll(
+      ".nav-links a"
+    );
 
-  if ("IntersectionObserver" in window) {
+
+  if (
+    "IntersectionObserver" in window
+  ) {
 
     const observer =
       new IntersectionObserver(
@@ -171,29 +279,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const visibleSection =
             entries
-              .filter(entry => entry.isIntersecting)
+              .filter(
+                entry =>
+                  entry.isIntersecting
+              )
               .sort(
                 (a, b) =>
                   b.intersectionRatio -
                   a.intersectionRatio
               )[0];
 
+
           if (!visibleSection) return;
+
 
           navItems.forEach(link => {
 
-            const isActive =
+            const active =
               link.getAttribute("href") ===
               `#${visibleSection.target.id}`;
 
             link.classList.toggle(
               "active",
-              isActive
+              active
             );
+
           });
+
         },
         {
-          rootMargin: "-35% 0px -55% 0px",
+          rootMargin:
+            "-35% 0px -55% 0px",
+
           threshold: [
             0,
             0.25,
@@ -203,52 +320,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
+
     sections.forEach(section => {
+
       observer.observe(section);
+
     });
+
   }
 
 
-  /* =========================
-     SMOOTH SCROLLING
-  ========================= */
+  /* =====================================
+     COPYRIGHT YEAR
+  ===================================== */
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  const year =
+    document.querySelector(
+      "[data-year]"
+    );
 
-    link.addEventListener("click", event => {
+  if (year) {
 
-      const targetId =
-        link.getAttribute("href");
-
-      if (!targetId || targetId === "#") {
-        return;
-      }
-
-      const target =
-        document.querySelector(targetId);
-
-      if (!target) return;
-
-      event.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
-  });
-
-
-  /* =========================
-     CURRENT YEAR
-  ========================= */
-
-  const yearElement =
-    document.querySelector("[data-year]");
-
-  if (yearElement) {
-    yearElement.textContent =
+    year.textContent =
       new Date().getFullYear();
+
   }
 
 });
