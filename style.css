@@ -1,878 +1,1206 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================================
+   JOHN ANDERSON MWALAWA — PORTFOLIO
+   ========================================================= */
+
+:root {
+    --navy: #071426;
+    --navy-light: #0b1d33;
+    --blue: #1683ff;
+    --blue-light: #49a3ff;
+    --white: #ffffff;
+    --text: #d7e1ec;
+    --muted: #8fa2b7;
+    --border: rgba(255, 255, 255, 0.09);
+    --card: #0d2038;
+
+    --container: 1180px;
+    --radius: 14px;
+
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.container {
+    width: min(92%, var(--container));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+}
+
+.section-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-label,
+.eyebrow {
+    color: var(--blue-light);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 span {
+    color: var(--blue);
+}
 
-    <title>John Anderson Mwalawa | ICT Specialist</title>
+.section-heading p {
+    color: var(--muted);
+}
 
-    <meta name="description"
-          content="John Anderson Mwalawa — ICT Specialist, IT Support, Networking, Cybersecurity and Data Annotation.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
-          rel="stylesheet">
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    background: rgba(7, 20, 38, 0.94);
+    backdrop-filter: blur(14px);
 
-<body>
+    border-bottom: 1px solid var(--border);
+}
 
-<!-- ================= NAVIGATION ================= -->
+.nav-container {
+    width: min(92%, var(--container));
+    min-height: 76px;
+    margin: auto;
 
-<header class="navbar">
-    <div class="nav-container">
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
 
-        <a href="#home" class="logo">
-            JM<span>.</span>
-        </a>
+.logo {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--white);
+}
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
-            ☰
-        </button>
+.logo span {
+    color: var(--blue);
+}
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
-        </nav>
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
 
-        <a href="John_Anderson_Mwalawa_CV.pdf"
-           class="nav-cv"
-           target="_blank">
-            Download CV
-        </a>
+.nav-links a {
+    position: relative;
 
-    </div>
-</header>
+    color: #b9c7d7;
+    font-size: 0.86rem;
+    font-weight: 600;
 
+    padding: 28px 0;
 
-<!-- ================= HERO ================= -->
+    transition: color 0.3s ease;
+}
 
-<section class="hero" id="home">
+.nav-links a::after {
+    content: "";
 
-    <div class="hero-container">
+    position: absolute;
+    left: 0;
+    bottom: 18px;
 
-        <div class="hero-content">
+    width: 0;
+    height: 2px;
 
-            <p class="eyebrow">
-                ICT SPECIALIST
-            </p>
+    background: var(--blue);
 
-            <h1>
-                John Anderson
-                <span>Mwalawa</span>
-            </h1>
+    transition: width 0.3s ease;
+}
 
-            <h2>
-                ICT Specialist | IT Support | Networking | Cybersecurity
-            </h2>
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+}
 
-            <p class="hero-description">
-                Passionate about technology, problem solving and building
-                reliable digital solutions. I specialize in IT support,
-                networking, cybersecurity, data annotation and technology
-                solutions that create real-world impact.
-            </p>
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
 
-            <div class="hero-buttons">
+.nav-cv {
+    background: var(--blue);
+    color: white;
 
-                <a href="#projects" class="btn btn-primary">
-                    View My Work
-                </a>
+    padding: 10px 18px;
+    border-radius: 7px;
 
-                <a href="#contact" class="btn btn-outline">
-                    Contact Me
-                </a>
+    font-size: 0.82rem;
+    font-weight: 700;
 
-            </div>
+    transition: 0.3s ease;
+}
 
-            <div class="social-links">
+.nav-cv:hover {
+    background: var(--blue-light);
+    transform: translateY(-2px);
+}
 
-                <a href="#" aria-label="LinkedIn">
-                    in
-                </a>
+.menu-toggle {
+    display: none;
 
-                <a href="#" aria-label="GitHub">
-                    GH
-                </a>
+    border: 0;
+    background: transparent;
+    color: white;
 
-                <a href="mailto:johnmwalawa@gmail.com"
-                   aria-label="Email">
-                    @
-                </a>
+    font-size: 1.7rem;
+    cursor: pointer;
+}
 
-            </div>
 
-        </div>
+/* =========================================================
+   HERO
+   ========================================================= */
 
+.hero {
+    min-height: 100vh;
 
-        <div class="hero-image">
+    display: flex;
+    align-items: center;
 
-            <div class="image-frame">
+    padding: 130px 0 90px;
 
-                <img src="profile.jpg"
-                     alt="John Anderson Mwalawa">
+    background:
+        radial-gradient(
+            circle at 85% 45%,
+            rgba(22, 131, 255, 0.13),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #071426 0%,
+            #091b31 55%,
+            #061323 100%
+        );
+}
 
-            </div>
+.hero-container {
+    width: min(92%, var(--container));
+    margin: auto;
 
-        </div>
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
 
-    </div>
+    align-items: center;
+    gap: 80px;
+}
 
-</section>
+.hero-content {
+    max-width: 690px;
+}
 
+.hero h1 {
+    color: var(--white);
 
-<!-- ================= ABOUT ================= -->
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(3rem, 6vw, 5.3rem);
 
-<section class="section about-section" id="about">
+    line-height: 1.05;
+    letter-spacing: -2px;
 
-    <div class="container">
+    margin-bottom: 22px;
+}
 
-        <div class="section-heading">
+.hero h1 span {
+    display: block;
+    color: var(--blue);
+}
 
-            <p class="section-label">
-                ABOUT ME
-            </p>
+.hero h2 {
+    color: #d8e5f2;
 
-            <h2>
-                Turning Technology Into
-                <span>Practical Solutions</span>
-            </h2>
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 600;
 
-            <p>
-                I am an ICT professional passionate about technology,
-                problem solving and continuous learning.
-            </p>
+    margin-bottom: 22px;
+}
 
-        </div>
+.hero-description {
+    max-width: 650px;
 
+    color: var(--muted);
 
-        <div class="about-grid">
+    font-size: 1rem;
+    line-height: 1.9;
 
-            <div class="about-text">
+    margin-bottom: 32px;
+}
 
-                <p>
-                    I am an ICT Specialist with experience and interest
-                    across information technology, technical support,
-                    networking, cybersecurity, data annotation and
-                    digital solutions.
-                </p>
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 
-                <p>
-                    My approach combines technical knowledge with
-                    practical problem solving. I enjoy troubleshooting
-                    systems, supporting users, learning new technologies
-                    and developing solutions that improve efficiency.
-                </p>
+    margin-bottom: 32px;
+}
 
-                <p>
-                    I am continuously developing my skills through
-                    professional training, hands-on projects and
-                    real-world technology challenges.
-                </p>
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-            </div>
+    min-height: 48px;
+    padding: 0 25px;
 
+    border-radius: 7px;
 
-            <div class="about-card">
+    font-size: 0.88rem;
+    font-weight: 700;
 
-                <div class="about-item">
-                    <strong>Location</strong>
-                    <span>Kenya</span>
-                </div>
+    transition: 0.3s ease;
+}
 
-                <div class="about-item">
-                    <strong>Field</strong>
-                    <span>Information & Communication Technology</span>
-                </div>
+.btn-primary {
+    background: var(--blue);
+    color: white;
+}
 
-                <div class="about-item">
-                    <strong>Focus</strong>
-                    <span>IT Support & Technology Solutions</span>
-                </div>
+.btn-primary:hover {
+    background: var(--blue-light);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(22, 131, 255, 0.25);
+}
 
-                <div class="about-item">
-                    <strong>Availability</strong>
-                    <span>Open to Opportunities</span>
-                </div>
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
 
-            </div>
+.btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue-light);
+    transform: translateY(-3px);
+}
 
-        </div>
+.social-links {
+    display: flex;
+    gap: 10px;
+}
 
-    </div>
+.social-links a {
+    width: 38px;
+    height: 38px;
 
-</section>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    border: 1px solid var(--border);
+    border-radius: 50%;
 
-<!-- ================= SKILLS ================= -->
+    color: #a9b9ca;
 
-<section class="section skills-section" id="skills">
+    font-size: 0.72rem;
+    font-weight: 800;
 
-    <div class="container">
+    transition: 0.3s ease;
+}
 
-        <div class="section-heading centered">
+.social-links a:hover {
+    color: white;
+    border-color: var(--blue);
+    background: rgba(22, 131, 255, 0.1);
+}
 
-            <p class="section-label">
-                MY SKILLS
-            </p>
 
-            <h2>
-                Technical
-                <span>Expertise</span>
-            </h2>
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
 
-            <p>
-                A combination of technical knowledge, practical
-                experience and continuous professional development.
-            </p>
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
 
-        </div>
+.image-frame {
+    position: relative;
 
+    width: min(430px, 100%);
+    aspect-ratio: 0.84;
 
-        <div class="skills-grid">
+    padding: 12px;
 
-            <div class="skill-card">
-                <div class="skill-icon">IT</div>
-                <h3>IT Support</h3>
-                <p>
-                    Troubleshooting, system support, software installation,
-                    hardware maintenance and user assistance.
-                </p>
-            </div>
+    border: 1px solid rgba(22, 131, 255, 0.35);
+    border-radius: 18px;
 
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 131, 255, 0.12),
+            rgba(255, 255, 255, 0.02)
+        );
 
-            <div class="skill-card">
-                <div class="skill-icon">NW</div>
-                <h3>Networking</h3>
-                <p>
-                    Network configuration, connectivity troubleshooting,
-                    infrastructure and network support.
-                </p>
-            </div>
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35),
+        0 0 50px rgba(22, 131, 255, 0.08);
+}
 
+.image-frame::before {
+    content: "";
 
-            <div class="skill-card">
-                <div class="skill-icon">CS</div>
-                <h3>Cybersecurity</h3>
-                <p>
-                    Security awareness, basic security practices,
-                    networking security and cyber hygiene.
-                </p>
-            </div>
+    position: absolute;
+    top: -10px;
+    right: -10px;
 
+    width: 70px;
+    height: 70px;
 
-            <div class="skill-card">
-                <div class="skill-icon">AI</div>
-                <h3>Data Annotation</h3>
-                <p>
-                    Data labeling, annotation workflows, quality control
-                    and AI data preparation.
-                </p>
-            </div>
+    border-top: 3px solid var(--blue);
+    border-right: 3px solid var(--blue);
 
+    border-radius: 0 15px 0 0;
+}
 
-            <div class="skill-card">
-                <div class="skill-icon">WD</div>
-                <h3>Web Development</h3>
-                <p>
-                    Building responsive websites using HTML, CSS,
-                    JavaScript and modern web technologies.
-                </p>
-            </div>
+.image-frame::after {
+    content: "";
 
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
 
-            <div class="skill-card">
-                <div class="skill-icon">CL</div>
-                <h3>Cloud & Digital Tools</h3>
-                <p>
-                    Working with cloud-based platforms, productivity
-                    tools and digital technology solutions.
-                </p>
-            </div>
+    width: 70px;
+    height: 70px;
 
-        </div>
+    border-bottom: 3px solid var(--blue);
+    border-left: 3px solid var(--blue);
 
-    </div>
+    border-radius: 0 0 0 15px;
+}
 
-</section>
+.image-frame img {
+    width: 100%;
+    height: 100%;
 
+    object-fit: cover;
 
-<!-- ================= PROJECTS ================= -->
+    border-radius: 10px;
+}
 
-<section class="section projects-section" id="projects">
 
-    <div class="container">
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
-        <div class="section-heading centered">
+.about-section {
+    background: #09192d;
+}
 
-            <p class="section-label">
-                MY WORK
-            </p>
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.8fr;
+    gap: 70px;
 
-            <h2>
-                Featured
-                <span>Projects</span>
-            </h2>
+    align-items: start;
+}
 
-            <p>
-                Selected projects and practical technology work.
-            </p>
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
 
-        </div>
+.about-card {
+    padding: 28px;
 
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
-        <div class="projects-grid">
+    box-shadow: var(--shadow);
+}
 
+.about-item {
+    padding: 18px 0;
 
-            <article class="project-card">
+    border-bottom: 1px solid var(--border);
 
-                <div class="project-top">
-                    <span class="project-number">01</span>
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
-                    <span class="project-tag">
-                        Web
-                    </span>
-                </div>
+.about-item:first-child {
+    padding-top: 0;
+}
 
-                <h3>
-                    Personal Portfolio Website
-                </h3>
+.about-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
 
-                <p>
-                    A responsive professional portfolio website designed
-                    to showcase my skills, experience, projects and
-                    professional background.
-                </p>
+.about-item strong {
+    color: white;
+    font-size: 0.9rem;
+}
 
-                <div class="project-tech">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>GitHub Pages</span>
-                </div>
+.about-item span {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
 
-                <a href="#" class="project-link">
-                    View Project →
-                </a>
 
-            </article>
+/* =========================================================
+   SKILLS
+   ========================================================= */
 
+.skills-section {
+    background: var(--navy);
+}
 
-            <article class="project-card">
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
-                <div class="project-top">
-                    <span class="project-number">02</span>
+.skill-card {
+    padding: 30px;
 
-                    <span class="project-tag">
-                        ICT
-                    </span>
-                </div>
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
-                <h3>
-                    ICT Support & Systems
-                </h3>
+    transition: 0.3s ease;
+}
 
-                <p>
-                    Practical ICT support work involving troubleshooting,
-                    computer systems, software and user support.
-                </p>
+.skill-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(22, 131, 255, 0.5);
+    box-shadow: var(--shadow);
+}
 
-                <div class="project-tech">
-                    <span>IT Support</span>
-                    <span>Hardware</span>
-                    <span>Software</span>
-                </div>
+.skill-icon {
+    width: 50px;
+    height: 50px;
 
-                <a href="#contact" class="project-link">
-                    Learn More →
-                </a>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            </article>
+    margin-bottom: 22px;
 
+    border-radius: 10px;
 
-            <article class="project-card">
+    background: rgba(22, 131, 255, 0.12);
+    color: var(--blue-light);
 
-                <div class="project-top">
-                    <span class="project-number">03</span>
+    font-size: 0.75rem;
+    font-weight: 800;
+}
 
-                    <span class="project-tag">
-                        AI
-                    </span>
-                </div>
+.skill-card h3 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
 
-                <h3>
-                    AI Data Annotation
-                </h3>
+.skill-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
 
-                <p>
-                    Data annotation and quality-focused work supporting
-                    datasets used for artificial intelligence and
-                    machine learning applications.
-                </p>
 
-                <div class="project-tech">
-                    <span>Data</span>
-                    <span>Annotation</span>
-                    <span>Quality Control</span>
-                </div>
+/* =========================================================
+   PROJECTS
+   ========================================================= */
 
-                <a href="#contact" class="project-link">
-                    Learn More →
-                </a>
+.projects-section {
+    background: #09192d;
+}
 
-            </article>
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
 
+.project-card {
+    position: relative;
 
-            <article class="project-card">
+    padding: 32px;
 
-                <div class="project-top">
-                    <span class="project-number">04</span>
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
-                    <span class="project-tag">
-                        Security
-                    </span>
-                </div>
+    transition: 0.3s ease;
+}
 
-                <h3>
-                    Cybersecurity Learning Projects
-                </h3>
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(22, 131, 255, 0.5);
+    box-shadow: var(--shadow);
+}
 
-                <p>
-                    Practical cybersecurity learning and hands-on
-                    activities focused on networking, security awareness
-                    and cyber defense concepts.
-                </p>
+.project-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-                <div class="project-tech">
-                    <span>Cybersecurity</span>
-                    <span>Networking</span>
-                    <span>Security</span>
-                </div>
+    margin-bottom: 25px;
+}
 
-                <a href="#contact" class="project-link">
-                    Learn More →
-                </a>
+.project-number {
+    color: rgba(255, 255, 255, 0.18);
 
-            </article>
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+}
 
-        </div>
+.project-tag {
+    color: var(--blue-light);
 
-    </div>
+    padding: 5px 10px;
 
-</section>
+    border: 1px solid rgba(22, 131, 255, 0.25);
+    border-radius: 20px;
 
+    font-size: 0.68rem;
+    font-weight: 700;
+}
 
-<!-- ================= EXPERIENCE ================= -->
+.project-card h3 {
+    color: white;
 
-<section class="section experience-section" id="experience">
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
 
-    <div class="container">
+    margin-bottom: 12px;
+}
 
-        <div class="section-heading centered">
+.project-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
 
-            <p class="section-label">
-                EXPERIENCE
-            </p>
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
 
-            <h2>
-                Professional
-                <span>Journey</span>
-            </h2>
+    margin: 22px 0;
+}
 
-        </div>
+.project-tech span {
+    padding: 5px 9px;
 
+    background: rgba(255, 255, 255, 0.04);
 
-        <div class="timeline">
+    border-radius: 5px;
 
+    color: #aebdcd;
 
-            <div class="timeline-item">
+    font-size: 0.7rem;
+}
 
-                <div class="timeline-dot"></div>
+.project-link {
+    color: var(--blue-light);
 
-                <div class="timeline-content">
+    font-size: 0.82rem;
+    font-weight: 700;
+}
 
-                    <span class="timeline-date">
-                        Professional Experience
-                    </span>
+.project-link:hover {
+    color: white;
+}
 
-                    <h3>
-                        ICT & Technology Roles
-                    </h3>
 
-                    <h4>
-                        IT Support • Networking • Data Annotation
-                    </h4>
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
 
-                    <p>
-                        Experience working with technology support,
-                        troubleshooting, networking and data-focused
-                        activities while continuously developing
-                        professional ICT skills.
-                    </p>
+.experience-section {
+    background: var(--navy);
+}
 
-                </div>
+.timeline {
+    position: relative;
 
-            </div>
+    max-width: 900px;
+    margin: auto;
 
+    padding-left: 35px;
+}
 
-            <div class="timeline-item">
+.timeline::before {
+    content: "";
 
-                <div class="timeline-dot"></div>
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
 
-                <div class="timeline-content">
+    width: 1px;
 
-                    <span class="timeline-date">
-                        Education
-                    </span>
+    background: rgba(22, 131, 255, 0.3);
+}
 
-                    <h3>
-                        Zetech University
-                    </h3>
+.timeline-item {
+    position: relative;
 
-                    <h4>
-                        Information & Communication Technology
-                    </h4>
+    padding-bottom: 45px;
+}
 
-                    <p>
-                        Academic development in ICT, computing,
-                        information systems and related technologies.
-                    </p>
+.timeline-dot {
+    position: absolute;
 
-                </div>
+    left: -35px;
+    top: 5px;
 
-            </div>
+    width: 12px;
+    height: 12px;
 
+    background: var(--blue);
 
-            <div class="timeline-item">
+    border: 3px solid var(--navy);
 
-                <div class="timeline-dot"></div>
+    border-radius: 50%;
 
-                <div class="timeline-content">
+    box-shadow: 0 0 0 2px rgba(22, 131, 255, 0.35);
+}
 
-                    <span class="timeline-date">
-                        Professional Development
-                    </span>
+.timeline-content {
+    padding: 25px;
 
-                    <h3>
-                        Technology Training
-                    </h3>
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
 
-                    <h4>
-                        Cybersecurity • Networking • Digital Skills
-                    </h4>
+.timeline-date {
+    color: var(--blue-light);
 
-                    <p>
-                        Continuous learning through professional
-                        certifications, technology training and
-                        practical projects.
-                    </p>
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
 
-                </div>
+.timeline-content h3 {
+    color: white;
 
-            </div>
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
 
-        </div>
+    margin: 8px 0 3px;
+}
 
-    </div>
+.timeline-content h4 {
+    color: #aebdcd;
 
-</section>
+    font-size: 0.85rem;
+    font-weight: 600;
 
+    margin-bottom: 12px;
+}
 
-<!-- ================= CERTIFICATIONS ================= -->
+.timeline-content p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
 
-<section class="section certifications-section"
-         id="certifications">
 
-    <div class="container">
+/* =========================================================
+   CERTIFICATIONS
+   ========================================================= */
 
-        <div class="section-heading centered">
+.certifications-section {
+    background: #09192d;
+}
 
-            <p class="section-label">
-                CERTIFICATIONS
-            </p>
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
 
-            <h2>
-                Professional
-                <span>Development</span>
-            </h2>
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
-        </div>
+    padding: 24px;
 
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
-        <div class="certifications-grid">
+    transition: 0.3s ease;
+}
 
+.cert-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(22, 131, 255, 0.4);
+}
 
-            <div class="cert-card">
+.cert-icon {
+    flex-shrink: 0;
 
-                <div class="cert-icon">
-                    CC
-                </div>
+    width: 52px;
+    height: 52px;
 
-                <div>
-                    <h3>
-                        Cisco
-                    </h3>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                    <p>
-                        Networking & cybersecurity training
-                    </p>
-                </div>
+    border-radius: 10px;
 
-            </div>
+    background: rgba(22, 131, 255, 0.12);
+    color: var(--blue-light);
 
+    font-size: 0.75rem;
+    font-weight: 800;
+}
 
-            <div class="cert-card">
+.cert-card h3 {
+    color: white;
 
-                <div class="cert-icon">
-                    H
-                </div>
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
 
-                <div>
-                    <h3>
-                        Huawei
-                    </h3>
+    margin-bottom: 4px;
+}
 
-                    <p>
-                        ICT and technology training
-                    </p>
-                </div>
+.cert-card p {
+    color: var(--muted);
+    font-size: 0.82rem;
+}
 
-            </div>
 
+/* =========================================================
+   CONTACT
+   ========================================================= */
 
-            <div class="cert-card">
+.contact-section {
+    background: var(--navy);
+}
 
-                <div class="cert-icon">
-                    CS
-                </div>
+.contact-box {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
 
-                <div>
-                    <h3>
-                        Cyber Shujaa
-                    </h3>
+    padding: 65px;
 
-                    <p>
-                        Cybersecurity professional development
-                    </p>
-                </div>
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(22, 131, 255, 0.12),
+            transparent 35%
+        ),
+        var(--card);
 
-            </div>
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
 
+.contact-content h2 {
+    color: white;
 
-            <div class="cert-card">
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.1rem);
 
-                <div class="cert-icon">
-                    C
-                </div>
+    line-height: 1.2;
 
-                <div>
-                    <h3>
-                        Coursera
-                    </h3>
+    margin-bottom: 20px;
+}
 
-                    <p>
-                        Online professional technology courses
-                    </p>
-                </div>
+.contact-content h2 span {
+    color: var(--blue);
+}
 
-            </div>
+.contact-content > p:not(.section-label) {
+    color: var(--muted);
 
-        </div>
+    max-width: 550px;
 
-    </div>
+    margin-bottom: 28px;
+}
 
-</section>
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    gap: 20px;
+}
 
-<!-- ================= CONTACT ================= -->
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 
-<section class="section contact-section"
-         id="contact">
+    padding-bottom: 18px;
 
-    <div class="container">
+    border-bottom: 1px solid var(--border);
+}
 
-        <div class="contact-box">
+.contact-symbol {
+    width: 42px;
+    height: 42px;
 
-            <div class="contact-content">
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <p class="section-label">
-                    GET IN TOUCH
-                </p>
+    border-radius: 9px;
 
-                <h2>
-                    Let's Work
-                    <span>Together</span>
-                </h2>
+    background: rgba(22, 131, 255, 0.1);
+    color: var(--blue-light);
 
-                <p>
-                    Interested in working together, discussing an
-                    opportunity or connecting professionally?
-                    Feel free to reach out.
-                </p>
+    font-size: 0.72rem;
+    font-weight: 800;
+}
 
-                <a href="mailto:johnmwalawa@gmail.com"
-                   class="btn btn-primary">
-                    Send Me an Email
-                </a>
+.contact-detail small {
+    display: block;
 
-            </div>
+    color: #778ca1;
 
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-            <div class="contact-details">
+.contact-detail a {
+    color: #d9e4ef;
 
-                <div class="contact-detail">
+    font-size: 0.88rem;
+}
 
-                    <span class="contact-symbol">
-                        @
-                    </span>
+.contact-detail a:hover {
+    color: var(--blue-light);
+}
 
-                    <div>
-                        <small>Email</small>
-                        <a href="mailto:johnmwalawa@gmail.com">
-                            johnmwalawa@gmail.com
-                        </a>
-                    </div>
 
-                </div>
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
+.footer {
+    padding: 28px 0;
 
-                <div class="contact-detail">
+    background: #040d19;
 
-                    <span class="contact-symbol">
-                        in
-                    </span>
+    border-top: 1px solid var(--border);
+}
 
-                    <div>
-                        <small>LinkedIn</small>
-                        <a href="#">
-                            Connect on LinkedIn
-                        </a>
-                    </div>
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-                </div>
+.footer p {
+    color: #718398;
+    font-size: 0.78rem;
+}
 
+.back-top {
+    width: 38px;
+    height: 38px;
 
-                <div class="contact-detail">
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                    <span class="contact-symbol">
-                        GH
-                    </span>
+    border: 1px solid var(--border);
+    border-radius: 50%;
 
-                    <div>
-                        <small>GitHub</small>
-                        <a href="#">
-                            View my GitHub
-                        </a>
-                    </div>
+    color: var(--blue-light);
 
-                </div>
+    transition: 0.3s ease;
+}
 
-            </div>
+.back-top:hover {
+    background: var(--blue);
+    color: white;
+}
 
-        </div>
 
-    </div>
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
 
-</section>
+@media (max-width: 1000px) {
 
+    .nav-links {
+        gap: 16px;
+    }
 
-<!-- ================= FOOTER ================= -->
+    .nav-links a {
+        font-size: 0.78rem;
+    }
 
-<footer class="footer">
+    .hero-container {
+        gap: 45px;
+    }
 
-    <div class="container footer-container">
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        <a href="#home" class="logo">
-            JM<span>.</span>
-        </a>
+}
 
-        <p>
-            © 2026 John Anderson Mwalawa. All rights reserved.
-        </p>
 
-        <a href="#home" class="back-top">
-            ↑
-        </a>
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
 
-    </div>
+@media (max-width: 800px) {
 
-</footer>
+    .section {
+        padding: 80px 0;
+    }
 
 
-<script>
+    /* NAV */
 
-    const menuToggle =
-        document.getElementById("menuToggle");
+    .nav-container {
+        min-height: 68px;
+    }
 
-    const navLinks =
-        document.getElementById("navLinks");
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
 
-    menuToggle.addEventListener("click", () => {
+    .nav-cv {
+        display: none;
+    }
 
-        navLinks.classList.toggle("show");
+    .nav-links {
+        position: absolute;
 
-    });
+        top: 68px;
+        left: 0;
 
+        width: 100%;
 
-    document.querySelectorAll(".nav-links a")
-        .forEach(link => {
+        padding: 15px 6% 25px;
 
-            link.addEventListener("click", () => {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
 
-                navLinks.classList.remove("show");
+        background: #071426;
 
-            });
+        border-bottom: 1px solid var(--border);
+    }
 
-        });
+    .nav-links.show {
+        display: flex;
+    }
 
+    .nav-links a {
+        width: 100%;
+        padding: 12px 0;
+    }
 
-    const sections =
-        document.querySelectorAll("section");
+    .nav-links a::after {
+        display: none;
+    }
 
-    const navItems =
-        document.querySelectorAll(".nav-links a");
 
+    /* HERO */
 
-    window.addEventListener("scroll", () => {
+    .hero {
+        padding-top: 120px;
+    }
 
-        let current = "";
+    .hero-container {
+        grid-template-columns: 1fr;
 
-        sections.forEach(section => {
+        text-align: center;
+    }
 
-            const sectionTop =
-                section.offsetTop - 150;
+    .hero-content {
+        margin: auto;
+    }
 
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute("id");
-            }
+    .hero h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+    }
 
-        });
+    .hero-buttons,
+    .social-links {
+        justify-content: center;
+    }
 
+    .hero-image {
+        order: -1;
+    }
 
-        navItems.forEach(link => {
+    .image-frame {
+        width: min(330px, 80vw);
+    }
 
-            link.classList.remove("active");
 
-            if (
-                link.getAttribute("href") ===
-                "#" + current
-            ) {
-                link.classList.add("active");
-            }
+    /* ABOUT */
 
-        });
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
 
-    });
 
-</script>
+    /* SKILLS */
 
-</body>
-</html>
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CERTIFICATIONS */
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CONTACT */
+
+    .contact-box {
+        grid-template-columns: 1fr;
+
+        padding: 35px 25px;
+
+        gap: 40px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .hero {
+        padding-top: 105px;
+    }
+
+    .hero h1 {
+        font-size: 2.55rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .project-card,
+    .skill-card {
+        padding: 25px;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-dot {
+        left: -25px;
+    }
+
+}
