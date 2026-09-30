@@ -1464,30 +1464,5 @@ a:focus-visible {
     transition: none !important;
     animation: none !important;
   }
-/* Fix desktop-site view on narrow phone screens */
-@media screen and (max-width: 900px) and (pointer: coarse) {
-  .hero {
-    min-height: auto !important;
-    height: auto !important;
-    padding-top: 35px !important;
-    padding-bottom: 25px !important;
-  }
 
-  .hero-content {
-    min-height: auto !important;
-    height: auto !important;
-    align-items: center;
-    gap: 25px !important;
-  }
-
-  .hero-text {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  .hero-image {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-}
 }
