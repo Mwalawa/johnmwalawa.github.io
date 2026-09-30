@@ -1,3 +1,7 @@
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -42,7 +46,9 @@ if (menuToggle && navMenu) {
 }
 
 
-/* Expandable sections */
+/* =========================================================
+   EXPANDABLE SECTIONS
+========================================================= */
 
 document.querySelectorAll(".expand-btn").forEach(button => {
 
@@ -51,7 +57,9 @@ document.querySelectorAll(".expand-btn").forEach(button => {
         const parent = button.closest(".expandable");
 
         if (parent) {
+
             parent.classList.toggle("open");
+
         }
 
     });
@@ -59,7 +67,9 @@ document.querySelectorAll(".expand-btn").forEach(button => {
 });
 
 
-/* Project details */
+/* =========================================================
+   PROJECT DETAILS
+========================================================= */
 
 document.querySelectorAll(".project-toggle").forEach(button => {
 
@@ -69,7 +79,9 @@ document.querySelectorAll(".project-toggle").forEach(button => {
 
         if (!card) return;
 
+
         card.classList.toggle("open");
+
 
         if (card.classList.contains("open")) {
 
@@ -88,7 +100,9 @@ document.querySelectorAll(".project-toggle").forEach(button => {
 });
 
 
-/* Certifications */
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
 
 const certToggle = document.getElementById("certToggle");
 const certList = document.getElementById("certList");
@@ -98,6 +112,7 @@ if (certToggle && certList) {
     certToggle.addEventListener("click", () => {
 
         certList.classList.toggle("show");
+
 
         if (certList.classList.contains("show")) {
 
@@ -116,7 +131,9 @@ if (certToggle && certList) {
 }
 
 
-/* Active navigation */
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
 
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -125,10 +142,12 @@ window.addEventListener("scroll", () => {
 
     let current = "";
 
+
     sections.forEach(section => {
 
         const sectionTop = section.offsetTop - 150;
         const sectionHeight = section.offsetHeight;
+
 
         if (
             window.scrollY >= sectionTop &&
@@ -146,6 +165,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
+
         if (link.getAttribute("href") === `#${current}`) {
 
             link.classList.add("active");
@@ -157,13 +177,16 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* Navbar shadow */
+/* =========================================================
+   NAVBAR SHADOW
+========================================================= */
 
 const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
 
     if (!navbar) return;
+
 
     if (window.scrollY > 30) {
 
