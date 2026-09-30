@@ -1,350 +1,91 @@
-/* =========================================================
-   JOHN MWALAWA PORTFOLIO
-   JAVASCRIPT
-   ========================================================= */
+// =========================================================
+// JOHN MWALAWA PORTFOLIO
+// =========================================================
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll(".nav-link");
 
 
-/* =========================================================
-   MOBILE NAVIGATION
-   ========================================================= */
+// Mobile menu
+menuToggle.addEventListener("click", () => {
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+    navMenu.classList.toggle("open");
 
-if (menuBtn && navLinks) {
+    const icon = menuToggle.querySelector("i");
 
-  menuBtn.addEventListener("click", () => {
+    if (navMenu.classList.contains("open")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
 
-    navLinks.classList.toggle("open");
-
-    const isOpen =
-      navLinks.classList.contains("open");
-
-    menuBtn.setAttribute(
-      "aria-expanded",
-      isOpen
-    );
-
-    menuBtn.innerHTML = isOpen
-      ? '<i class="fa-solid fa-xmark"></i>'
-      : '<i class="fa-solid fa-bars"></i>';
-
-  });
+});
 
 
-  /* Close mobile menu when a link is clicked */
+// Close menu when a link is clicked
+navLinks.forEach(link => {
 
-  document
-    .querySelectorAll(".nav-link")
-    .forEach(link => {
+    link.addEventListener("click", () => {
 
-      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
 
-        navLinks.classList.remove("open");
+        const icon = menuToggle.querySelector("i");
 
-        menuBtn.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuBtn.innerHTML =
-          '<i class="fa-solid fa-bars"></i>';
-
-      });
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
 
     });
 
-}
+});
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-   ========================================================= */
+// Active navigation link
+const sections = document.querySelectorAll("section[id]");
 
-const sections =
-  document.querySelectorAll("section[id]");
+window.addEventListener("scroll", () => {
 
-const navigationLinks =
-  document.querySelectorAll(".nav-link");
+    let current = "";
 
+    sections.forEach(section => {
 
-function updateActiveNavigation() {
+        const sectionTop = section.offsetTop - 130;
+        const sectionHeight = section.offsetHeight;
 
-  let currentSection = "";
-
-  sections.forEach(section => {
-
-    const sectionTop =
-      section.offsetTop - 140;
-
-    if (window.scrollY >= sectionTop) {
-
-      currentSection =
-        section.getAttribute("id");
-
-    }
-
-  });
-
-
-  navigationLinks.forEach(link => {
-
-    link.classList.remove("active");
-
-    if (
-      link.getAttribute("href") ===
-      `#${currentSection}`
-    ) {
-
-      link.classList.add("active");
-
-    }
-
-  });
-
-}
-
-
-window.addEventListener(
-  "scroll",
-  updateActiveNavigation
-);
-
-
-/* =========================================================
-   COLLAPSIBLE SKILLS
-   ========================================================= */
-
-const skillHeaders =
-  document.querySelectorAll(".skill-header");
-
-
-skillHeaders.forEach(header => {
-
-  header.addEventListener("click", () => {
-
-    const selectedCard =
-      header.closest(".collapsible-card");
-
-    const wasOpen =
-      selectedCard.classList.contains("open");
-
-
-    /* Close every skill */
-
-    document
-      .querySelectorAll(".collapsible-card")
-      .forEach(card => {
-
-        card.classList.remove("open");
-
-        const cardHeader =
-          card.querySelector(".skill-header");
-
-        if (cardHeader) {
-
-          cardHeader.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            current = section.getAttribute("id");
         }
 
-      });
+    });
 
+    navLinks.forEach(link => {
 
-    /* Open selected skill */
+        link.classList.remove("active");
 
-    if (!wasOpen) {
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
 
-      selectedCard.classList.add("open");
-
-      header.setAttribute(
-        "aria-expanded",
-        "true"
-      );
-
-    }
-
-  });
+    });
 
 });
 
 
-/* =========================================================
-   PROJECT DETAILS
-   ========================================================= */
+// Navbar shadow when scrolling
+window.addEventListener("scroll", () => {
 
-const detailButtons =
-  document.querySelectorAll(".details-btn");
+    const navbar = document.getElementById("navbar");
 
-
-detailButtons.forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    const details =
-      button.nextElementSibling;
-
-    const text =
-      button.querySelector("span");
-
-    const icon =
-      button.querySelector("i");
-
-
-    if (!details) return;
-
-
-    const isHidden =
-      details.classList.contains("hidden");
-
-
-    if (isHidden) {
-
-      details.classList.remove("hidden");
-
-      if (text) {
-        text.textContent = "Hide Details";
-      }
-
-      if (icon) {
-
-        icon.className =
-          "fa-solid fa-chevron-up";
-
-      }
-
+    if (window.scrollY > 30) {
+        navbar.style.boxShadow =
+            "0 8px 30px rgba(0,0,0,0.18)";
     } else {
-
-      details.classList.add("hidden");
-
-      if (text) {
-        text.textContent = "Show Details";
-      }
-
-      if (icon) {
-
-        icon.className =
-          "fa-solid fa-chevron-down";
-
-      }
-
+        navbar.style.boxShadow = "none";
     }
-
-  });
 
 });
-
-
-/* =========================================================
-   CERTIFICATIONS TOGGLE
-   ========================================================= */
-
-const certToggle =
-  document.getElementById("certToggle");
-
-const certGrid =
-  document.getElementById("certGrid");
-
-
-if (certToggle && certGrid) {
-
-  certToggle.addEventListener("click", () => {
-
-    certGrid.classList.toggle("hidden");
-
-    const isHidden =
-      certGrid.classList.contains("hidden");
-
-
-    const text =
-      certToggle.querySelector("span");
-
-    const icon =
-      certToggle.querySelector("i");
-
-
-    if (isHidden) {
-
-      if (text) {
-        text.textContent =
-          "Show Certifications";
-      }
-
-      if (icon) {
-
-        icon.className =
-          "fa-solid fa-chevron-down";
-
-      }
-
-    } else {
-
-      if (text) {
-        text.textContent =
-          "Hide Certifications";
-      }
-
-      if (icon) {
-
-        icon.className =
-          "fa-solid fa-chevron-up";
-
-      }
-
-    }
-
-  });
-
-}
-
-
-/* =========================================================
-   CURRENT YEAR
-   ========================================================= */
-
-const currentYear =
-  document.getElementById("currentYear");
-
-
-if (currentYear) {
-
-  currentYear.textContent =
-    new Date().getFullYear();
-
-}
-
-
-/* =========================================================
-   ESCAPE KEY
-   ========================================================= */
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (event.key === "Escape") {
-
-      if (navLinks) {
-
-        navLinks.classList.remove("open");
-
-      }
-
-      if (menuBtn) {
-
-        menuBtn.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuBtn.innerHTML =
-          '<i class="fa-solid fa-bars"></i>';
-
-      }
-
-    }
-
-  }
-);
