@@ -1,58 +1,70 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+
   /* =====================================
      MOBILE NAVIGATION
   ===================================== */
 
-  const menuBtn = document.getElementById("menuBtn");
-  const navLinks = document.getElementById("navLinks");
+  const menuToggle = document.querySelector("#menuToggle");
+  const navLinks = document.querySelector("#navLinks");
 
-  if (menuBtn && navLinks) {
+  if (menuToggle && navLinks) {
 
-    menuBtn.setAttribute("aria-expanded", "false");
-
-    menuBtn.addEventListener("click", () => {
+    menuToggle.addEventListener("click", () => {
 
       const isOpen =
         navLinks.classList.toggle("open");
 
-      const icon =
-        menuBtn.querySelector("i");
-
-      if (icon) {
-        icon.className = isOpen
-          ? "fa-solid fa-xmark"
-          : "fa-solid fa-bars";
-      }
-
-      menuBtn.setAttribute(
+      menuToggle.setAttribute(
         "aria-expanded",
         String(isOpen)
       );
+
+      const icon =
+        menuToggle.querySelector("i");
+
+      if (icon) {
+
+        icon.classList.toggle(
+          "fa-bars",
+          !isOpen
+        );
+
+        icon.classList.toggle(
+          "fa-xmark",
+          isOpen
+        );
+
+      }
+
     });
 
 
-    /* Close after clicking link */
+    /* Close mobile menu after clicking a link */
 
-    navLinks.querySelectorAll("a")
-      .forEach(link => {
+    navLinks
+      .querySelectorAll("a")
+      .forEach((link) => {
 
         link.addEventListener("click", () => {
 
           navLinks.classList.remove("open");
 
-          const icon =
-            menuBtn.querySelector("i");
-
-          if (icon) {
-            icon.className =
-              "fa-solid fa-bars";
-          }
-
-          menuBtn.setAttribute(
+          menuToggle.setAttribute(
             "aria-expanded",
             "false"
           );
+
+          const icon =
+            menuToggle.querySelector("i");
+
+          if (icon) {
+
+            icon.classList.add("fa-bars");
+            icon.classList.remove("fa-xmark");
+
+          }
+
         });
 
       });
@@ -60,52 +72,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Close when clicking outside */
 
-    document.addEventListener("click", event => {
+    document.addEventListener("click", (event) => {
 
       if (
         !navLinks.contains(event.target) &&
-        !menuBtn.contains(event.target)
+        !menuToggle.contains(event.target)
       ) {
 
         navLinks.classList.remove("open");
 
-        const icon =
-          menuBtn.querySelector("i");
-
-        if (icon) {
-          icon.className =
-            "fa-solid fa-bars";
-        }
-
-        menuBtn.setAttribute(
+        menuToggle.setAttribute(
           "aria-expanded",
           "false"
         );
+
+        const icon =
+          menuToggle.querySelector("i");
+
+        if (icon) {
+
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-xmark");
+
+        }
+
       }
 
     });
 
 
-    /* Escape key */
+    /* Close with Escape */
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keydown", (event) => {
 
       if (event.key === "Escape") {
 
         navLinks.classList.remove("open");
 
-        const icon =
-          menuBtn.querySelector("i");
-
-        if (icon) {
-          icon.className =
-            "fa-solid fa-bars";
-        }
-
-        menuBtn.setAttribute(
+        menuToggle.setAttribute(
           "aria-expanded",
           "false"
         );
+
+        const icon =
+          menuToggle.querySelector("i");
+
+        if (icon) {
+
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-xmark");
+
+        }
+
       }
 
     });
@@ -118,81 +136,63 @@ document.addEventListener("DOMContentLoaded", () => {
   ===================================== */
 
   const skillCategories =
-    document.querySelectorAll(
-      ".skill-category"
-    );
+    document.querySelectorAll(".skill-category");
 
-  skillCategories.forEach(category => {
+  skillCategories.forEach((category) => {
 
-    const header =
-      category.querySelector(
-        ".skill-header"
-      );
+    const button =
+      category.querySelector(".skill-header");
 
-    if (!header) return;
+    if (!button) return;
 
-    header.setAttribute(
+    button.setAttribute(
       "aria-expanded",
       "false"
     );
 
+    button.addEventListener("click", () => {
 
-    header.addEventListener(
-      "click",
-      () => {
-
-        const wasOpen =
-          category.classList.contains(
-            "open"
-          );
+      const isCurrentlyOpen =
+        category.classList.contains("open");
 
 
-        /* Close everything */
+      /* Close all categories first */
 
-        skillCategories.forEach(
-          otherCategory => {
+      skillCategories.forEach((item) => {
 
-            otherCategory.classList.remove(
-              "open"
-            );
+        item.classList.remove("open");
 
-            const otherHeader =
-              otherCategory.querySelector(
-                ".skill-header"
-              );
+        const itemButton =
+          item.querySelector(".skill-header");
 
-            if (otherHeader) {
+        if (itemButton) {
 
-              otherHeader.setAttribute(
-                "aria-expanded",
-                "false"
-              );
-
-            }
-
-          }
-        );
-
-
-        /* Open selected category */
-
-        if (!wasOpen) {
-
-          category.classList.add(
-            "open"
-          );
-
-          header.setAttribute(
+          itemButton.setAttribute(
             "aria-expanded",
-            "true"
+            "false"
           );
 
         }
 
-      }
-    );
+      });
 
-  });
+
+      /* Open selected category */
+
+      if (!isCurrentlyOpen) {
+
+        category.classList.add("open");
+
+        button.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+      }
+
+    });
+
+  }
 
 
   /* =====================================
@@ -200,58 +200,75 @@ document.addEventListener("DOMContentLoaded", () => {
   ===================================== */
 
   const projectCards =
-    document.querySelectorAll(
-      ".project-card"
-    );
+    document.querySelectorAll(".project-card");
 
-  projectCards.forEach(card => {
+  projectCards.forEach((card) => {
 
     const button =
-      card.querySelector(
-        ".project-toggle"
-      );
+      card.querySelector(".project-toggle");
 
     if (!button) return;
-
-    const label =
-      button.querySelector("span");
-
 
     button.setAttribute(
       "aria-expanded",
       "false"
     );
 
+    button.addEventListener("click", () => {
 
-    button.addEventListener(
-      "click",
-      () => {
+      const isOpen =
+        card.classList.toggle("show-details");
+
+      button.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      button.textContent =
+        isOpen
+          ? "Hide Details"
+          : "View Details";
+
+    });
+
+  });
+
+
+  /* =====================================
+     CERTIFICATIONS ACCORDION
+  ===================================== */
+
+  const certifications =
+    document.querySelector(".certifications");
+
+  if (certifications) {
+
+    const certToggle =
+      certifications.querySelector(".cert-toggle");
+
+    if (certToggle) {
+
+      certToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+
+      certToggle.addEventListener("click", () => {
 
         const isOpen =
-          card.classList.toggle(
-            "show-details"
-          );
+          certifications.classList.toggle("open");
 
-
-        button.setAttribute(
+        certToggle.setAttribute(
           "aria-expanded",
           String(isOpen)
         );
 
+      });
 
-        if (label) {
+    }
 
-          label.textContent =
-            isOpen
-              ? "Hide Details"
-              : "View Details";
-
-        }
-
-      }
-    );
-
-  });
+  }
 
 
   /* =====================================
@@ -263,65 +280,53 @@ document.addEventListener("DOMContentLoaded", () => {
       "main section[id]"
     );
 
-  const navItems =
+  const navigationLinks =
     document.querySelectorAll(
       ".nav-links a"
     );
 
 
   if (
-    "IntersectionObserver" in window
+    sections.length &&
+    navigationLinks.length
   ) {
 
     const observer =
       new IntersectionObserver(
-        entries => {
+        (entries) => {
 
-          const visibleSection =
-            entries
-              .filter(
-                entry =>
-                  entry.isIntersecting
-              )
-              .sort(
-                (a, b) =>
-                  b.intersectionRatio -
-                  a.intersectionRatio
-              )[0];
+          entries.forEach((entry) => {
 
+            if (entry.isIntersecting) {
 
-          if (!visibleSection) return;
+              navigationLinks.forEach((link) => {
 
+                link.classList.remove("active");
 
-          navItems.forEach(link => {
+                if (
+                  link.getAttribute("href") ===
+                  `#${entry.target.id}`
+                ) {
 
-            const active =
-              link.getAttribute("href") ===
-              `#${visibleSection.target.id}`;
+                  link.classList.add("active");
 
-            link.classList.toggle(
-              "active",
-              active
-            );
+                }
+
+              });
+
+            }
 
           });
 
         },
         {
           rootMargin:
-            "-35% 0px -55% 0px",
-
-          threshold: [
-            0,
-            0.25,
-            0.5,
-            0.75
-          ]
+            "-25% 0px -65% 0px"
         }
       );
 
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
 
       observer.observe(section);
 
@@ -334,16 +339,14 @@ document.addEventListener("DOMContentLoaded", () => {
      COPYRIGHT YEAR
   ===================================== */
 
-  const year =
-    document.querySelector(
-      "[data-year]"
-    );
+  const yearElements =
+    document.querySelectorAll("[data-year]");
 
-  if (year) {
+  yearElements.forEach((element) => {
 
-    year.textContent =
+    element.textContent =
       new Date().getFullYear();
 
-  }
+  });
 
 });
