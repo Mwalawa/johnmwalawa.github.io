@@ -2,36 +2,50 @@ const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
 if (menuToggle && navMenu) {
+
     menuToggle.addEventListener("click", () => {
+
         navMenu.classList.toggle("open");
 
         const icon = menuToggle.querySelector("i");
 
         if (navMenu.classList.contains("open")) {
+
             icon.classList.remove("fa-bars");
             icon.classList.add("fa-xmark");
+
         } else {
+
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
+
         }
+
     });
 
+
     document.querySelectorAll(".nav-link").forEach(link => {
+
         link.addEventListener("click", () => {
+
             navMenu.classList.remove("open");
 
             const icon = menuToggle.querySelector("i");
 
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
+
         });
+
     });
+
 }
 
 
 /* Expandable sections */
 
 document.querySelectorAll(".expand-btn").forEach(button => {
+
     button.addEventListener("click", () => {
 
         const parent = button.closest(".expandable");
@@ -41,6 +55,7 @@ document.querySelectorAll(".expand-btn").forEach(button => {
         }
 
     });
+
 });
 
 
@@ -119,17 +134,22 @@ window.addEventListener("scroll", () => {
             window.scrollY >= sectionTop &&
             window.scrollY < sectionTop + sectionHeight
         ) {
+
             current = section.getAttribute("id");
+
         }
 
     });
+
 
     navLinks.forEach(link => {
 
         link.classList.remove("active");
 
         if (link.getAttribute("href") === `#${current}`) {
+
             link.classList.add("active");
+
         }
 
     });
