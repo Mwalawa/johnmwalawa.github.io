@@ -28,8 +28,6 @@ if (menuToggle && navMenu) {
     });
 
 
-    /* Close mobile menu after clicking a link */
-
     document.querySelectorAll(".nav-link").forEach(link => {
 
         link.addEventListener("click", () => {
@@ -58,9 +56,9 @@ document.querySelectorAll(".expand-btn").forEach(button => {
 
         const parent = button.closest(".expandable");
 
-        if (!parent) return;
-
-        parent.classList.toggle("open");
+        if (parent) {
+            parent.classList.toggle("open");
+        }
 
     });
 
@@ -102,8 +100,11 @@ document.querySelectorAll(".project-toggle").forEach(button => {
    CERTIFICATIONS
 ========================================================= */
 
-const certToggle = document.getElementById("certToggle");
-const certList = document.getElementById("certList");
+const certToggle =
+    document.getElementById("certToggle");
+
+const certList =
+    document.getElementById("certList");
 
 if (certToggle && certList) {
 
@@ -129,11 +130,14 @@ if (certToggle && certList) {
 
 
 /* =========================================================
-   ACTIVE NAVIGATION ON SCROLL
+   ACTIVE NAVIGATION LINK
 ========================================================= */
 
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navLinks =
+    document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
 
@@ -141,16 +145,20 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 150;
+        const sectionTop =
+            section.offsetTop - 150;
 
-        const sectionHeight = section.offsetHeight;
+        const sectionHeight =
+            section.offsetHeight;
 
         if (
             window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
+            window.scrollY <
+            sectionTop + sectionHeight
         ) {
 
-            current = section.getAttribute("id");
+            current =
+                section.getAttribute("id");
 
         }
 
@@ -161,7 +169,10 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if (link.getAttribute("href") === `#${current}`) {
+        if (
+            link.getAttribute("href") ===
+            `#${current}`
+        ) {
 
             link.classList.add("active");
 
@@ -176,7 +187,8 @@ window.addEventListener("scroll", () => {
    NAVBAR SHADOW ON SCROLL
 ========================================================= */
 
-const navbar = document.getElementById("navbar");
+const navbar =
+    document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
 
