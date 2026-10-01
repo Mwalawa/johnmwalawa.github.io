@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
   */
 
   const GOOGLE_SCRIPT_URL =
-    "YOUR_GOOGLE_APPS_SCRIPT_URL";
+  "https://script.google.com/macros/s/AKfycbwzs3343qCFRZIUY5KdnDA7bS8ZIkwmRkCc1p2XCr8MaePvOIqmUzchLFBLWO_jYvwt/exec";
 
 
   let visitor = {
