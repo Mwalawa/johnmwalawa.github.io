@@ -2116,146 +2116,209 @@ a:focus-visible {
   }
 
 }
-/* =========================
+/* =====================================
    CHAT MESSAGE COMPOSER
-========================= */
+===================================== */
 
 .message-input-wrapper {
   position: relative;
   width: 100%;
-  background: var(--white);
+  height: 110px;
+
   border: 1px solid var(--border);
   border-radius: 12px;
+
+  background: var(--white);
+
   overflow: hidden;
 }
 
-.message-input-wrapper textarea {
-  display: block;
-  width: 100%;
-  height: 105px;
-  min-height: 105px;
-  margin: 0;
-  padding: 14px 14px 48px 14px;
-  box-sizing: border-box;
 
-  border: none !important;
+/* Message text area */
+.message-input-wrapper textarea#messageText {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 13px 55px 48px 13px;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
   outline: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+
   resize: none;
 
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--text);
-  background: transparent;
+  box-shadow: none !important;
 }
 
-/* Bottom toolbar */
+.message-input-wrapper textarea#messageText:focus {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* =====================================
+   EMOJI + ATTACHMENT
+===================================== */
+
 .message-tools {
   position: absolute;
-  left: 10px;
-  bottom: 9px;
+
+  left: 9px;
+  bottom: 8px;
+
+  height: 34px;
 
   display: flex;
   align-items: center;
+
   gap: 2px;
 
-  height: 34px;
   z-index: 10;
 }
 
-/* Emoji + attachment */
-.message-tool {
-  width: 34px;
-  height: 34px;
 
-  margin: 0;
-  padding: 0;
+/* Both icons use exactly the same styling */
+.message-tool,
+.message-tools label.message-tool {
+  width: 34px !important;
+  height: 34px !important;
 
-  border: 0;
-  border-radius: 50%;
+  min-width: 34px;
+  min-height: 34px;
 
-  background: transparent;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  background: transparent !important;
+
   color: var(--muted);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  font-size: 17px;
+  line-height: 1;
 
   cursor: pointer;
 
-  font-size: 18px;
-  line-height: 1;
+  box-sizing: border-box;
 
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-.message-tool:hover {
-  background: #eef5fc;
+.message-tool:hover,
+.message-tools label.message-tool:hover {
+  background: #eef5fc !important;
   color: var(--blue);
 }
 
-/* Send button */
+.message-tool i {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: 17px;
+  line-height: 1;
+}
+
+
+/* =====================================
+   SEND BUTTON
+===================================== */
+
 .message-send {
   position: absolute;
-  right: 10px;
-  bottom: 9px;
 
-  width: 36px;
-  height: 36px;
+  right: 9px;
+  bottom: 8px;
 
-  margin: 0;
-  padding: 0;
+  width: 36px !important;
+  height: 36px !important;
 
-  border: none;
-  border-radius: 50%;
+  min-width: 36px;
+  min-height: 36px;
 
-  background: var(--blue);
-  color: #ffffff;
+  margin: 0 !important;
+  padding: 0 !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: none !important;
+  border-radius: 50% !important;
+
+  background: var(--blue) !important;
+
+  color: var(--white) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
   cursor: pointer;
 
   font-size: 14px;
   line-height: 1;
 
+  box-sizing: border-box;
+
   z-index: 10;
 
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .message-send:hover {
-  background: var(--blue-dark);
+  background: var(--blue-dark) !important;
+
   transform: scale(1.05);
 }
 
-.message-send i,
-.message-tool i {
-  margin: 0;
-  padding: 0;
+.message-send i {
+  margin: 0 !important;
+  padding: 0 !important;
+
   line-height: 1;
 }
 
-/* =========================
+
+/* =====================================
    EMOJI PICKER
-========================= */
+===================================== */
 
 .emoji-picker {
   position: absolute;
-  left: 10px;
-  bottom: 52px;
+
+  left: 9px;
+  bottom: 51px;
 
   width: 230px;
-  padding: 10px;
+
+  padding: 9px;
 
   display: grid;
+
   grid-template-columns: repeat(8, 1fr);
+
   gap: 3px;
 
-  background: #ffffff;
+  background: var(--white);
+
   border: 1px solid var(--border);
+
   border-radius: 10px;
 
   box-shadow: var(--shadow);
@@ -2271,6 +2334,7 @@ a:focus-visible {
   padding: 0;
 
   border: none;
+
   border-radius: 6px;
 
   background: transparent;
@@ -2280,7 +2344,6 @@ a:focus-visible {
   justify-content: center;
 
   font-size: 17px;
-  line-height: 1;
 
   cursor: pointer;
 }
@@ -2293,31 +2356,39 @@ a:focus-visible {
   display: none;
 }
 
-/* =========================
+
+/* =====================================
    ATTACHMENT PREVIEW
-========================= */
+===================================== */
 
 .attachment-info {
+  width: 100%;
+
+  margin-top: 8px;
+  padding: 7px 10px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  width: 100%;
+  gap: 8px;
+
   box-sizing: border-box;
 
-  margin-top: 8px;
-  padding: 8px 10px;
-
-  background: #f4f8fc;
   border: 1px solid var(--border);
+
   border-radius: 8px;
+
+  background: var(--light);
 
   font-size: 12px;
 }
 
 .attachment-info span {
   overflow: hidden;
+
   text-overflow: ellipsis;
+
   white-space: nowrap;
 }
 
@@ -2329,12 +2400,12 @@ a:focus-visible {
   padding: 0;
 
   border: none;
+
   background: transparent;
 
   color: #d33;
 
   font-size: 18px;
-  line-height: 1;
 
   cursor: pointer;
 
