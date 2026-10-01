@@ -1137,73 +1137,105 @@ RESPONSIVE
 }
 
 
-/* =====================================
-   CONTACT
-===================================== */
+/* =========================
+   LET'S CONNECT
+========================= */
 
 .contact-section {
-  background: var(--navy);
-
-  color: var(--white);
+  padding: 80px 0;
+  background: var(--light);
+  text-align: center;
 }
 
-.contact-section .section-heading p {
-  color: rgba(255, 255, 255, 0.65);
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.contact-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 20px;
+.contact-container .section-label {
+  display: inline-block;
+  margin-bottom: 14px;
 }
 
-.contact-box {
-  padding: 30px;
+.contact-container h2 {
+  margin: 0 auto 28px;
+  max-width: 650px;
+  font-size: 32px;
+  line-height: 1.3;
+  color: var(--navy);
+}
 
+.contact-actions {
   display: flex;
-  flex-direction: column;
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  border-radius: var(--radius);
-
-  background: rgba(255, 255, 255, 0.03);
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
 }
 
-.contact-box:hover {
-  transform: translateY(-4px);
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
 
-  background: rgba(255, 255, 255, 0.06);
+  min-width: 140px;
+  padding: 12px 20px;
+
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.2s ease;
 }
 
-.contact-box > i {
-  margin-bottom: 20px;
-
-  color: var(--blue);
-
-  font-size: 24px;
-}
-
-.contact-box span {
-  margin-bottom: 5px;
-
-  color: rgba(255, 255, 255, 0.5);
-
-  font-size: 12px;
-}
-
-.contact-box strong {
+.contact-chat-btn {
+  border: none;
+  background: var(--blue);
   color: var(--white);
+}
 
-  font-size: 14px;
+.contact-chat-btn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+}
 
-  word-break: break-word;
+.contact-linkedin-btn {
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--navy);
+}
+
+.contact-linkedin-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-2px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .contact-section {
+    padding: 65px 0;
+  }
+
+  .contact-container h2 {
+    font-size: 27px;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+
 }
 
 
