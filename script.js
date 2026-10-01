@@ -354,4 +354,630 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+
+  /* =====================================
+     PORTFOLIO CHATBOT
+  ===================================== */
+
+  const chatButton =
+    document.querySelector("#chatButton");
+
+  const chatWindow =
+    document.querySelector("#chatWindow");
+
+  const chatClose =
+    document.querySelector("#chatClose");
+
+  const visitorForm =
+    document.querySelector("#visitorForm");
+
+  const visitorName =
+    document.querySelector("#visitorName");
+
+  const visitorEmail =
+    document.querySelector("#visitorEmail");
+
+  const chatMessages =
+    document.querySelector("#chatMessages");
+
+  const chatOptions =
+    document.querySelector("#chatOptions");
+
+  const messageForm =
+    document.querySelector("#messageForm");
+
+  const messageText =
+    document.querySelector("#messageText");
+
+
+  /*
+     Replace this with your deployed
+     Google Apps Script Web App URL.
+  */
+
+  const GOOGLE_SCRIPT_URL =
+    "YOUR_GOOGLE_APPS_SCRIPT_URL";
+
+
+  let visitor = {
+    name: "",
+    email: ""
+  };
+
+
+  /*
+     Open chatbot
+  */
+
+  if (chatButton && chatWindow) {
+
+    chatButton.addEventListener("click", () => {
+
+      chatWindow.classList.add("open");
+
+      chatButton.classList.add("hidden");
+
+      if (visitor.name) {
+
+        showChatOptions();
+
+      } else {
+
+        visitorName.focus();
+
+      }
+
+    });
+
+  }
+
+
+  /*
+     Close chatbot
+  */
+
+  if (chatClose) {
+
+    chatClose.addEventListener("click", closeChat);
+
+  }
+
+
+  function closeChat() {
+
+    if (chatWindow) {
+
+      chatWindow.classList.remove("open");
+
+    }
+
+    if (chatButton) {
+
+      chatButton.classList.remove("hidden");
+
+    }
+
+  }
+
+
+  /*
+     Close with Escape
+  */
+
+  document.addEventListener("keydown", (event) => {
+
+    if (
+      event.key === "Escape" &&
+      chatWindow &&
+      chatWindow.classList.contains("open")
+    ) {
+
+      closeChat();
+
+    }
+
+  });
+
+
+  /*
+     Visitor details
+  */
+
+  if (visitorForm) {
+
+    visitorForm.addEventListener("submit", (event) => {
+
+      event.preventDefault();
+
+
+      const name =
+        visitorName.value.trim();
+
+      const email =
+        visitorEmail.value.trim();
+
+
+      if (!name || !email) {
+
+        return;
+
+      }
+
+
+      if (!isValidEmail(email)) {
+
+        alert("Please enter a valid email address.");
+
+        visitorEmail.focus();
+
+        return;
+
+      }
+
+
+      visitor.name = name;
+
+      visitor.email = email;
+
+
+      visitorForm.classList.add("hidden");
+
+
+      addBotMessage(
+        `Thanks, ${escapeHtml(name)}! 👋`
+      );
+
+
+      setTimeout(() => {
+
+        addBotMessage(
+          "How can I help you today?"
+        );
+
+        showChatOptions();
+
+      }, 400);
+
+    });
+
+  }
+
+
+  /*
+     Show chatbot options
+  */
+
+  function showChatOptions() {
+
+    if (!chatOptions) return;
+
+    chatOptions.classList.remove("hidden");
+
+  }
+
+
+  /*
+     Quick option buttons
+  */
+
+  document.addEventListener("click", (event) => {
+
+    const option =
+      event.target.closest(".chat-option");
+
+    if (!option) return;
+
+
+    const action =
+      option.dataset.action;
+
+
+    handleChatAction(action);
+
+  });
+
+
+  /*
+     Handle chatbot actions
+  */
+
+  function handleChatAction(action) {
+
+    if (!chatMessages) return;
+
+
+    if (action === "about") {
+
+      addUserMessage("Tell me about John.");
+
+      addBotMessage(
+        "John Anderson Mwalawa is an ICT professional with experience in IT support, systems administration, business applications, and technology-driven project support."
+      );
+
+    }
+
+
+    else if (action === "skills") {
+
+      addUserMessage("What are John's skills?");
+
+      addBotMessage(
+        "John's skills include IT support, systems administration, Active Directory, Microsoft 365, ERP support, networking, troubleshooting, system deployment, testing, ICT operations, cybersecurity, and IT project support."
+      );
+
+    }
+
+
+    else if (action === "experience") {
+
+      addUserMessage("What experience does John have?");
+
+      addBotMessage(
+        "John has experience across IT support, ICT operations, systems administration, project support, freelance IT support, and AI data annotation, review and quality assurance."
+      );
+
+    }
+
+
+    else if (action === "projects") {
+
+      addUserMessage("What projects has John worked on?");
+
+      addBotMessage(
+        "His portfolio includes Zetech University ICT Support, ERP & Business Systems Support, IT Support & Infrastructure, and AI Data Annotation & QA."
+      );
+
+    }
+
+
+    else if (action === "certifications") {
+
+      addUserMessage("What certifications does John have?");
+
+      addBotMessage(
+        "John has training and certifications including Cisco DevNet Associate, CyberOps Associate, Network Defense, Endpoint Security, Agile Project Management, Business Analysis & Process Management, DevOps, Chatbot Development, and other professional programs."
+      );
+
+    }
+
+
+    else if (action === "cv") {
+
+      addUserMessage("I'd like to view John's CV.");
+
+      addBotMessage(
+        "Sure! You can view or download John's CV below."
+      );
+
+
+      addChatLink(
+        "📄 Download CV",
+        "John%20Mwalawa%20CV_.pdf"
+      );
+
+    }
+
+
+    else if (action === "contact") {
+
+      addUserMessage("I want to contact John.");
+
+      addBotMessage(
+        "You can contact John directly by email, phone, LinkedIn, or send him a message through this chatbot."
+      );
+
+
+      addChatLink(
+        "✉️ Email John",
+        "mailto:johnmwalawa@gmail.com"
+      );
+
+    }
+
+
+    else if (action === "message") {
+
+      addUserMessage("I want to send John a message.");
+
+      if (chatOptions) {
+
+        chatOptions.classList.add("hidden");
+
+      }
+
+      const messageBox =
+        document.querySelector("#messageBox");
+
+      if (messageBox) {
+
+        messageBox.classList.remove("hidden");
+
+        messageText.focus();
+
+      }
+
+    }
+
+  }
+
+
+  /*
+     Send message to Google Apps Script
+  */
+
+  if (messageForm) {
+
+    messageForm.addEventListener("submit", async (event) => {
+
+      event.preventDefault();
+
+
+      const message =
+        messageText.value.trim();
+
+
+      if (!message) return;
+
+
+      if (!visitor.name || !visitor.email) {
+
+        addBotMessage(
+          "Please provide your name and email first."
+        );
+
+        return;
+
+      }
+
+
+      const submitButton =
+        messageForm.querySelector(
+          "button[type='submit']"
+        );
+
+
+      if (submitButton) {
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+          "Sending...";
+
+      }
+
+
+      try {
+
+        const response =
+          await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "text/plain;charset=utf-8"
+              },
+
+              body: JSON.stringify({
+                name: visitor.name,
+                email: visitor.email,
+                message: message,
+                page: window.location.href
+              })
+            }
+          );
+
+
+        const result =
+          await response.json();
+
+
+        if (result.success) {
+
+          messageText.value = "";
+
+          const messageBox =
+            document.querySelector("#messageBox");
+
+          if (messageBox) {
+
+            messageBox.classList.add("hidden");
+
+          }
+
+
+          addBotMessage(
+            "✅ Your message has been sent successfully. John will be able to reach you using the email address you provided. Thank you!"
+          );
+
+
+          setTimeout(() => {
+
+            showChatOptions();
+
+          }, 500);
+
+        }
+
+        else {
+
+          throw new Error(
+            result.message ||
+            "Message could not be sent."
+          );
+
+        }
+
+      }
+
+      catch (error) {
+
+        console.error(error);
+
+        addBotMessage(
+          "Sorry, there was a problem sending your message. Please try again or contact John directly by email."
+        );
+
+      }
+
+      finally {
+
+        if (submitButton) {
+
+          submitButton.disabled = false;
+
+          submitButton.textContent =
+            "Send Message";
+
+        }
+
+      }
+
+    });
+
+  }
+
+
+  /*
+     Add bot message
+  */
+
+  function addBotMessage(message) {
+
+    if (!chatMessages) return;
+
+
+    const bubble =
+      document.createElement("div");
+
+    bubble.className =
+      "chat-message bot-message";
+
+
+    bubble.innerHTML =
+      message;
+
+
+    chatMessages.appendChild(bubble);
+
+
+    scrollChat();
+
+  }
+
+
+  /*
+     Add visitor message
+  */
+
+  function addUserMessage(message) {
+
+    if (!chatMessages) return;
+
+
+    const bubble =
+      document.createElement("div");
+
+    bubble.className =
+      "chat-message user-message";
+
+
+    bubble.textContent =
+      message;
+
+
+    chatMessages.appendChild(bubble);
+
+
+    scrollChat();
+
+  }
+
+
+  /*
+     Add link inside chatbot
+  */
+
+  function addChatLink(text, href) {
+
+    if (!chatMessages) return;
+
+
+    const link =
+      document.createElement("a");
+
+    link.className =
+      "chat-action-link";
+
+    link.href =
+      href;
+
+    link.textContent =
+      text;
+
+
+    if (
+      href.startsWith("http")
+    ) {
+
+      link.target = "_blank";
+
+      link.rel = "noopener";
+
+    }
+
+
+    chatMessages.appendChild(link);
+
+
+    scrollChat();
+
+  }
+
+
+  /*
+     Scroll chatbot to latest message
+  */
+
+  function scrollChat() {
+
+    if (chatMessages) {
+
+      chatMessages.scrollTop =
+        chatMessages.scrollHeight;
+
+    }
+
+  }
+
+
+  /*
+     Validate email
+  */
+
+  function isValidEmail(email) {
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  }
+
+
+  /*
+     Prevent unsafe HTML in visitor name
+  */
+
+  function escapeHtml(text) {
+
+    const div =
+      document.createElement("div");
+
+    div.textContent =
+      text;
+
+    return div.innerHTML;
+
+  }
+
+
 });
