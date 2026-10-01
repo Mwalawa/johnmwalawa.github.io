@@ -1470,6 +1470,222 @@
 
 </footer>
 
+<!-- =========================
+     CHATBOT
+========================= -->
+
+<button
+  id="chatButton"
+  class="chat-button"
+  type="button"
+  aria-label="Open chat"
+  aria-expanded="false"
+  aria-controls="chatWindow"
+>
+  <i class="fa-solid fa-comments"></i>
+  <span>Let's Chat</span>
+</button>
+
+<div
+  id="chatWindow"
+  class="chat-window"
+  role="dialog"
+  aria-label="Chat with John's virtual assistant"
+  aria-hidden="true"
+>
+  <!-- Chat Header -->
+  <div class="chat-header">
+
+    <div class="chat-header-info">
+      <div class="chat-avatar">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+
+      <div class="chat-header-text">
+        <strong>John's Virtual Assistant</strong>
+        <span>Online</span>
+      </div>
+    </div>
+
+    <button
+      id="chatClose"
+      class="chat-close"
+      type="button"
+      aria-label="Close chat"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+  <!-- Chat Body -->
+  <div class="chat-body">
+
+    <div id="chatMessages" class="chat-messages">
+
+      <!-- Initial Bot Message -->
+      <div class="chat-message bot-message">
+        Hi! 👋 I'm John's virtual assistant.
+        <br><br>
+        Before we continue, may I get your name and email?
+      </div>
+
+      <!-- Visitor Details -->
+      <form id="visitorForm" class="visitor-form">
+
+        <h4>Let's get to know you</h4>
+
+        <p>
+          This helps John reach you if a follow-up is needed.
+        </p>
+
+        <div class="chat-field">
+          <label for="visitorName">Name</label>
+
+          <input
+            id="visitorName"
+            name="name"
+            type="text"
+            placeholder="Your name"
+            required
+            autocomplete="name"
+          >
+        </div>
+
+        <div class="chat-field">
+          <label for="visitorEmail">Email</label>
+
+          <input
+            id="visitorEmail"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <button
+          class="chat-submit"
+          type="submit"
+        >
+          Continue
+        </button>
+
+      </form>
+
+      <!-- Quick Options -->
+      <div id="chatOptions" class="chat-options hidden">
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="about"
+        >
+          <i class="fa-solid fa-user"></i>
+          About John
+        </button>
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="skills"
+        >
+          <i class="fa-solid fa-gears"></i>
+          Skills
+        </button>
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="experience"
+        >
+          <i class="fa-solid fa-briefcase"></i>
+          Experience
+        </button>
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="projects"
+        >
+          <i class="fa-solid fa-folder-open"></i>
+          Projects
+        </button>
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="certifications"
+        >
+          <i class="fa-solid fa-certificate"></i>
+          Certifications
+        </button>
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="cv"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+          Download CV
+        </button>
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="contact"
+        >
+          <i class="fa-solid fa-address-card"></i>
+          Contact John
+        </button>
+
+        <button
+          type="button"
+          class="chat-option"
+          data-action="message"
+        >
+          <i class="fa-solid fa-paper-plane"></i>
+          Send John a Message
+        </button>
+
+      </div>
+
+      <!-- Send Message -->
+      <div id="messageBox" class="message-box hidden">
+
+        <h4>✉️ Send John a Message</h4>
+
+        <form id="messageForm">
+
+          <div class="chat-field">
+            <label for="messageText">Message</label>
+
+            <textarea
+              id="messageText"
+              required
+              placeholder="Write your message..."
+              rows="5"
+            ></textarea>
+          </div>
+
+          <button
+            class="chat-submit"
+            type="submit"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Message
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 <script src="script.js"></script>
 
