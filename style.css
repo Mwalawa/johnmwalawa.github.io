@@ -868,6 +868,7 @@ button {
 
 .education-section {
   background: var(--white);
+  padding-top: 50px;
 }
 
 .education-grid {
