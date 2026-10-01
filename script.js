@@ -981,3 +981,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+// =========================
+// EMOJI PICKER
+// =========================
+
+const emojiButton = document.getElementById("emojiButton");
+const emojiPicker = document.getElementById("emojiPicker");
+const messageText = document.getElementById("messageText");
+
+if (emojiButton && emojiPicker && messageText) {
+
+  emojiButton.addEventListener("click", function () {
+    emojiPicker.classList.toggle("hidden");
+  });
+
+  emojiPicker.querySelectorAll("button").forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const emoji = button.textContent;
+
+      const start = messageText.selectionStart;
+      const end = messageText.selectionEnd;
+
+      messageText.value =
+        messageText.value.substring(0, start) +
+        emoji +
+        messageText.value.substring(end);
+
+      messageText.focus();
+
+      messageText.selectionStart =
+        messageText.selectionEnd =
+        start + emoji.length;
+
+      emojiPicker.classList.add("hidden");
+    });
+
+  });
+}
+
+
+// =========================
+// FILE ATTACHMENT
+// =========================
+
+const fileAttachment = document.getElementById("fileAttachment");
+const attachmentInfo = document.getElementById("attachmentInfo");
+const attachmentName = document.getElementById("attachmentName");
+const removeAttachment = document.getElementById("removeAttachment");
+
+let selectedFile = null;
+
+if (fileAttachment) {
+
+  fileAttachment.addEventListener("change", function () {
+
+    const file = fileAttachment.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    // Maximum file size: 5 MB
+    const maxSize = 5 * 1024 * 1024;
+
+    if (file.size > maxSize) {
+
+      alert("Please choose a file smaller than 5 MB.");
+
+      fileAttachment.value = "";
+      selectedFile = null;
+
+      if (attachmentInfo) {
+        attachmentInfo.classList.add("hidden");
+      }
+
+      return;
+    }
+
+    selectedFile = file;
+
+    attachmentName.textContent =
+      "📎 " + file.name;
+
+    attachmentInfo.classList.remove("hidden");
+  });
+}
+
+
+// =========================
+// REMOVE ATTACHMENT
+// =========================
+
+if (removeAttachment) {
+
+  removeAttachment.addEventListener("click", function () {
+
+    selectedFile = null;
+
+    fileAttachment.value = "";
+
+    attachmentInfo.classList.add("hidden");
+
+  });
+}
