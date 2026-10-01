@@ -273,14 +273,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-// Contact section "Let's Chat" button
-const contactChatButton = document.getElementById("contactChatButton");
-
-if (contactChatButton && chatButton) {
-  contactChatButton.addEventListener("click", function () {
-    chatButton.click();
-  });
-}
   
   /* =====================================
      ACTIVE NAVIGATION
@@ -414,31 +406,48 @@ if (contactChatButton && chatButton) {
 
 
   /*
-     Open chatbot
-  */
+   Open chatbot
+*/
 
-  if (chatButton && chatWindow) {
+if (chatButton && chatWindow) {
 
-    chatButton.addEventListener("click", () => {
+  chatButton.addEventListener("click", () => {
 
-      chatWindow.classList.add("open");
+    chatWindow.classList.add("open");
 
-      chatButton.classList.add("hidden");
+    chatButton.classList.add("hidden");
 
-      if (visitor.name) {
+    if (visitor.name) {
 
-        showChatOptions();
+      showChatOptions();
 
-      } else {
+    } else {
 
-        visitorName.focus();
+      visitorName.focus();
 
-      }
+    }
 
-    });
+  });
 
-  }
+}
 
+
+/*
+   Contact section "Let's Chat"
+*/
+
+const contactChatButton =
+  document.querySelector("#contactChatButton");
+
+if (contactChatButton && chatButton) {
+
+  contactChatButton.addEventListener("click", () => {
+
+    chatButton.click();
+
+  });
+
+}
 
   /*
      Close chatbot
