@@ -374,7 +374,7 @@ button {
 
 
 /* =========================
-ABOUT ME
+   ABOUT & SKILLS
 ========================= */
 
 .about-section {
@@ -389,13 +389,14 @@ ABOUT ME
   padding: 0 24px;
 
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   column-gap: 80px;
   align-items: start;
 }
 
+
 /* =========================
-LEFT - ABOUT ME
+   ABOUT ME
 ========================= */
 
 .about-left {
@@ -424,49 +425,117 @@ LEFT - ABOUT ME
 
 
 /* =========================
-RIGHT - EXPERTISE
+   SKILLS
 ========================= */
 
 .about-right {
   grid-column: 2;
   grid-row: 1;
-
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-
-  padding-top: 0;
 }
 
-.about-right .expertise-item {
-  margin: 0;
-  padding: 0;
+.about-right .section-label {
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
-.about-right .expertise-item h3 {
-  font-size: 20px;
+.about-right > h2 {
+  font-size: 28px;
   line-height: 1.3;
-  margin: 0 0 8px;
+  margin: 0 0 24px;
   color: var(--navy);
 }
 
-.about-right .expertise-item p {
-  margin: 0;
-  color: var(--muted);
+
+/* SKILL ITEM */
+
+.skill-item {
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* SKILL HEADER */
+
+.skill-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 0;
+
+  border: none;
+  background: transparent;
+
+  color: var(--navy);
+
+  font-family: inherit;
   font-size: 15px;
+  font-weight: 600;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.skill-header:hover {
+  color: var(--blue);
+}
+
+.skill-header i {
+  font-size: 12px;
+  color: var(--muted);
+
+  transition: transform 0.25s ease;
+}
+
+
+/* SKILL CONTENT */
+
+.skill-content {
+  max-height: 0;
+  overflow: hidden;
+
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
+}
+
+.skill-content p {
+  margin: 0;
+  padding: 0 30px 16px 0;
+
+  color: var(--muted);
+  font-size: 14px;
   line-height: 1.7;
 }
 
 
+/* OPEN STATE */
+
+.skill-item.active .skill-content {
+  max-height: 150px;
+}
+
+.skill-item.active .skill-header i {
+  transform: rotate(180deg);
+}
+
+.skill-item.active .skill-header {
+  color: var(--blue);
+}
+
+
 /* =========================
-RESPONSIVE
+   RESPONSIVE
 ========================= */
 
 @media (max-width: 900px) {
 
   .about-layout {
     grid-template-columns: 1fr;
-    row-gap: 45px;
+    row-gap: 55px;
   }
 
   .about-left {
@@ -480,6 +549,7 @@ RESPONSIVE
   }
 
 }
+
 
 @media (max-width: 600px) {
 
@@ -495,115 +565,14 @@ RESPONSIVE
     font-size: 30px;
   }
 
-}
+  .about-right > h2 {
+    font-size: 26px;
+  }
 
+  .skill-header {
+    padding: 15px 0;
+  }
 
-/* =====================================
-   SKILLS
-===================================== */
-
-.skills-section {
-  background: var(--light);
-}
-
-.skills-list {
-  display: flex;
-  flex-direction: column;
-
-  gap: 12px;
-}
-
-.skill-category {
-  overflow: hidden;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius);
-
-  background: var(--white);
-}
-
-.skill-header {
-  width: 100%;
-
-  padding: 22px 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  border: 0;
-
-  background: transparent;
-
-  color: var(--text);
-
-  cursor: pointer;
-
-  text-align: left;
-}
-
-.skill-title {
-  display: flex;
-  align-items: center;
-
-  gap: 15px;
-
-  font-weight: 600;
-}
-
-.skill-title i {
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 8px;
-
-  background: rgba(8, 127, 245, 0.08);
-
-  color: var(--blue);
-}
-
-.skill-arrow {
-  color: var(--muted);
-
-  transition: transform 0.25s ease;
-}
-
-.skill-category.open .skill-arrow {
-  transform: rotate(180deg);
-}
-
-.skill-details {
-  display: none;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  padding: 0 25px 25px;
-}
-
-.skill-category.open .skill-details {
-  display: flex;
-}
-
-.skill-details span {
-  padding: 7px 12px;
-
-  border: 1px solid var(--border);
-
-  border-radius: 30px;
-
-  background: var(--light);
-
-  color: var(--muted);
-
-  font-size: 12px;
-  font-weight: 500;
 }
 
 
