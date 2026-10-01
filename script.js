@@ -702,143 +702,253 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /*
-     Send message to Google Apps Script
-  */
+   Send message to Google Apps Script
+*/
 
-  if (messageForm) {
+if (messageForm) {
 
-    messageForm.addEventListener("submit", async (event) => {
+  messageForm.addEventListener("submit", async (event) => {
 
-      event.preventDefault();
+    event.preventDefault();
 
+    const message =
+      messageText.value.trim();
 
-      const message =
-        messageText.value.trim();
+    if (!message) return;
 
+    if (!visitor.name || !visitor.email) {
 
-      if (!message) return;
+      addBotMessage(
+        "Please provide your name and email first."
+      );
 
+      return;
 
-      if (!visitor.name || !visitor.email) {
+    }
 
-        addBotMessage(
-          "Please provide your name and email first."
-        );
+    const submitButton =
+      messageForm.querySelector(
+        "button[type='submit']"
+      );
 
-        return;
+    if (submitButton) {
 
+      submitButton.disabled = true;
+
+      submitButton.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+    }
+
+    try {
+
+      /*
+         Prepare attachment
+      */
+
+      let attachmentData = "";
+      let attachmentFileName = "";
+      let attachmentFileType = "";
+
+      if (selectedFile) {
+
+        attachmentFileName =
+          selectedFile.name;
+
+        attachmentFileType =
+          selectedFile.type ||
+          "application/octet-stream";
+
+        attachmentData =
+          await fileToBase64(selectedFile);
       }
 
 
-      const submitButton =
-        messageForm.querySelector(
-          "button[type='submit']"
+      /*
+         Send message + optional attachment
+         to Google Apps Script
+      */
+
+      const response =
+        await fetch(
+          GOOGLE_SCRIPT_URL,
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify({
+
+              name:
+                visitor.name,
+
+              email:
+                visitor.email,
+
+              message:
+                message,
+
+              page:
+                window.location.href,
+
+              attachmentName:
+                attachmentFileName,
+
+              attachmentType:
+                attachmentFileType,
+
+              attachmentData:
+                attachmentData
+
+            })
+          }
         );
 
+
+      const result =
+        await response.json();
+
+
+      if (result.success) {
+
+        /*
+           Clear message
+        */
+
+        messageText.value = "";
+
+
+        /*
+           Clear attachment
+        */
+
+        selectedFile = null;
+
+        if (fileAttachment) {
+
+          fileAttachment.value = "";
+
+        }
+
+        if (attachmentInfo) {
+
+          attachmentInfo.classList.add(
+            "hidden"
+          );
+
+        }
+
+
+        /*
+           Hide message box
+        */
+
+        const messageBox =
+          document.querySelector(
+            "#messageBox"
+          );
+
+        if (messageBox) {
+
+          messageBox.classList.add(
+            "hidden"
+          );
+
+        }
+
+
+        /*
+           Success message
+        */
+
+        addBotMessage(
+          "✅ Your message has been sent successfully. John will be able to reach you using the email address you provided. Thank you!"
+        );
+
+
+        setTimeout(() => {
+
+          showChatOptions();
+
+        }, 500);
+
+      }
+
+      else {
+
+        throw new Error(
+          result.message ||
+          "Message could not be sent."
+        );
+
+      }
+
+    }
+
+    catch (error) {
+
+      console.error(error);
+
+      addBotMessage(
+        "Sorry, there was a problem sending your message. Please try again or contact John directly by email."
+      );
+
+    }
+
+    finally {
 
       if (submitButton) {
 
-        submitButton.disabled = true;
+        submitButton.disabled = false;
 
-        submitButton.textContent =
-          "Sending...";
-
-      }
-
-
-      try {
-
-        const response =
-          await fetch(
-            GOOGLE_SCRIPT_URL,
-            {
-              method: "POST",
-
-              headers: {
-                "Content-Type":
-                  "text/plain;charset=utf-8"
-              },
-
-              body: JSON.stringify({
-                name: visitor.name,
-                email: visitor.email,
-                message: message,
-                page: window.location.href
-              })
-            }
-          );
-
-
-        const result =
-          await response.json();
-
-
-        if (result.success) {
-
-          messageText.value = "";
-
-          const messageBox =
-            document.querySelector("#messageBox");
-
-          if (messageBox) {
-
-            messageBox.classList.add("hidden");
-
-          }
-
-
-          addBotMessage(
-            "✅ Your message has been sent successfully. John will be able to reach you using the email address you provided. Thank you!"
-          );
-
-
-          setTimeout(() => {
-
-            showChatOptions();
-
-          }, 500);
-
-        }
-
-        else {
-
-          throw new Error(
-            result.message ||
-            "Message could not be sent."
-          );
-
-        }
+        submitButton.innerHTML =
+          '<i class="fa-solid fa-paper-plane"></i> Send Message';
 
       }
 
-      catch (error) {
+    }
 
-        console.error(error);
+  });
 
-        addBotMessage(
-          "Sorry, there was a problem sending your message. Please try again or contact John directly by email."
-        );
+}
 
-      }
+/*
+   Convert selected file to Base64
+*/
 
-      finally {
+function fileToBase64(file) {
 
-        if (submitButton) {
+  return new Promise((resolve, reject) => {
 
-          submitButton.disabled = false;
+    const reader =
+      new FileReader();
 
-          submitButton.textContent =
-            "Send Message";
+    reader.onload = () => {
 
-        }
+      resolve(
+        reader.result
+      );
 
-      }
+    };
 
-    });
+    reader.onerror = () => {
 
-  }
+      reject(
+        new Error(
+          "Could not read the attachment."
+        )
+      );
 
+    };
 
+    reader.readAsDataURL(file);
+
+  });
+
+}
   /*
      Add bot message
   */
