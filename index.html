@@ -1597,35 +1597,114 @@
 </div>
 
       <!-- Send Message -->
-      <div id="messageBox" class="message-box hidden">
+<div id="messageBox" class="message-box hidden">
 
-        <h4>✉️ Send John a Message</h4>
+  <h4>✉️ Send John a Message</h4>
 
-        <form id="messageForm">
+  <form id="messageForm">
 
-          <div class="chat-field">
-            <label for="messageText">Message</label>
+    <div class="chat-field">
+      <label for="messageText">Message</label>
 
-            <textarea
-              id="messageText"
-              required
-              placeholder="Write your message..."
-              rows="5"
-            ></textarea>
-          </div>
+      <div class="message-input-wrapper">
 
+        <textarea
+          id="messageText"
+          required
+          placeholder="Write your message..."
+          rows="5"
+        ></textarea>
+
+        <div class="message-tools">
+
+          <!-- Emoji -->
           <button
-            class="chat-submit"
-            type="submit"
+            type="button"
+            id="emojiButton"
+            class="message-tool"
+            title="Add emoji"
+            aria-label="Add emoji"
           >
-            <i class="fa-solid fa-paper-plane"></i>
-            Send Message
+            😊
           </button>
 
-        </form>
+          <!-- Attachment -->
+          <label
+            for="fileAttachment"
+            class="message-tool"
+            title="Attach a file"
+            aria-label="Attach a file"
+          >
+            📎
+          </label>
+
+          <input
+            type="file"
+            id="fileAttachment"
+            hidden
+            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.zip"
+          >
+
+        </div>
 
       </div>
 
+      <!-- Emoji Picker -->
+      <div id="emojiPicker" class="emoji-picker hidden">
+
+        <button type="button">😀</button>
+        <button type="button">😃</button>
+        <button type="button">😄</button>
+        <button type="button">😁</button>
+        <button type="button">😆</button>
+        <button type="button">😅</button>
+        <button type="button">😂</button>
+        <button type="button">🤣</button>
+        <button type="button">😊</button>
+        <button type="button">😎</button>
+        <button type="button">😍</button>
+        <button type="button">🥰</button>
+        <button type="button">🤝</button>
+        <button type="button">👍</button>
+        <button type="button">👏</button>
+        <button type="button">🙏</button>
+        <button type="button">🔥</button>
+        <button type="button">💯</button>
+        <button type="button">❤️</button>
+        <button type="button">💼</button>
+        <button type="button">📧</button>
+        <button type="button">💻</button>
+        <button type="button">🚀</button>
+        <button type="button">🎯</button>
+      </div>
+
+      <!-- Selected Attachment -->
+      <div id="attachmentInfo" class="attachment-info hidden">
+        <span id="attachmentName"></span>
+
+        <button
+          type="button"
+          id="removeAttachment"
+          title="Remove attachment"
+          aria-label="Remove attachment"
+        >
+          ×
+        </button>
+      </div>
+
+    </div>
+
+    <button
+      class="chat-submit"
+      type="submit"
+    >
+      <i class="fa-solid fa-paper-plane"></i>
+      Send Message
+    </button>
+
+  </form>
+
+</div>
     </div>
 
   </div>
