@@ -273,7 +273,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+// Contact section "Let's Chat" button
+const contactChatButton = document.getElementById("contactChatButton");
 
+if (contactChatButton && chatButton) {
+  contactChatButton.addEventListener("click", function () {
+    chatButton.click();
+  });
+}
+  
   /* =====================================
      ACTIVE NAVIGATION
   ===================================== */
