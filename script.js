@@ -285,20 +285,26 @@ const educationLink = document.querySelector('a[href="#education"]');
 
 if (careerSection && educationSection) {
 
-  // Hide Career and Education when the page first loads
+  // Hide both when page loads
   careerSection.style.display = "none";
   educationSection.style.display = "none";
+
+  function showSection(sectionToShow, sectionToHide) {
+    sectionToHide.style.display = "none";
+    sectionToShow.style.display = "block";
+
+    setTimeout(() => {
+      sectionToShow.scrollIntoView({
+        behavior: "smooth"
+      });
+    }, 50);
+  }
 
   if (careerLink) {
     careerLink.addEventListener("click", (event) => {
       event.preventDefault();
 
-      careerSection.style.display = "block";
-      educationSection.style.display = "none";
-
-      careerSection.scrollIntoView({
-        behavior: "smooth"
-      });
+      showSection(careerSection, educationSection);
     });
   }
 
@@ -306,14 +312,28 @@ if (careerSection && educationSection) {
     educationLink.addEventListener("click", (event) => {
       event.preventDefault();
 
-      educationSection.style.display = "block";
-      careerSection.style.display = "none";
-
-      educationSection.scrollIntoView({
-        behavior: "smooth"
-      });
+      showSection(educationSection, careerSection);
     });
   }
+
+  // Automatically hide the section after scrolling past it
+  window.addEventListener("scroll", () => {
+
+    [careerSection, educationSection].forEach((section) => {
+
+      if (section.style.display === "none") return;
+
+      const rect = section.getBoundingClientRect();
+
+      // Hide immediately after the bottom of the section is passed
+      if (rect.bottom < 0) {
+        section.style.display = "none";
+      }
+
+    });
+
+  });
+
 }
   
   /* =====================================
