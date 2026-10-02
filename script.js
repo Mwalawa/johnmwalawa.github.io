@@ -273,6 +273,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+  /* =====================================
+   HIDDEN CAREER & EDUCATION SECTIONS
+===================================== */
+
+const careerSection = document.querySelector("#experience");
+const educationSection = document.querySelector("#education");
+
+const careerLink = document.querySelector('a[href="#experience"]');
+const educationLink = document.querySelector('a[href="#education"]');
+
+if (careerSection && educationSection) {
+
+  // Hide Career and Education when the page first loads
+  careerSection.style.display = "none";
+  educationSection.style.display = "none";
+
+  if (careerLink) {
+    careerLink.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      careerSection.style.display = "block";
+      educationSection.style.display = "none";
+
+      careerSection.scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  }
+
+  if (educationLink) {
+    educationLink.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      educationSection.style.display = "block";
+      careerSection.style.display = "none";
+
+      educationSection.scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  }
+}
   
   /* =====================================
      ACTIVE NAVIGATION
